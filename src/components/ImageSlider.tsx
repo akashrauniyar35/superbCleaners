@@ -38,7 +38,7 @@ function ImageSlider() {
 
 
 
-    const SliderCard = ({ item: { img, title, id } }) => {
+    const SliderCard = ({ item: { img, title, id } }: any) => {
 
         const previousState = () => {
 
@@ -47,10 +47,7 @@ function ImageSlider() {
         };
 
         const nextState = () => {
-            const x = parseInt(id)
-            const y = parseInt(currentIndex)
-            let state = y + 1
-            setCurrentIndex({ currentIndex: state })
+
         }
 
         const nutralState = () => {
@@ -64,11 +61,11 @@ function ImageSlider() {
                 <Image rounded='md' src={img} alt="Segun Adebayo" w={60} h={80} />
 
                 <Text>{title}</Text>
-                <Flex onClick={() => previousState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" left={"30px"}>
+                <Flex onClick={() => previousState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" left={"-30px"}>
                     <GoChevronLeft color='white' size={32} />
                 </Flex>
 
-                <Flex onClick={() => nextState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" right={"30px"}>
+                <Flex onClick={() => nextState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" right={"-30px"}>
                     <GoChevronRight color='white' size={32} />
                 </Flex>
 
@@ -85,13 +82,13 @@ function ImageSlider() {
 
                 <Text>Image Slider</Text>
 
-                <Box align="center" py={2}>
+                <Flex flexDirection="column" align="center" py={2}>
                     {data.map((item) => {
                         let parseIn = parseInt(item.id)
                         console.log('DATA LENGTH', parseIn)
                         return (<SliderCard key={item.id} item={item} />)
                     })}
-                </Box>
+                </Flex>
 
             </Box>
         </>

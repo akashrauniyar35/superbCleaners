@@ -64,7 +64,7 @@ function AddOns() {
     const [addedItems, setAaddedItems] = useState([{ label: '', count: '' }])
 
     const dispatch = useDispatch()
-    const addOnData = useSelector((state) => state.addOns)
+    const addOnData = useSelector((state: any) => state.addOns)
     const [counter, setCounter] = useState(0)
 
     const [data, setData] = useState([
@@ -120,18 +120,17 @@ function AddOns() {
     ]
     )
 
-    const onAddClick = (item) => {
+    const onAddClick = (item: any) => {
 
-        const dupe = addOnData.some(x => item.label === x.label)
-
-        console.log('dupe item', dupe, item)
+        // const dupe = addOnData.some(xz => item.label === x.label)
+        // console.log('dupe item', dupe, item)
         setAaddedItems([{ label: item.label, count: item.count + 1 }])
         dispatch(addAddOn(addedItems))
 
     }
 
 
-    const AddOnCards = ({ item }) => {
+    const AddOnCards = ({ item }: any) => {
 
         const General = () => {
             return (

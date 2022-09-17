@@ -77,7 +77,7 @@ const servicesData = [
 
             { id: "00", label: "The professional carpet cleaners will first examine what is the type of the stains on your carpet. They’ll do a pH testing using a special alkaline solution. The cleaners will treat the stains with the correct solution for the specific type of stains." },
             { id: "01", label: "After that, the experts will confirm the type of material of which the carpet is made. The cleaner will implement different cleaning methods according to the carpet’s material - hot water extraction, steam cleaning or dry cleaning." },
-            {id: "02", label: "The carpet cleaners will vacuum the carpet to remove all the build-up dust, dander and particles using an industrial vacuum cleaner. Any stains and spillages will be pre- treated.High traffic areas will be pre - sprayed to loosen up the grimes and soil." },
+            { id: "02", label: "The carpet cleaners will vacuum the carpet to remove all the build-up dust, dander and particles using an industrial vacuum cleaner. Any stains and spillages will be pre- treated.High traffic areas will be pre - sprayed to loosen up the grimes and soil." },
             { id: "03", label: "Small furniture will be cleared out of the way by the cleaners - chairs, tables, and small shelves will be moved aside. If massive furniture needs to be relocated for the carpet steam cleaning, you need to do it before the service." },
             { id: "04", label: "he professionals will deep clean the carpets and rugs using hot water extraction, steam cleaning or dry cleaning methods." },
             { id: "05", label: "Fabric protector can be applied on the carpet upon request. It’ll prevent spillages and stains to go deep into the fabric, which will make their cleaning easy." },
@@ -131,8 +131,7 @@ const Services = () => {
 
 
 
-
-    const ServicesCard = ({ item }) => {
+    const ServicesCard = ({ item }: any) => {
         return (
             <Flex flexDirection="column" pb={4} mb={6} borderBottomWidth={1} borderColor="gray.200">
                 <Text fontSize="20" mb={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.title}</Text>
@@ -149,7 +148,7 @@ const Services = () => {
 
                     <Box position="absolute" top="0" pl="2" pt="4">
                         <List spacing={3}>
-                            {item.headerList.map((x) => {
+                            {item.headerList.map((x: any) => {
                                 return (
                                     <ListItem key={x.id}>
                                         <Flex align="center" >
@@ -180,7 +179,7 @@ const Services = () => {
 
 
                     <UnorderedList>
-                        {item.stepsTasks.map((y) => {
+                        {item.stepsTasks.map((y: any) => {
                             return (
                                 <ListItem key={y.id}>
                                     <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{y.title ? y.title + ':' : null} {y.label}</Text>
@@ -199,7 +198,7 @@ const Services = () => {
                     <Text fontSize="14" mb={2} color="gray.700" fontWeight="light">{item.requirementDescription}</Text>
 
                     <UnorderedList>
-                        {item.requirementList.map((i) => {
+                        {item.requirementList.map((i: any) => {
                             return (
                                 <ListItem key={i.key}>    <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
                             )

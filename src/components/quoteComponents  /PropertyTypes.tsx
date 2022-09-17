@@ -24,7 +24,7 @@ const propertyTypes = [
 
 function PropertyTypes() {
 
-    const loding = useSelector((state) => state)
+    const loding: any = useSelector((state) => state)
     const loaded = loding.service === "" ? false : true;
 
     const [selectedProperty, setSelectedProperty] = useState("House");

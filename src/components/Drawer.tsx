@@ -61,7 +61,7 @@ function DrawerButton() {
 
 
 
-    const DrawerCard = ({ item: { title, nav } }) => {
+    const DrawerCard = ({ item: { title, nav } }: any) => {
         return (
 
             <Link href={nav}>

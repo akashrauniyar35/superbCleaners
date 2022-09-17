@@ -28,7 +28,7 @@ function QuoteHeader() {
 
     const dispatch = useDispatch();
 
-    const onServiceSelect = (service) => {
+    const onServiceSelect = (service: any) => {
         console.log('first')
         setService(service);
         dispatch(selectedService(service));

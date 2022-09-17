@@ -2,7 +2,7 @@ import { Box, Flex, Image, Skeleton, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { IoMdAddCircle, IoMdRemoveCircle } from 'react-icons/io'
 import Colors from '../../assets/Colors';
-
+import { useSelector } from 'react-redux'
 
 
 const propertyTypes = [
@@ -23,10 +23,15 @@ const propertyTypes = [
 
 
 function PropertyTypes() {
+
+    const loding = useSelector((state) => state)
+    const loaded = loding.service === "" ? false : true;
+
     const [selectedProperty, setSelectedProperty] = useState("House");
     const [bedroomCount, setBedroomCount] = useState(1);
     const [bathroomCount, setBathroomCount] = useState(1);
-    const [loaded, setLoaded] = useState(false)
+
+    // const [loaded, setLoaded] = useState(false)
 
     function addBedroom() {
         setBedroomCount(bedroomCount + 1)
@@ -41,7 +46,7 @@ function PropertyTypes() {
         bathroomCount > 1 ? setBathroomCount(bathroomCount - 1) : setBathroomCount(1)
     }
 
-
+    console.log('use selector', loding.service)
     return (
         <>
 
@@ -56,7 +61,7 @@ function PropertyTypes() {
 
                         {propertyTypes.map((item) => {
                             return (
-                                <Flex
+                                <Flex key={item.id}
                                     onClick={() => setSelectedProperty(item.label)}
                                     opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bg={Colors.mattBlue} px='9' rounded='sm' py='1'>
                                     <Text color='#fff' fontSize='14' fontWeight='bold'>{item.label}</Text>

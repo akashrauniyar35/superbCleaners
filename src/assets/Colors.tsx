@@ -12,7 +12,6 @@ const Colors = {
     orange: '#fe8a71',
     grayBG: "#f5f5f5",
 
-
     colorOneBlue: '#000A5D',
     colorTwoOrange: '#FC4d2d',
     colorThreePink: '#e5236c',

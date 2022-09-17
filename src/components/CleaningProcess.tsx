@@ -20,7 +20,7 @@ function CleaningProcess() {
                         />
                         <Flex flexDirection="column" ml={2} align="left" justify="center" mt={2}>
                             <Text textAlign="left" fontSize="18" fontWeight="bold" color={'gray.700'}>WeDo Working Process</Text>
-                            <Text marginTop={2} fontSize="14" textAlign='left' width="70" color="gray.700">You can just call us for the quote or fill in the get quote form and we will get back to you with the Quote.</Text>
+                            <Text marginTop={2} fontSize="13" textAlign='left' width="70" color="gray.700">You can just call us for the quote or fill in the get quote form and we will get back to you with the Quote.</Text>
                         </Flex>
                     </Flex>
                 </Box>

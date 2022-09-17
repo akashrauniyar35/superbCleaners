@@ -1,19 +1,14 @@
 import { Box, Divider, Flex, Image, Skeleton, Stack, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { IoMdCall } from 'react-icons/io'
 import Colors from '../src/assets/Colors'
-import CallUs from '../src/components/CallUs'
-import Drawer from '../src/components/Drawer'
-import HeaderDivider from '../src/components/HeaderDivider'
-import Heading from '../src/components/Heading'
-import InstantQuote from '../src/components/InstantQuote'
+
 import Logo from '../src/components/Logo'
 import AddOns from '../src/components/quoteComponents  /AddOns'
 import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
 
-function instantQuote() {
+const InstantQuotePage = () => {
     const [loaded, setLoaded] = useState(false)
     return (
         <>
@@ -69,4 +64,4 @@ function instantQuote() {
     )
 }
 
-export default instantQuote
+export default InstantQuotePage

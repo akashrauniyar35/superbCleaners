@@ -33,35 +33,35 @@ const data = [
         title: 'Coogee Beach',
     },
     {
-        id: '03',
+        id: '07',
         title: 'Townhall',
     },
     {
-        id: '04',
+        id: '08',
         title: 'Manly Beach',
     },
     {
-        id: '05',
+        id: '09',
         title: 'Coogee Beach',
     },
     {
-        id: '06',
+        id: '10',
         title: 'Coogee Beach',
     },
     {
-        id: '03',
+        id: '11',
         title: 'Townhall',
     },
     {
-        id: '04',
+        id: '12',
         title: 'Manly Beach',
     },
     {
-        id: '05',
+        id: '13',
         title: 'Coogee Beach',
     },
     {
-        id: '06',
+        id: '14',
         title: 'Coogee Beach',
     },
 ];
@@ -75,7 +75,7 @@ function Suburbs() {
 
                     {data.map((item) => {
                         return (
-                            <ListItem marginRight={8} marginBottom={2} color="#fff">
+                            <ListItem key={item.id} marginRight={8} marginBottom={2} color="#fff">
                                 <Text fontSize="14" marginLeft={4} color="#fff">{item.title}</Text>
                             </ListItem>
                         )

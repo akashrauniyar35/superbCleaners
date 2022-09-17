@@ -66,7 +66,7 @@ function DrawerButton() {
 
             <Link href={nav}>
                 <Flex onClick={() => '.pages/contactUs'} align="center" justify="space-between" cursor="pointer" mb={4} >
-                    <Text fontSize="18" textAlign='left' mb={1} color="gray.700" fontWeight="md">{title}</Text>
+                    <Text fontSize="14" textAlign='left' mb={1} color="gray.700" fontWeight="md">{title}</Text>
                 </Flex>
             </Link>
         )
@@ -89,12 +89,8 @@ function DrawerButton() {
 
                         <DrawerCloseButton mt="2" />
                         <DrawerHeader><Text>Sydney Cleaners</Text></DrawerHeader>
-
-
                         <DrawerBody>
-                            {data.map((item) => (<DrawerCard item={item} />))}
-
-
+                            {data.map((item) => (<DrawerCard key={item.id} item={item} />))}
                             <Flex mt={10} rounded='md' align="center" justify="center" backgroundColor="#48A14D">
                                 <IoMdCall color='#fff' size={24} />
                                 <Text fontSize="18" textAlign='left' mb={1} color="#fff" py={1} px={4} fontWeight="bold">Call Us</Text>

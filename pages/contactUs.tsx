@@ -5,7 +5,7 @@ import DrawerButton from '../src/components/Drawer'
 import Footer from '../src/components/Footer'
 import Logo from '../src/components/Logo'
 
-function ContactUs() {
+const ContactUs = () => {
     const [selectedService, setSeletedService] = useState();
     const [notes, setNotes] = useState("");
 
@@ -84,7 +84,7 @@ function ContactUs() {
 
                                 {services.map((item) => {
                                     return (
-                                        <AccordionPanel cursor='pointer' _hover={{ backgroundColor: 'gray.700' }} py='0' mb='2' onClick={() => setSeletedService(item.title)} >
+                                        <AccordionPanel key={item.id} cursor='pointer' _hover={{ backgroundColor: 'gray.700' }} py='0' mb='2' onClick={() => setSeletedService(item.title)} >
                                             <Text textAlign="left" fontSize="16" fontWeight="medium" color={"#8C929B"} _hover={{ color: 'gray.100' }} py='1' >{item.title}</Text>
                                         </AccordionPanel>
                                     )

@@ -2,7 +2,7 @@ import { Box, Container, Flex, Stack } from '@chakra-ui/react'
 import React from 'react'
 import Drawer from './Drawer'
 import HeaderDivider from './HeaderDivider'
-import InstantQuote from './InstantQuote'
+import InstantQuote from './InstantQuoteButton'
 import Logo from './Logo'
 
 function HeaderButtons() {

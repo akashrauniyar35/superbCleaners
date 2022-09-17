@@ -3,7 +3,7 @@ import React from 'react'
 import Colors from '../assets/Colors'
 import Link from 'next/link'
 
-function InstantQuote() {
+function InstantQuoteButton() {
     return (
 
         <Link href="/instantQuote">
@@ -16,4 +16,4 @@ function InstantQuote() {
     )
 }
 
-export default InstantQuote
+export default InstantQuoteButton

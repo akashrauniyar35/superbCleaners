@@ -3,7 +3,7 @@ import React from "react"
 import { MdCheckCircle, MdCheckCircleOutline } from "react-icons/md"
 import Colors from "../src/assets/Colors"
 import DrawerButton from "../src/components/Drawer"
-import InstantQuote from "../src/components/InstantQuote"
+import InstantQuote from "../src/components/InstantQuoteButton"
 import Logo from "../src/components/Logo"
 
 
@@ -77,9 +77,7 @@ const servicesData = [
 
             { id: "00", label: "The professional carpet cleaners will first examine what is the type of the stains on your carpet. They’ll do a pH testing using a special alkaline solution. The cleaners will treat the stains with the correct solution for the specific type of stains." },
             { id: "01", label: "After that, the experts will confirm the type of material of which the carpet is made. The cleaner will implement different cleaning methods according to the carpet’s material - hot water extraction, steam cleaning or dry cleaning." },
-            {
-                id: "02", label: "The carpet cleaners will vacuum the carpet to remove all the build-up dust, dander and particles using an industrial vacuum cleaner. Any stains and spillages will be pre- treated.High traffic areas will be pre - sprayed to loosen up the grimes and soil."
-            },
+            {id: "02", label: "The carpet cleaners will vacuum the carpet to remove all the build-up dust, dander and particles using an industrial vacuum cleaner. Any stains and spillages will be pre- treated.High traffic areas will be pre - sprayed to loosen up the grimes and soil." },
             { id: "03", label: "Small furniture will be cleared out of the way by the cleaners - chairs, tables, and small shelves will be moved aside. If massive furniture needs to be relocated for the carpet steam cleaning, you need to do it before the service." },
             { id: "04", label: "he professionals will deep clean the carpets and rugs using hot water extraction, steam cleaning or dry cleaning methods." },
             { id: "05", label: "Fabric protector can be applied on the carpet upon request. It’ll prevent spillages and stains to go deep into the fabric, which will make their cleaning easy." },
@@ -129,7 +127,7 @@ const servicesData = [
 ]
 
 
-function services() {
+const Services = () => {
 
 
 
@@ -153,7 +151,7 @@ function services() {
                         <List spacing={3}>
                             {item.headerList.map((x) => {
                                 return (
-                                    <ListItem>
+                                    <ListItem key={x.id}>
                                         <Flex align="center" >
                                             <ListIcon as={MdCheckCircleOutline} color='gray.900' w="6" h="6" />
                                             <Text fontSize="12" color="gray.900" fontWeight="bold">
@@ -184,7 +182,7 @@ function services() {
                     <UnorderedList>
                         {item.stepsTasks.map((y) => {
                             return (
-                                <ListItem>
+                                <ListItem key={y.id}>
                                     <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{y.title ? y.title + ':' : null} {y.label}</Text>
                                 </ListItem>
                             )
@@ -203,7 +201,7 @@ function services() {
                     <UnorderedList>
                         {item.requirementList.map((i) => {
                             return (
-                                <ListItem>   <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
+                                <ListItem key={i.key}>    <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
                             )
                         })}
 
@@ -249,7 +247,7 @@ function services() {
 
                 {
                     servicesData.map((item) => {
-                        return <ServicesCard item={item} />
+                        return <ServicesCard item={item} key={item.id} />
                     })
                 }
 
@@ -261,4 +259,4 @@ function services() {
     )
 }
 
-export default services
+export default Services

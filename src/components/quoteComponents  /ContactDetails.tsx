@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 
 function ContactDetails() {
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(true)
     return (
         <Box>
             <Skeleton isLoaded={loaded}>
@@ -18,15 +18,14 @@ function ContactDetails() {
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                                children={<Image
+                            ><Image
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/user.png'}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
-                                />}
-                            />
+                                /></InputLeftElement>
                             <Input size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
 
                         </InputGroup>
@@ -36,15 +35,14 @@ function ContactDetails() {
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                                children={<Image
+                            ><Image
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/mail.png'}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
-                                />}
-                            />
+                                /></InputLeftElement>
                             <Input size='sm' rounded='md' placeholder='Email' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
 
                         </InputGroup>
@@ -55,15 +53,15 @@ function ContactDetails() {
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                                children={<Image
+                            >
+                                <Image
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/phone.png'}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
-                                />}
-                            />
+                                /></InputLeftElement>
                             <Input size='sm' rounded='md' placeholder='Contact number' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
 
                         </InputGroup>
@@ -73,20 +71,19 @@ function ContactDetails() {
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                                children={<Image
+                            ><Image
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/location.png'}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
-                                />}
-                            />
+                                /></InputLeftElement>
                             <Input size='sm' rounded='md' placeholder='Street Address' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
                         </InputGroup>
                     </Skeleton>
                     <Skeleton isLoaded={loaded}>
-
+ 
                         <InputGroup>
 
                             <Flex align='center' justify='space-between'>

@@ -2,62 +2,134 @@ import { Box, Flex, Image, Skeleton, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 import { IoMdAddCircle, IoMdRemoveCircle, IoMdCheckmarkCircle } from 'react-icons/io'
-const data = [
-    {
-        id: '00',
-        label: 'Study room',
-        count: '',
-        icon: '/study.png',
-    },
-    {
-        id: '01',
-        label: 'Laundry',
-        count: '',
-        icon: '/laundry.png',
-    },
-    {
-        id: '02',
-        label: 'Separate toilet',
-        count: '',
-        icon: '/toilet.png',
-    },
-    {
-        id: '03',
-        label: 'Balcony',
-        count: '',
-        icon: '/balcony.png',
-    },
-    {
-        id: '04',
-        label: 'Wall wash',
-        count: '',
-        icon: '/wall.png',
-    },
-    {
-        id: '05',
-        label: 'Garage',
-        count: '',
-        icon: '/garage.png',
-    },
-    {
-        id: '06',
-        label: 'Blinds',
-        count: '',
-        icon: '/blinds.png',
-    },
-    {
-        id: '07',
-        label: 'Carpets',
-        count: '',
-        steameClean: false,
-        icon: '/carpet.png',
-    },
-]
+import { addAddOn } from '../../redux/slice';
+import { useDispatch, useSelector } from 'react-redux'
+// let data = [
+//     {
+//         id: '00',
+//         label: 'Study room',
+//         count: 0,
+//         icon: '/study.png',
+//     },
+//     {
+//         id: '01',
+//         label: 'Laundry',
+//         count: 0,
+//         icon: '/laundry.png',
+//     },
+//     {
+//         id: '02',
+//         label: 'Separate toilet',
+//         count: 0,
+//         icon: '/toilet.png',
+//     },
+//     {
+//         id: '03',
+//         label: 'Balcony',
+//         count: 0,
+//         icon: '/balcony.png',
+//     },
+//     {
+//         id: '04',
+//         label: 'Wall wash',
+//         count: 0,
+//         icon: '/wall.png',
+//     },
+//     {
+//         id: '05',
+//         label: 'Garage',
+//         count: 0,
+//         icon: '/garage.png',
+//     },
+//     {
+//         id: '06',
+//         label: 'Blinds',
+//         count: 0,
+//         icon: '/blinds.png',
+//     },
+//     {
+//         id: '07',
+//         label: 'Carpets',
+//         count: 0,
+//         steameClean: false,
+//         icon: '/carpet.png',
+//     },
+// ]
 
 
 function AddOns() {
     const [steameClean, setSteameClean] = useState(false)
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(true)
+
+    const [addedItems, setAaddedItems] = useState([{ label: '', count: '' }])
+
+    const dispatch = useDispatch()
+    const addOnData = useSelector((state) => state.addOns)
+    const [counter, setCounter] = useState(0)
+
+    const [data, setData] = useState([
+        {
+            id: '00',
+            label: 'Study room',
+            count: counter,
+            icon: '/study.png',
+        },
+        {
+            id: '01',
+            label: 'Laundry',
+            count: counter,
+            icon: '/laundry.png',
+        },
+        {
+            id: '02',
+            label: 'Separate toilet',
+            count: counter,
+            icon: '/toilet.png',
+        },
+        {
+            id: '03',
+            label: 'Balcony',
+            count: counter,
+            icon: '/balcony.png',
+        },
+        {
+            id: '04',
+            label: 'Wall wash',
+            count: counter,
+            icon: '/wall.png',
+        },
+        {
+            id: '05',
+            label: 'Garage',
+            count: counter,
+            icon: '/garage.png',
+        },
+        {
+            id: '06',
+            label: 'Blinds',
+            count: counter,
+            icon: '/blinds.png',
+        },
+        {
+            id: '07',
+            label: 'Carpets',
+            count: counter,
+            steameClean: false,
+            icon: '/carpet.png',
+        },
+    ]
+    )
+
+    const onAddClick = (item) => {
+
+        const dupe = addOnData.some(x => item.label === x.label)
+
+        console.log('dupe item', dupe, item)
+        setAaddedItems([{ label: item.label, count: item.count + 1 }])
+        dispatch(addAddOn(addedItems))
+
+    }
+
 
     const AddOnCards = ({ item }) => {
 
@@ -82,8 +154,8 @@ function AddOns() {
 
                             <Flex align="center" justify="space-evenly" w="100%" bg={Colors.mattBlue} borderBottomRadius={'md'}>
                                 <IoMdRemoveCircle size={16} color={'#fff'} cursor='pointer' />
-                                <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{'1'}</Text>
-                                <IoMdAddCircle size={16} color={'#fff'} cursor='pointer' />
+                                <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{item.count}</Text>
+                                <IoMdAddCircle onClick={() => onAddClick(item)} size={16} color={'#fff'} cursor='pointer' />
                             </Flex>
                         </Skeleton>
                     </Flex>
@@ -168,11 +240,8 @@ function AddOns() {
 
                     {
                         data.map((item) => {
-
-
-
                             return (
-                                <AddOnCards item={item} />
+                                <AddOnCards key={item.id} item={item} />
                             )
                         })
                     }

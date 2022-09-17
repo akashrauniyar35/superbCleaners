@@ -1,10 +1,10 @@
-import { Box, Flex, Image, Text, Skeleton } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 
-import { IoMdAddCircle, IoMdRemoveCircle } from 'react-icons/io'
+import { useDispatch, } from 'react-redux'
+import { selectedService } from '../../redux/slice'
 
-import house from '../../assets/house.png'
 
 const serviceTypes = [
 
@@ -24,9 +24,15 @@ const serviceTypes = [
 
 
 function QuoteHeader() {
-    const [selectedService, setSeletedService] = useState("End of Lease Cleaning");
+    const [service, setService] = useState("");
 
+    const dispatch = useDispatch();
 
+    const onServiceSelect = (service) => {
+        console.log('first')
+        setService(service);
+        dispatch(selectedService(service));
+    }
 
     return (
         <>
@@ -38,14 +44,15 @@ function QuoteHeader() {
                         serviceTypes.map((item) => {
                             return (
 
-                                <Flex p={2} w='180px' rounded='md' bg={Colors.colorOneBlue} cursor='pointer' justify='space-between' onClick={() => setSeletedService(item.title)}
+                                <Flex key={item.id} p={2} w='180px' rounded='md' bg={Colors.colorOneBlue} cursor='pointer' justify='space-between' onClick={() => onServiceSelect(item.title)}
 
-                                    opacity={item.title === selectedService ? "1" : '.3'}
+                                    opacity={item.title === service ? "1" : '.3'}
 
                                 >
                                     <Image
                                         width="20" height="20"
                                         // boxSize='70px'
+                                        bg="#000000" opacity=".8"
                                         objectFit='cover'
                                         src={item.icon}
                                         background={'#fff'}

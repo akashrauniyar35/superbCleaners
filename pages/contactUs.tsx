@@ -6,7 +6,7 @@ import Footer from '../src/components/Footer'
 import Logo from '../src/components/Logo'
 
 const ContactUs = () => {
-    const [selectedService, setSeletedService] = useState();
+    const [selectedService, setSeletedService] = useState("");
     const [notes, setNotes] = useState("");
 
     const services = [

@@ -39,7 +39,7 @@ const ContactUs = () => {
 
             <Box px={4} pt={4}>
                 <Text textAlign="left" fontSize="28" mb={4} fontWeight="bold" color={"gray.700"}>Contact us</Text>
-                <Text fontSize="14" color="gray.700" fontWeight="light">If you want to request a service, discuss an existing appointment, learn more about our franchise opportunities, collaborate with us on an exiting project or drop us a line about your service experience, use the form below and we'll get in touch shortly! </Text>
+                <Text fontSize="14" color="gray.700" fontWeight="light">If you want to request a service, discuss an existing appointment, learn more about our franchise opportunities, collaborate with us on an exiting project or drop us a line about your service experience, use the form below and we&apos;ll get in touch shortly! </Text>
             </Box>
             <Box px={4} pt={4}>
                 <Flex flexDirection="column" bg='gray.300' px={4} rounded={'md'} py={4} shadow="base">

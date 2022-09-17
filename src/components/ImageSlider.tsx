@@ -89,7 +89,7 @@ function ImageSlider() {
                     {data.map((item) => {
                         let parseIn = parseInt(item.id)
                         console.log('DATA LENGTH', parseIn)
-                        return (<SliderCard item={item} />)
+                        return (<SliderCard key={item.id} item={item} />)
                     })}
                 </Box>
 

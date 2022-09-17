@@ -41,7 +41,7 @@ const data = [
 function FooterAccordians() {
 
 
-    const AccordianCard = ({ label, description }) => {
+    const AccordianCard = ({ label, description }: any) => {
         return (
             <AccordionItem borderWidth={0} borderColor={Colors.red} pb={2}>
 

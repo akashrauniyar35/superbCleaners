@@ -82,7 +82,7 @@ function DrawerButton() {
                     isOpen={isOpen}
                     placement='left'
                     onClose={toggleDrawer}
-                    finalFocusRef={btnRef}
+                    // finalFocusRef={btnRef}
                 >
                     <DrawerOverlay />
                     <DrawerContent>

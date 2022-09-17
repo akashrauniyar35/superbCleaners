@@ -3,7 +3,6 @@ import React from 'react'
 import { MdCheckCircle, MdSettings } from 'react-icons/md';
 import Colors from '../assets/Colors';
 
-import data from '../assets/SuburbsData';
 import CallUs from './CallUs';
 import ChooseUS from './ChooseUS';
 import CleaningProcess from './CleaningProcess';

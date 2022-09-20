@@ -27,7 +27,7 @@ function Banner() {
                 </Box>
 
                 <Box width="90" alignSelf="center" pt={4}>
-                    <Text textAlign="left" fontSize="14">The no-stress way to book the cleaning service you need in minutes. Eliminates back and forth emails. Book straight into our team`s schedule even on SUNDAY! </Text>
+                    <Text textAlign="left" fontSize="13">The no-stress way to book the cleaning service you need in minutes. Eliminates back and forth emails. Book straight into our team`s schedule even on SUNDAY! </Text>
                 </Box>
 
                 <Box position="relative">
@@ -38,7 +38,7 @@ function Banner() {
                     />
                     <Flex bgGradient='linear(to-l,blue.500 5%,blue.700 50%)' marginTop={-20} rounded="md" px={4}>
                         <Box marginTop={8} pb={4}>
-                            <Text textAlign="left" fontSize="18" fontWeight="bold" color="#fff">Modern cleaning for modern lives</Text>
+                            <Text textAlign="left" fontSize="18  " fontWeight="bold" color="#fff">Modern cleaning for modern lives</Text>
 
                             <Flex align="center" justify="space-between" marginTop={2}>
                                 <Text fontSize="14" textAlign='left' color="#fff">We have the technology to keep things efficient and the people to keep things personalized.</Text>
@@ -91,15 +91,18 @@ function Banner() {
 
                     </Box>
 
-                    <Box bgGradient='radial( blue.700 40%,blue.400 70%)' >
-                        <Box width="50%" position='absolute' top={10} right={0}>
-                            <UnorderedList fontSize={12}>
-                                <ListItem><Text fontSize="13" color="gray.700">Best in Sydney, NSW</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Get a Quote in less than 2 minutes</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Satisfaction guranteed</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Resonable Pricings</Text></ListItem>
+                    <Box width="50%" position='absolute' top={10} right={0}>
+                        <Flex bgGradient={[
+                            'linear(to-tr, red.300, blue.400)',
+                            'linear(to-t, blue.200, red.500)',
+                            'linear(to-b, blue.100, blue.300)',]} rounded='full' align="center" h="200px" w="200px" shadow="base">
+                            <UnorderedList fontSize={13} ml={7} color='white'>
+                                <ListItem><Text fontSize="13" color="white">Best in Sydney, NSW</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Get a Quote in less than 2 minutes</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Satisfaction guranteed</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Resonable Pricings</Text></ListItem>
                             </UnorderedList>
-                        </Box>
+                        </Flex>
                     </Box>
                 </Box>
 

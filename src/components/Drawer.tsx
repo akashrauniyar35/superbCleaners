@@ -76,19 +76,21 @@ function DrawerButton() {
         <>
             <Box>
 
-                <HamburgerIcon cursor="pointer" onClick={toggleDrawer} w={6} h={6} />
+                <HamburgerIcon cursor="pointer" onClick={toggleDrawer} w={8} h={8} />
 
                 <Drawer
                     isOpen={isOpen}
                     placement='left'
                     onClose={toggleDrawer}
-                    // finalFocusRef={btnRef}
+                // finalFocusRef={btnRef}
                 >
                     <DrawerOverlay />
                     <DrawerContent>
 
-                        <DrawerCloseButton mt="2" />
-                        <DrawerHeader><Text>Sydney Cleaners</Text></DrawerHeader>
+                        <DrawerCloseButton mt="2" color='white' />
+                        <DrawerHeader bgGradient='linear(to-r, blue.700 82%, blue.400)'>
+                            <Text color='white'>Superb Cleaners</Text>
+                        </DrawerHeader>
                         <DrawerBody>
                             {data.map((item) => (<DrawerCard key={item.id} item={item} />))}
                             <Flex mt={10} rounded='md' align="center" justify="center" backgroundColor="#48A14D">
@@ -98,7 +100,7 @@ function DrawerButton() {
 
                             <Link href="/instantQuote">
 
-                                <Flex mt={4} rounded='md' align="center" justify="center" backgroundColor={Colors.mattBlue} >
+                                <Flex mt={4} rounded='md' cursor='pointer' align="center" justify="center" _hover={{ bgGradient: 'linear(to-tl, red.300, #e5236c)' }} bgGradient='linear(to-tr, red.300, #e5236c)'>
                                     <Text fontSize="18" textAlign='left' mb={1} color="#fff" py={1} px={4} fontWeight="bold">Request a Free Quote</Text>
                                 </Flex>
                             </Link>

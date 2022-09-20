@@ -3,8 +3,15 @@ import { Box, Flex, Image, Input, InputGroup, InputLeftElement, Skeleton, Stack,
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 
+import { customerDetails, customerName } from '../../redux/slice';
+import { useDispatch, useSelector } from 'react-redux'
+
 function ContactDetails() {
     const [loaded, setLoaded] = useState(true)
+    const dispatch = useDispatch();
+
+    const [data, setData] = useState([{ customerName: '', emial: '', phone: '', streetAddress: '', unit: '', postCode: null, suburb: null, }])
+
     return (
         <Box>
             <Skeleton isLoaded={loaded}>
@@ -26,7 +33,7 @@ function ContactDetails() {
                                     padding='2'
                                     mt='-1'
                                 /></InputLeftElement>
-                            <Input size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
+                            <Input onChange={(e) => dispatch(customerName(e.target.value))} size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
 
                         </InputGroup>
                     </Skeleton>
@@ -83,7 +90,7 @@ function ContactDetails() {
                         </InputGroup>
                     </Skeleton>
                     <Skeleton isLoaded={loaded}>
- 
+
                         <InputGroup>
 
                             <Flex align='center' justify='space-between'>

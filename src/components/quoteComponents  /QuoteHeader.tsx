@@ -24,7 +24,7 @@ const serviceTypes = [
 
 
 function QuoteHeader() {
-    const [service, setService] = useState("");
+    const [service, setService] = useState();
 
     const dispatch = useDispatch();
 

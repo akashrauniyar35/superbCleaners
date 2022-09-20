@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { IoMdAddCircle, IoMdRemoveCircle } from 'react-icons/io'
 import Colors from '../../assets/Colors';
 import { useSelector } from 'react-redux'
-
+import { useDispatch, } from 'react-redux'
+import { propertySelected, addBedCount, addBathCount, removeBedCount } from '../../redux/slice'
 
 const propertyTypes = [
 
@@ -26,22 +27,30 @@ function PropertyTypes() {
 
     const loding: any = useSelector((state) => state)
     const loaded = loding.service === "" ? false : true;
-
+    const dispatch = useDispatch();
     const [selectedProperty, setSelectedProperty] = useState("House");
     const [bedroomCount, setBedroomCount] = useState(1);
     const [bathroomCount, setBathroomCount] = useState(1);
 
-    // const [loaded, setLoaded] = useState(false)
-
     function addBedroom() {
         setBedroomCount(bedroomCount + 1)
+        dispatch(addBedCount(bedroomCount))
     }
+    function selectProperty(property: any) {
+        dispatch(propertySelected(property))
+        setSelectedProperty(property)
+    }
+
     function addBathroom() {
         setBathroomCount(bathroomCount + 1)
+        dispatch(addBathCount(bathroomCount))
     }
+
     function removeBedroom() {
         bedroomCount > 1 ? setBedroomCount(bedroomCount - 1) : setBedroomCount(1)
+        dispatch(removeBedCount(bedroomCount))
     }
+
     function removeBathroom() {
         bathroomCount > 1 ? setBathroomCount(bathroomCount - 1) : setBathroomCount(1)
     }
@@ -62,7 +71,7 @@ function PropertyTypes() {
                         {propertyTypes.map((item) => {
                             return (
                                 <Flex key={item.id}
-                                    onClick={() => setSelectedProperty(item.label)}
+                                    onClick={() => selectProperty(item.label)}
                                     opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bg={Colors.mattBlue} px='9' rounded='sm' py='1'>
                                     <Text color='#fff' fontSize='14' fontWeight='bold'>{item.label}</Text>
                                 </Flex>

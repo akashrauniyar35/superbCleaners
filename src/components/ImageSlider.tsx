@@ -2,12 +2,13 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
 import React, { Fragment, useState } from 'react'
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import Colors from '../assets/Colors';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const data = [
     {
         id: '0',
-        title: 'Instagram Pictures',
+        title: 'This will be some description of the picture dont know how to make a description but trying my best.',
         img: 'https://scitechdaily.com/images/New-Hubble-Image-Shows-Part-of-the-Large-Magellanic-Cloud.jpg',
     },
     {
@@ -37,39 +38,37 @@ function ImageSlider() {
 
 
 
+    const arrowPrevious = (clickHandler: any) => {
+        return (
+            <Flex onClick={clickHandler} cursor='pointer' backgroundColor={"blue.700"} borderColor={'#fff'} borderWidth={2} w={'35px'} h={'35px'} rounded='full' position='absolute' align='center' justify="center" top="40%" left={"2px"} zIndex="5">
+                <GoChevronLeft color='white' size={32} />
+            </Flex>
+        )
+    }
+    const arrowNext = (clickHandler: any) => {
+        return (
+            <Flex onClick={clickHandler} cursor='pointer' backgroundColor={"blue.700"} borderColor={'#fff'} borderWidth={2} w={'35px'} h={'35px'} rounded='full' position='absolute' align='center' justify="center" top="40%" right={"2px"} zIndex="2">
+                <GoChevronRight color='white' size={32} />
+            </Flex>
+        )
+    }
+
+
+
+
+
 
     const SliderCard = ({ item: { img, title, id } }: any) => {
 
-        const previousState = () => {
-
-            const x = currentIndex - 1
-            setCurrentIndex(x)
-        };
-
-        const nextState = () => {
-
-        }
-
-        const nutralState = () => {
-
-        }
-
 
         return (
-            <Box position='relative' >
+            <Box position='relative' shadow='lg' >
 
-                <Image rounded='md' src={img} alt="Segun Adebayo" w={60} h={80} />
-
-                <Text>{title}</Text>
-                <Flex onClick={() => previousState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" left={"-30px"}>
-                    <GoChevronLeft color='white' size={32} />
-                </Flex>
-
-                <Flex onClick={() => nextState()} cursor='pointer' backgroundColor={Colors.red} borderColor={'#fff'} borderWidth={4} w={'45px'} h={'45px'} rounded='full' position='absolute' align='center' justify="center" top="40%" right={"-30px"}>
-                    <GoChevronRight color='white' size={32} />
-                </Flex>
-
-            </Box>
+                <Box py={2} bg='white' position='absolute' bottom='0' borderBottomRadius='md' w="100%" textAlign='left' px="2">
+                    <Text alignSelf="left" fontSize='10' color='gray.700' opacity='1'>{title}</Text>
+                </Box>
+                <Image rounded='md' src={img} w={'60px'} h={'280px'} />
+            </Box >
         )
     }
 
@@ -77,17 +76,17 @@ function ImageSlider() {
 
     return (
         <>
+            <Box mt={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative'>
+                <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Instagram Pictures</Text>
+                <Flex flexDirection="column" align="center" pt={4}>
+                    <Carousel interval={2000} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false} renderArrowNext={(clickHandler) => arrowNext(clickHandler)} renderArrowPrev={(clickHandler) => arrowPrevious(clickHandler)} >
+                        {data.map((item) => {
+                            let parseIn = parseInt(item.id)
+                            console.log('DATA LENGTH', parseIn)
+                            return (<SliderCard key={item.id} item={item} />)
 
-            <Box mt={2} backgroundColor={"#f5f5f5"} rounded="md" p={4} position='relative'>
-
-                <Text>Image Slider</Text>
-
-                <Flex flexDirection="column" align="center" py={2}>
-                    {data.map((item) => {
-                        let parseIn = parseInt(item.id)
-                        console.log('DATA LENGTH', parseIn)
-                        return (<SliderCard key={item.id} item={item} />)
-                    })}
+                        })}
+                    </Carousel>
                 </Flex>
 
             </Box>

@@ -8,7 +8,7 @@ import Logo from './Logo'
 function HeaderButtons() {
     return (
         <>
-            <Flex px={4} align="center" flexDirection="row" justify="space-between" my="2">
+            <Flex px={4} align="center" flexDirection="row" justify="space-between" my={2}>
                 <Drawer />
                 <Logo />
                 <InstantQuote />

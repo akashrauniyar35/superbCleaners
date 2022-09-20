@@ -2,25 +2,27 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 
-interface QuoteState {
-    id: number,
-    title: string,
-    property: string,
-    service: string,
-    bedroomCount: string,
-    bathroomCount: string,
-    addOns: Array<[{ id: string, label: string, count: Number }]>
-}
+// interface QuoteState {
+//     id: number,
+//     title: string,
+//     property: string,
+//     contactDetails: { customerName: string, emial: string, phone: Number, streetAddress: string, unit: Number, postCode: Number, suburb: string, }
+//     service: string,
+//     bedroomCount: Number,
+//     bathroomCount: Number,
+//     addOns: Array<[{ id: string, label: string, count: Number }]>
+// }
 
 const initialState = {
     id: 0,
     title: '',
     service: '',
     property: 'House',
-    bedroomCount: '',
-    bathroomCount: '',
+    bedroomCount: 0,
+    bathroomCount: 0,
     addOns: [],
-} as QuoteState
+    contactDetails: []
+}
 
 const quoteSlice = createSlice({
     name: 'quote',
@@ -29,20 +31,36 @@ const quoteSlice = createSlice({
         selectedService(state, action: any) {
             state.service = action.payload
         },
-        propertySelected(state, action: PayloadAction<string>) {
+        propertySelected(state, action) {
             state.property = action.payload
         },
-        bedroomCount(state, action: PayloadAction<string>) {
+        addBedCount(state, action) {
+            console.log(action.payload)
             state.bedroomCount = action.payload
         },
-        bathroomCount(state, action: PayloadAction<string>) {
+        removeBedCount(state, action) {
+            state.bedroomCount = action.payload
+        },
+        addBathCount(state, action) {
             state.bathroomCount = action.payload
         },
-        addAddOn(state, action: PayloadAction<any>) {
-            state.addOns.push(action.payload)
+        addAddOn(state, action: any) {
+            console.log(action)
+            // state.addOns.push(action.payload)
+            // const itemIndex = state.addOns.findIndex(action.payload)
         },
+        customerName(state, action) {
+            console.log('s', state.contactDetails)
+
+        },
+        customerDetails(state, action) {
+            console.log(action)
+            // state.contactDetails.push(action.payload)
+            // const itemIndex = state.addOns.findIndex(action.payload)
+        },
+
     },
 })
 
-export const { selectedService, bedroomCount, bathroomCount, addAddOn } = quoteSlice.actions
+export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeBedCount, customerDetails, customerName } = quoteSlice.actions
 export default quoteSlice.reducer

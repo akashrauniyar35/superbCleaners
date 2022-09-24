@@ -47,14 +47,14 @@ function FooterAccordians() {
 
                 <AccordionButton p={0} _hover={{ backgroundColor: "transparent" }}>
                     <Box flex='1' textAlign='left'>
-                        <Text textAlign="left" fontSize="13" fontWeight="bold" color="#fff">{label}</Text>
+                        <Text textAlign="left" fontSize="13" fontWeight="md" color="gray.700">{label}</Text>
                     </Box>
-                    <AccordionIcon w={6} h={6} color="#fff" />
+                    <AccordionIcon w={6} h={6} color="gray.700" />
                 </AccordionButton>
 
                 <AccordionPanel p={0} borderWidth={0}>
 
-                    <Text fontSize="13" textAlign='left' color="#fff">{description}</Text>
+                    <Text fontSize="13" textAlign='left' fontWeight="light" color="gray.700">{description}</Text>
                 </AccordionPanel>
             </AccordionItem>
         )
@@ -63,9 +63,8 @@ function FooterAccordians() {
     return (
         <>
 
-            <Box mt={2} bgGradient='linear( to-bl,red.400 15%, blue.500 70%)' rounded="md" p={4} position='relative'>
-                <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="#fff">Questionaries</Text>
-
+            <Box  shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative'>
+                <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Questionaries</Text>
                 <Accordion allowMultiple >
 
                     {data.map((item) => (<AccordianCard key={item.id} description={item.description} label={item.label} />))}

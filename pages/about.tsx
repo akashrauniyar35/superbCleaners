@@ -32,13 +32,15 @@ const About = () => {
             </Flex>
 
             <Box px={4} pt={4}>
-                <Text textAlign="left" fontSize="28" mb={4} fontWeight="bold" color={"gray.700"}>About us</Text>
+                <Text textAlign="left" fontSize="18" mb={4} fontWeight="bold" color={"gray.700"}>About us</Text>
             </Box>
 
 
             <Flex px={4} position='relative' align='center' justify='center'>
-                <Image position="relative" boxSize="400" rounded="md" src="/teamWorking.png" bg="#000000" opacity=".3" />
-                <Text w='70%' top='60%' position='absolute' fontSize="28" mb={2} color={Colors.colorOneBlue} fontWeight="bold" lineHeight={1}
+                <Flex bgGradient='linear(to-tr, red.100, #e5236c)' rounded="md">
+                    <Image position="relative" boxSize="400" rounded="md" src="/teamWorking.png" opacity={.6} />
+                </Flex>
+                <Text w='70%' top='60%' position='absolute' fontSize="28" mb={2} color={"gray.700"} fontWeight="bold" lineHeight={1} zIndex={2}
                     textAlign="center"
                 >We are here because you have better things to do</Text>
             </Flex>
@@ -49,7 +51,7 @@ const About = () => {
                     return (
                         <Flex key={item.id} align="center" flexDirection="column" mb={8} position="relative">
                             <Image position="relative" boxSize="20" shadow='inner' rounded="full" src={item.img} bg="gray.300" opacity=".9" p={4} />
-                            <Text my={2} fontSize="18" fontWeight="bold" color={"gray.700"}>{item.title}</Text>
+                            <Text my={2} fontSize="16" fontWeight="bold" color={"gray.700"}>{item.title}</Text>
                             <Text w='70%' textAlign="center" fontSize="12" fontWeight="light" color={"gray.700"}>{item.description}</Text>
                         </Flex>
                     )

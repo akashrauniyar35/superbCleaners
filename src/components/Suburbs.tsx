@@ -68,22 +68,22 @@ const data = [
 
 function Suburbs() {
     return (
-        <Box mt={2} bgGradient='linear( to-br,red.400 15%, blue.500 70%)' rounded="md" p={4} position='relative'>
-            <Text mb={2} textAlign="left" fontSize="20" fontWeight="bold" color="#fff">Sydney</Text>
+        <Box my={4} bg="#f5f5f5" rounded="md" p={4} position='relative' shadow="base">
+            <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Sydney</Text>
             <UnorderedList>
-                <Flex align="center" flexWrap='wrap' >
+                <Flex align="center" flexWrap='wrap'>
 
                     {data.map((item) => {
                         return (
-                            <ListItem key={item.id} marginRight={8} marginBottom={2} color="#fff">
-                                <Text fontSize="14" marginLeft={4} color="#fff">{item.title}</Text>
+                            <ListItem key={item.id} marginRight={8} marginBottom={2} color="gray.700"  >
+                                <Text fontSize="13" color="gray.700" >{item.title}</Text>
                             </ListItem>
                         )
                     })}
                 </Flex>
             </UnorderedList>
 
-        </Box>
+        </Box >
     )
 }
 

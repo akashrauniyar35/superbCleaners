@@ -1,17 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { MdYard } from 'react-icons/md'
 
 
-// interface QuoteState {
-//     id: number,
-//     title: string,
-//     property: string,
-//     contactDetails: { customerName: string, emial: string, phone: Number, streetAddress: string, unit: Number, postCode: Number, suburb: string, }
-//     service: string,
-//     bedroomCount: Number,
-//     bathroomCount: Number,
-//     addOns: Array<[{ id: string, label: string, count: Number }]>
-// }
 
 const initialState = {
     id: 0,
@@ -21,14 +11,19 @@ const initialState = {
     bedroomCount: 0,
     bathroomCount: 0,
     addOns: [],
-    contactDetails: []
+    contactDetails: ''
 }
+
+
+
+
+
 
 const quoteSlice = createSlice({
     name: 'quote',
     initialState,
     reducers: {
-        selectedService(state, action: any) {
+        selectedService(state, action) {
             state.service = action.payload
         },
         propertySelected(state, action) {
@@ -44,13 +39,24 @@ const quoteSlice = createSlice({
         addBathCount(state, action) {
             state.bathroomCount = action.payload
         },
-        addAddOn(state, action: any) {
-            console.log(action)
+        addAddOn(state, action) {
+
+            state.addOns.length === 0 && state.addOns.push(action.payload);
+            const exist = state.addOns.find(x => x.id === action.payload.id);
+            if (exist) {
+                state.addOns.push(state.addOns.map(y => y.id === action.payload.id ? { ...exist, count: action.payload.count } : y))
+            } else {
+                state.addOns.push(action.payload)
+            }
+
+        },
+
+
+        removeAddOn(state, action) {
             // state.addOns.push(action.payload)
-            // const itemIndex = state.addOns.findIndex(action.payload)
         },
         customerName(state, action) {
-            console.log('s', state.contactDetails)
+            // console.log('s', state.contactDetails)
 
         },
         customerDetails(state, action) {
@@ -62,5 +68,5 @@ const quoteSlice = createSlice({
     },
 })
 
-export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeBedCount, customerDetails, customerName } = quoteSlice.actions
+export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, customerName } = quoteSlice.actions
 export default quoteSlice.reducer

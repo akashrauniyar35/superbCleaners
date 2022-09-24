@@ -2,7 +2,7 @@ import { Box, Flex, Image, Skeleton, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 import { IoMdAddCircle, IoMdRemoveCircle, IoMdCheckmarkCircle } from 'react-icons/io'
-import { addAddOn } from '../../redux/slice';
+import { addAddOn, removeAddOn } from '../../redux/slice';
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -72,34 +72,47 @@ function AddOns() {
     const AddOnCards = ({ item }: any) => {
         const [counters, setCounters] = useState(0)
 
-        const onAddClick = (item: any) => {
-            setCounters(counters + 1)
-            let selectedAddon = {
-                id: item.id,
-                title: item.label,
-                count: counters
-            }
-            // dispatch(addAddOn({selectedAddon}))
-        }
 
-        const onRemoveClick = (item: any) => {
-            setCounters(counters > 0 ? counters - 1 : 0)
-            let selectedAddon = {
-                id: item.id,
-                title: item.label,
-                count: counters
-            }
-
-        }
 
 
         const General = () => {
+
+
+
+            const onAddClick = (item: any) => {
+                setCounters(counters + 1)
+
+                let selectedAddon = {
+                    id: item.id,
+                    title: item.label,
+                    count: counters
+                }
+                console.log(selectedAddon)
+                dispatch(addAddOn(selectedAddon))
+
+
+            }
+
+
+            const onRemoveClick = (item: any) => {
+                console.log('REMOVED')
+                setCounters(counters > 0 ? counters - 1 : 0)
+                let selectedAddon = {
+                    id: item.id,
+                    title: item.label,
+                    count: counters
+                }
+
+                dispatch(removeAddOn("Bathroom"))
+
+            }
+
             return (
                 <>
                     <Flex borderWidth={.1} borderColor={'gray.200'} rounded='md' align='center' flexDirection='column' w={120} mb={3} mx={1}>
                         <Skeleton w={'100%'} isLoaded={loaded} >
 
-                            <Flex align='center' bgGradient='linear(to-r, blue.700 82%, blue.500)' w="100%" justify="left" borderTopRadius={'md'}>
+                            <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
                                 <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
                             </Flex>
                             <Flex align="center" flexDirection='column'>
@@ -108,15 +121,16 @@ function AddOns() {
                                     objectFit='cover'
                                     src={item.icon}
                                     background='white'
+                                    opacity={.5}
                                     padding='2'
                                     rounded='lg'
                                 />
                             </Flex>
 
-                            <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-r, blue.700 82%, blue.500)' borderBottomRadius={'md'}>
+                            <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-t, blue.700 50%, blue.400)' borderBottomRadius={'md'}>
                                 <IoMdRemoveCircle onClick={() => onRemoveClick(item)} size={16} color={'#fff'} cursor='pointer' />
                                 <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{counters}</Text>
-                                <IoMdAddCircle onClick={() => onAddClick(item)} size={16} color={'#fff'} cursor='pointer' />
+                                <IoMdAddCircle onClick={(e) => onAddClick(item)} size={16} color={'#fff'} cursor='pointer' />
                             </Flex>
                         </Skeleton>
                     </Flex>
@@ -124,11 +138,13 @@ function AddOns() {
             )
         }
 
+
+
         const Carpets = () => {
 
             const ShowAddButtons = () => {
                 return (
-                    <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-r, blue.700 82%, blue.500)' borderBottomRadius={'md'}>
+                    <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-t, blue.700 50%, blue.400)' borderBottomRadius={'md'}>
                         <Text fontSize='14' w="48%" fontWeight='medium' color={'#fff'}>No. of Rooms</Text>
                         <IoMdRemoveCircle size={16} color={'#fff'} cursor='pointer' />
                         <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{'1'}</Text>
@@ -144,7 +160,7 @@ function AddOns() {
                     <Flex borderWidth={.1} borderColor={'gray.200'} rounded='md' align='left' flexDirection='column' w={250} mb={3} mx={1} >
                         <Skeleton w="100%" isLoaded={loaded} >
 
-                            <Flex align='center' bgGradient='linear(to-r, blue.700 82%, blue.500)' w="100%" justify="left" borderTopRadius={'md'}>
+                            <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
                                 <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
                             </Flex>
 
@@ -156,9 +172,10 @@ function AddOns() {
                                     src={item.icon}
                                     background={'#fff'}
                                     padding='2'
+                                    opacity={.5}
                                     rounded='lg'
                                 />
-                                <Box ml={2}>
+                                <Box ml={2} >
                                     <Flex onClick={() => setSteameClean(!steameClean)} align='' my={2} cursor="pointer" justify='space-between' w="140%">
                                         <Text fontSize='12' fontWeight='medium' color={Colors.mattBlue}>Vaccumed Only</Text>
 
@@ -195,7 +212,7 @@ function AddOns() {
         <>
             <Box>
                 <Skeleton isLoaded={loaded} >
-                    <Text textAlign="left" fontSize="18" my={2} fontWeight="bold" color={Colors.mattBlue}>Add Ons</Text>
+                    <Text textAlign="left" fontSize="18" my={2} fontWeight="bold" color={"gray.700"}>Add Ons</Text>
                 </Skeleton>
                 <Flex align="center" justify="space-evenly" flexWrap="wrap">
 

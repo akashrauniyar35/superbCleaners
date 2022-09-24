@@ -12,11 +12,10 @@ function CallUs() {
 
 
     return (
-        <Flex cursor='pointer' align="center" justify="center" rounded='full' w="45px" h="45px" shadow='md' position="absolute" top={"23%"} right={'10px'} zIndex="2" borderWidth={4} borderColor="#fff" >
+        <Flex cursor='pointer' rounded='full' w="45px" h="45px" shadow='base' position="sticky" top={"94%"} zIndex={4} borderWidth={4} borderColor="#fff" left={'88%'}>
 
             <Image
                 // boxSize='55'
-
                 objectFit='cover'
                 src={'/phone.png'}
                 background={'transparent'}

@@ -15,7 +15,7 @@ function ContactDetails() {
     return (
         <Box>
             <Skeleton isLoaded={loaded}>
-                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={Colors.mattBlue}>Contact Details</Text>
+                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={"gray.700"}>Contact Details</Text>
             </Skeleton>
 
             <Box>
@@ -29,6 +29,7 @@ function ContactDetails() {
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/user.png'}
+                                    opacity={.5}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
@@ -46,6 +47,7 @@ function ContactDetails() {
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/mail.png'}
+                                    opacity={.5}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'
@@ -64,6 +66,7 @@ function ContactDetails() {
                                 <Image
                                     boxSize='35px'
                                     objectFit='cover'
+                                    opacity={.5}
                                     src={'/phone.png'}
                                     background={'transparent'}
                                     padding='2'
@@ -82,6 +85,7 @@ function ContactDetails() {
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/location.png'}
+                                    opacity={.5}
                                     background={'transparent'}
                                     padding='2'
                                     mt='-1'

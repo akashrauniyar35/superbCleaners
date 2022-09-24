@@ -11,7 +11,7 @@ const serviceTypes = [
     {
         id: '00',
         title: 'End of Lease Cleaning',
-        icon: '/key.png',
+        icon: '/keys.png',
         description: 'What does an end of lease cleaning include? A bond cleaning usually includes vacuuming all carpets, mopping the floors, thorough dusting of any hard furniture, cleaning the kitchen, bathrooms, the oven inside and out, as well as washing the windows.',
     },
     {
@@ -37,14 +37,14 @@ function QuoteHeader() {
     return (
         <>
             <Box>
-                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={Colors.colorOneBlue}>Select a Service</Text>
+                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={"gray.700"}>Select a Service</Text>
 
                 <Flex align='center' justify='space-between' >
                     {
                         serviceTypes.map((item) => {
                             return (
 
-                                <Flex key={item.id} p={2} w='180px' rounded='md' bg={Colors.colorOneBlue} cursor='pointer' justify='space-between' onClick={() => onServiceSelect(item.title)}
+                                <Flex key={item.id} p={2} w='180px' rounded='md' bgGradient='linear(to-tr, blue.100, #000A5D)' cursor='pointer' justify='space-between' onClick={() => onServiceSelect(item.title)}
 
                                     opacity={item.title === service ? "1" : '.3'}
 

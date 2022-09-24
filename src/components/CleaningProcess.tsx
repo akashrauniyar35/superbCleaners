@@ -5,16 +5,18 @@ import Colors from '../assets/Colors'
 function CleaningProcess() {
     return (
         <>
-            <Box backgroundColor={"#f5f5f5"} rounded="md" p={4} position='relative'>
+            <Box backgroundColor={"#f5f5f5"} rounded="md" p={4} position='relative' shadow="base">
 
                 <Box mb={4}>
-                    <Text textAlign="left" fontSize="18" fontWeight="bold" color={'gray.700'}>WeDo Working Process</Text>
+                    <Text textAlign="left" mb={2} fontSize="18" fontWeight="bold" color={'gray.700'}>Our Working Process</Text>
+
                     <Flex flexDirection="row" align="flex-start" justify="center">
                         <Image
                             marginTop={2}
                             opacity={.5}
                             width="28" height="28"
                             objectFit='cover'
+                            bgGradient='linear(to-tr, red.300, #e5236c)'
                             shadow='md'
                             rounded="md"
                             src="/bookingOnlinePicture.png"
@@ -35,8 +37,9 @@ function CleaningProcess() {
                             objectFit='cover'
                             opacity={.5}
                             shadow='md'
+                            bgGradient='linear(to-tr, red.300, #e5236c)'
                             rounded="md"
-                            src="/bookingOnlinePicture.png"
+                            src="/teamWorking.png"
                         />
 
                         <Flex flexDirection="column" ml={2} align="left" justify="center" mt={2}>
@@ -53,8 +56,9 @@ function CleaningProcess() {
                             objectFit='cover'
                             shadow='md'
                             opacity={.5}
+                            bgGradient='linear(to-tr, red.300, #e5236c)'
                             rounded="md"
-                            src="/bookingOnlinePicture.png"
+                            src="/keys.png"
                         />
                         <Flex flexDirection="column" ml={2} align="left" justify="center" mt={2}>
                             <Text textAlign="left" fontSize="16" fontWeight="bold" color={'gray.700'}>Notify & Close Job</Text>
@@ -64,17 +68,17 @@ function CleaningProcess() {
                 </Box>
 
 
-                <Box position="absolute" top='24' zIndex="2">
+                <Box position="absolute" top='24' zIndex="2" left={6}>
 
-                    <Flex align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'85px'} w={'40px'} h="40px" zIndex={4} >
+                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'24'} w={'40px'} h="40px" zIndex={4} >
                         <Text color='#fff' fontSize='14' fontWeight='bold'>1</Text>
                     </Flex>
 
-                    <Flex align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'24'} w={'40px'} h="40px">
+                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'24'} w={'40px'} h="40px">
                         <Text color='#fff' fontSize='14' fontWeight='bold' alignSelf="center" >2</Text>
                     </Flex>
 
-                    <Flex align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" w={'40px'} h="40px">
+                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" w={'40px'} h="40px">
                         <Text color='#fff' fontSize='14' fontWeight='bold' alignSelf="center">3</Text>
                     </Flex>
 

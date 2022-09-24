@@ -21,6 +21,7 @@
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.23",
+    "react-stickup": "^1.12.1",
     "redux": "^4.2.0"
   },
   "devDependencies": {

@@ -62,7 +62,7 @@ function ImageSlider() {
 
 
         return (
-            <Box position='relative' shadow='lg' >
+            <Box position='relative'>
 
                 <Box py={2} bg='white' position='absolute' bottom='0' borderBottomRadius='md' w="100%" textAlign='left' px="2">
                     <Text alignSelf="left" fontSize='10' color='gray.700' opacity='1'>{title}</Text>
@@ -76,7 +76,7 @@ function ImageSlider() {
 
     return (
         <>
-            <Box mt={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative'>
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base">
                 <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Instagram Pictures</Text>
                 <Flex flexDirection="column" align="center" pt={4}>
                     <Carousel interval={2000} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false} renderArrowNext={(clickHandler) => arrowNext(clickHandler)} renderArrowPrev={(clickHandler) => arrowPrevious(clickHandler)} >

@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Image, Skeleton, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Divider, Flex, Image, Skeleton, Spinner, Stack, Text, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../src/assets/Colors'
 
@@ -9,21 +9,29 @@ import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
 
 const InstantQuotePage = () => {
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(true);
+    const [sending, setSending] = useState(false);
+
+    const toast = useToast()
+    function onSubmit() {
+        setSending(true)
+        setTimeout(() => setSending(false), 3000)
+
+    }
+
     return (
         <>
-            <Flex p={4} shadow='base' align="center" flexDirection="row" justify="space-between" >
+            <Flex px={4} py={2} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
                 <Logo />
-                <Flex align="center">
+                <Flex shadow="base" align="center" p={.5} rounded="full" bgGradient='linear(to-tr, white, green.600)' >
                     <Image
                         boxSize='45px'
                         objectFit='cover'
+                        cursor='pointer'
                         src={'/phone.png'}
                         background={'transparent'}
-                        padding='2'
+                        p={1}
                     />
-                    <Text fontSize={16} color="gray.700">0415701000</Text>
-
                 </Flex>
             </Flex>
 
@@ -46,19 +54,40 @@ const InstantQuotePage = () => {
                         <ContactDetails />
                     </Box>
 
-                    <Box>
+                    {/* <Box>
                         <Skeleton isLoaded={loaded}>
 
-                            <Flex align="center" bg={Colors.mattBlue} justify='center' rounded='md' mb={4}>
-                                <Text fontSize="20" my={2} fontWeight="bold" color={'#fff'}>Submit</Text>
+                            <Flex onClick={() => onSubmit()} cursor='pointer' h={"10"} shadow="base" align="center" bgGradient='linear(to-tr, red.300, #e5236c)' justify='center' rounded='md' mb={4}>
+                                {sending ? <Spinner color={'#fff'} size='md' /> :
+                                    <Text fontSize="20" fontWeight="bold" color={'#fff'}>Submit</Text>
+                                }
                             </Flex>
                         </Skeleton>
-                    </Box>
+                    </Box> */}
+
+
+
+
+                    <Button
+                        onClick={() =>
+                            toast({
+                                position: 'top',
+                                render: () => (
+                                    <Box p={3} w={'100%'} bgGradient='linear(to-tr, red.300, #e5236c)' color="white">
+                                        Hello World
+
+                                    </Box>
+                                ),
+                            })
+                        }
+                    >
+                        Show Toast
+                    </Button>
 
                 </Stack>
 
 
-            </Box>
+            </Box >
 
         </>
     )

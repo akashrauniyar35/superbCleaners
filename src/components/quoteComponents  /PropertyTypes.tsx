@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Skeleton, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { IoMdAddCircle, IoMdRemoveCircle } from 'react-icons/io'
+import { IoMdAdd, IoMdAddCircle, IoMdRemove, IoMdRemoveCircle } from 'react-icons/io'
 import Colors from '../../assets/Colors';
 import { useSelector } from 'react-redux'
 import { useDispatch, } from 'react-redux'
@@ -62,7 +62,7 @@ function PropertyTypes() {
             <Box>
 
                 <Skeleton isLoaded={loaded} >
-                    <Text textAlign="left" fontSize="20" my={2} fontWeight="bold" color={Colors.mattBlue}>Please tell us about your place</Text>
+                    <Text textAlign="left" fontSize="18" my={2} fontWeight="bold" color={"gray.700"}>Please tell us about your place</Text>
                 </Skeleton>
 
                 <Skeleton isLoaded={loaded}>
@@ -72,7 +72,7 @@ function PropertyTypes() {
                             return (
                                 <Flex key={item.id}
                                     onClick={() => selectProperty(item.label)}
-                                    opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bg={Colors.mattBlue} px='9' rounded='sm' py='1'>
+                                    opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bgGradient='linear(to-tr, red.300, #e5236c)' px='9' rounded='sm' py='1'>
                                     <Text color='#fff' fontSize='14' fontWeight='bold'>{item.label}</Text>
                                 </Flex>
                             )
@@ -93,13 +93,21 @@ function PropertyTypes() {
                                     src={'/bedroom.png'}
                                     background={'#fff'}
                                 />
-                                <Text ml={4} mt={0} textAlign="left" fontSize="18" fontWeight="bold" color={Colors.mattBlue}>Bedroom</Text>
+                                <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bedroom</Text>
                             </Flex>
 
                             <Flex align="center" justify="space-evenly">
-                                <IoMdRemoveCircle size={20} color={Colors.mattBlue} cursor='pointer' onClick={() => removeBedroom()} />
-                                <Text px={4} fontSize="16" fontWeight="bold" color={Colors.mattBlue}>{bedroomCount}</Text>
-                                <IoMdAddCircle onClick={() => addBedroom()} size={20} color={Colors.mattBlue} cursor='pointer' />
+
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
+                                    <IoMdRemove onClick={() => addBedroom()} size={16} color={"white"} cursor='pointer' />
+                                </Box>
+
+                                <Text px={4} fontSize="16" fontWeight="bold" color={"gray.700"}>{bedroomCount}</Text>
+
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
+                                    <IoMdAdd onClick={() => addBedroom()} size={16} color={"white"} cursor='pointer' />
+                                </Box>
+
                             </Flex>
 
 
@@ -108,19 +116,27 @@ function PropertyTypes() {
                         <Flex align="center" justify="space-between" width="100%">
 
                             <Flex align="center">
-                                <Image
-                                    boxSize='60px'
-                                    objectFit='cover'
-                                    src={'/bath.png'}
-                                    background={'#fff'}
-                                />
-                                <Text ml={4} mt={0} textAlign="left" fontSize="18" fontWeight="bold" color={Colors.mattBlue}>Bathroom</Text>
+                                
+                                    <Image
+                                        boxSize='60px'
+                                        objectFit='cover'
+                                        src={'/bath.png'}
+                                        background={'#fff'}
+                                    />
+                               
+                                <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bathroom</Text>
                             </Flex>
 
                             <Flex align="center" justify="space-evenly">
-                                <IoMdRemoveCircle size={20} color={Colors.mattBlue} cursor='pointer' onClick={() => removeBathroom()} />
-                                <Text px={4} fontSize="16" fontWeight="bold" color={Colors.mattBlue}>1</Text>
-                                <IoMdAddCircle onClick={() => addBathroom()} size={20} color={Colors.mattBlue} cursor='pointer' />
+
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
+                                    <IoMdRemove onClick={() => removeBathroom()} size={16} color={"white"} cursor='pointer' />
+                                </Box>
+
+                                <Text px={4} fontSize="16" fontWeight="bold" color={"gray.700"}>1</Text>
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
+                                    <IoMdAdd onClick={() => addBathroom()} size={16} color={"white"} cursor='pointer' />
+                                </Box>
                             </Flex>
                         </Flex>
                     </Flex>

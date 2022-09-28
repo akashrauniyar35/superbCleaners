@@ -71,9 +71,9 @@ function ProductSelectedCard({ item: { service, bedroomCount, bathroomCount, add
                                 </Flex>
                             </Box>
 
-                            {addOns.map((item: any, index: any) => {
+                            {addOns.map((item: any, index: number) => {
                                 return (
-                                    <Box mt={4}>
+                                    <Box mt={4} key={item.id}>
                                         <Flex flex='1' align='center' >
                                             <Circle count={item.count} id={index} transparent={false} />
                                             <Flex align="center" justify="space-between" w="87%" >

@@ -7,7 +7,7 @@ const initialState = {
     id: 0,
     title: '',
     service: '',
-    property: 'House',
+    property: '',
     bedroomCount: 0,
     bathroomCount: 0,
     addOns: [],

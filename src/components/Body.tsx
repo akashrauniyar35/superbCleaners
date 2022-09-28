@@ -111,13 +111,13 @@ function Banner() {
                     </Box>
 
                     <Box width="50%" position='absolute' top={10} right={0}>
-                        <Flex bgGradient={['linear(to-tr, #f5f5f5,#f5f5f5)',]}
+                        <Flex bgGradient='linear(to-tr, red.300, #e5236c)'
                             rounded='full' align="center" h="200px" w="200px" shadow="base">
-                            <UnorderedList fontSize={13} ml={7} color='gray.700'>
-                                <ListItem><Text fontSize="13" color="gray.700">Best in Sydney, NSW</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Get a Quote in less than 2 minutes</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Satisfaction guranteed</Text></ListItem>
-                                <ListItem><Text fontSize="13" color="gray.700">Resonable Pricings</Text></ListItem>
+                            <UnorderedList fontSize={13} ml={7} color='white'>
+                                <ListItem><Text fontSize="13" color="white">Best in Sydney, NSW</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Get a Quote in less than 2 minutes</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Satisfaction guranteed</Text></ListItem>
+                                <ListItem><Text fontSize="13" color="white">Resonable Pricings</Text></ListItem>
                             </UnorderedList>
                         </Flex>
                     </Box>

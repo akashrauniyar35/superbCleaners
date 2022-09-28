@@ -109,7 +109,7 @@ function AddOns() {
 
             return (
                 <>
-                    <Flex borderWidth={.1} borderColor={'gray.200'} rounded='md' align='center' flexDirection='column' w={120} mb={3} mx={1}>
+                    <Flex rounded='md' align='center' flexDirection='column' w={120} mb={3} mx={1}>
                         <Skeleton w={'100%'} isLoaded={loaded} >
 
                             <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>

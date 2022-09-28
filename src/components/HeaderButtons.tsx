@@ -26,7 +26,7 @@ function HeaderButtons() {
                 <InstantQuote />
             </Flex>
 
-
+            <HeaderDivider />
 
         </>
     )

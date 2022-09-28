@@ -5,6 +5,7 @@ import Colors from '../src/assets/Colors'
 import Logo from '../src/components/Logo'
 import AddOns from '../src/components/quoteComponents  /AddOns'
 import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
+import ProductsSelected from '../src/components/quoteComponents  /ProductsSelected'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
 
@@ -34,6 +35,11 @@ const InstantQuotePage = () => {
                     />
                 </Flex>
             </Flex>
+
+
+            <Box px={4} position="sticky" top={20} zIndex={4} >
+                <ProductsSelected />
+            </Box>
 
             <Box px={4}>
                 <Stack spacing={8}>
@@ -75,7 +81,6 @@ const InstantQuotePage = () => {
                                 render: () => (
                                     <Box p={3} w={'100%'} bgGradient='linear(to-tr, red.300, #e5236c)' color="white">
                                         Hello World
-
                                     </Box>
                                 ),
                             })

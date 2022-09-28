@@ -123,7 +123,7 @@ function Reviews() {
                 </Flex>
 
                 <Box bg='#fff' rounded='md' p={2} mt={4} h={32} shadow="inner">
-                    <Text textAlign="left" fontSize="10" fontWeight="medium" color="gray.700">{comment}</Text>
+                    <Text textAlign="left" fontSize="13" p={2} fontWeight="medium" color="gray.700">{comment}</Text>
                 </Box>
 
 

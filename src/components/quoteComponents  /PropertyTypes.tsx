@@ -28,7 +28,7 @@ function PropertyTypes() {
     const loding: any = useSelector((state) => state)
     const loaded = loding.service === "" ? false : true;
     const dispatch = useDispatch();
-    const [selectedProperty, setSelectedProperty] = useState("House");
+    const [selectedProperty, setSelectedProperty] = useState("");
     const [bedroomCount, setBedroomCount] = useState(1);
     const [bathroomCount, setBathroomCount] = useState(1);
 
@@ -91,6 +91,7 @@ function PropertyTypes() {
                                     boxSize='60px'
                                     objectFit='cover'
                                     src={'/bedroom.png'}
+                                    opacity={.5}
                                     background={'#fff'}
                                 />
                                 <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bedroom</Text>
@@ -116,14 +117,15 @@ function PropertyTypes() {
                         <Flex align="center" justify="space-between" width="100%">
 
                             <Flex align="center">
-                                
-                                    <Image
-                                        boxSize='60px'
-                                        objectFit='cover'
-                                        src={'/bath.png'}
-                                        background={'#fff'}
-                                    />
-                               
+
+                                <Image
+                                    opacity={.5}
+                                    boxSize='60px'
+                                    objectFit='cover'
+                                    src={'/bath.png'}
+                                    background={'#fff'}
+                                />
+
                                 <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bathroom</Text>
                             </Flex>
 

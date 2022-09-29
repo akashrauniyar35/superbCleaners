@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
+import { IoMdCart } from 'react-icons/io'
 import ProductSelectedCard from './ProductSelectedCard'
 
 
@@ -59,10 +60,8 @@ function ProductsSelected() {
 
 
     return (
-        <Flex shadow='base' position='sticky' flexDirection='column' bgGradient='linear(to-tr, red.300, #e5236c)' rounded='md' p={.5} px={1} color="white">
-
+        <Flex shadow='base' position='sticky' zIndex={4} flexDirection='column' bgGradient='linear(to-tr, red.300, #e5236c)' rounded='md' p={.5} px={1} color="white" mt={4} mb={2}>
             {data.map((item) => <ProductSelectedCard key={item.id} item={item} />)}
-
         </Flex>
     )
 }

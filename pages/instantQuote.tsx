@@ -8,41 +8,50 @@ import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
 import ProductsSelected from '../src/components/quoteComponents  /ProductsSelected'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
+import { useSelector } from 'react-redux'
 
 const InstantQuotePage = () => {
     const [loaded, setLoaded] = useState(true);
     const [sending, setSending] = useState(false);
 
     const toast = useToast()
+
+    const loding: any = useSelector((state) => state)
+    const showPrices = loding.service === "" ? false : true;
+
+
+
     function onSubmit() {
         setSending(true)
         setTimeout(() => setSending(false), 3000)
 
     }
 
+
+
     return (
         <>
             <Flex px={4} py={2} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
                 <Logo />
-                <Flex shadow="base" align="center" p={.5} rounded="full" bgGradient='linear(to-tr, white, green.600)' >
+                <Flex align="center">
                     <Image
                         boxSize='45px'
+                        p={1}
                         objectFit='cover'
                         cursor='pointer'
                         src={'/phone.png'}
                         background={'transparent'}
-                        p={1}
                     />
                 </Flex>
             </Flex>
 
-
-            <Box px={4} position="sticky" top={20} zIndex={4} >
+            {showPrices ? <Box px={4} position="sticky" top={20} zIndex={4} bg="white">
                 <ProductsSelected />
-            </Box>
+            </Box> : null}
 
-            <Box px={4}>
+            <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
                 <Stack spacing={8}>
+
                     <Box>
                         <QuoteHeader />
                     </Box>
@@ -60,7 +69,7 @@ const InstantQuotePage = () => {
                         <ContactDetails />
                     </Box>
 
-                    {/* <Box>
+                    <Box>
                         <Skeleton isLoaded={loaded}>
 
                             <Flex onClick={() => onSubmit()} cursor='pointer' h={"10"} shadow="base" align="center" bgGradient='linear(to-tr, red.300, #e5236c)' justify='center' rounded='md' mb={4}>
@@ -69,25 +78,7 @@ const InstantQuotePage = () => {
                                 }
                             </Flex>
                         </Skeleton>
-                    </Box> */}
-
-
-
-
-                    <Button
-                        onClick={() =>
-                            toast({
-                                position: 'top',
-                                render: () => (
-                                    <Box p={3} w={'100%'} bgGradient='linear(to-tr, red.300, #e5236c)' color="white">
-                                        Hello World
-                                    </Box>
-                                ),
-                            })
-                        }
-                    >
-                        Show Toast
-                    </Button>
+                    </Box>
 
                 </Stack>
 

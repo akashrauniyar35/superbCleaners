@@ -10,7 +10,7 @@ function InstantQuoteButton() {
 
             <Flex shadow='base' _hover={{ bgGradient: 'linear(to-tl, red.300, #e5236c)' }} bgGradient='linear(to-tr, red.300, #e5236c)'
                 padding={1.5} rounded={4} boxShadow="md" paddingX={4} cursor="pointer" >
-                <Text fontSize={12} fontWeight="bold" color="white">Instant Quote</Text>
+                <Text fontSize={14} fontWeight="bold" color="white">Instant Quote</Text>
             </Flex >
         </Link>
 

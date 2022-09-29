@@ -12,14 +12,14 @@ function HeaderDivider() {
             <Flex align="center">
 
                 <Flex align="center" >
-                    <Flex align="center">
-                        <Text fontSize={16} color="white" fontWeight="medium">8</Text>
-                        <Text fontSize={16} color="white" marginLeft={1}>AM</Text>
+                    <Flex align="center" position="relative">
+                        <Text fontSize={16} color="white" fontWeight="bold">8</Text>
+                        <Text fontSize={10} color="white" marginLeft={1} marginBottom={-1} >AM</Text>
                     </Flex>
-                    <Text fontSize={12} color="white" marginLeft={1} marginRight={1} marginTop={0}>to</Text>
+                    <Text fontSize={13} color="white" marginLeft={1} marginRight={1} marginTop={0}>to</Text>
                     <Flex align="center">
-                        <Text fontSize={16} color="white" fontWeight="medium">10</Text>
-                        <Text fontSize={16} color="white" marginLeft={1}>PM</Text>
+                        <Text fontSize={16} color="white" fontWeight="bold">10</Text>
+                        <Text fontSize={10} color="white" marginLeft={1} marginBottom={-1}>PM</Text>
                     </Flex>
                 </Flex>
 
@@ -28,8 +28,8 @@ function HeaderDivider() {
                 </Center>
 
                 <Flex align="center">
-                    <Text fontSize={16} color="white" fontWeight="medium">7</Text>
-                    <Text fontSize={16} color="white" marginLeft={1}>Days</Text>
+                    <Text fontSize={16} color="white" fontWeight="bold">7</Text>
+                    <Text fontSize={13} color="white" marginLeft={1}>Days</Text>
                 </Flex>
 
 
@@ -38,7 +38,7 @@ function HeaderDivider() {
 
             <Flex align="center">
                 <MdOutlineLocationOn color='white' size="20" />
-                <Text fontSize={14} color="white">Sydney, NSW</Text>
+                <Text fontSize={13} color="white" fontWeight="bold">Sydney, NSW</Text>
             </Flex>
 
             <Flex align="center" padding="1" rounded={4} cursor='pointer'>

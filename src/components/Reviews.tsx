@@ -134,11 +134,11 @@ function Reviews() {
     }
     return (
         <>
-            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base">
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
                 <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Reviews</Text>
 
 
-                <Flex flexDirection="column" pt={2}>
+                <Flex flexDirection="column" pt={2} w={{ lg: '40%', sm: '80%' }} marginX="auto">
 
                     <Carousel showStatus={false} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false} showArrows={false}>
                         {data.map((item) => {

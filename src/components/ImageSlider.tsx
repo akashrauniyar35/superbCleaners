@@ -76,9 +76,9 @@ function ImageSlider() {
 
     return (
         <>
-            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base">
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
                 <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Instagram Pictures</Text>
-                <Flex flexDirection="column" align="center" pt={4}>
+                <Flex flexDirection="column" align="center" pt={4} w={{ lg: '40%', sm: '80%' }} marginX="auto">
                     <Carousel interval={2000} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false} renderArrowNext={(clickHandler) => arrowNext(clickHandler)} renderArrowPrev={(clickHandler) => arrowPrevious(clickHandler)} >
                         {data.map((item) => {
                             let parseIn = parseInt(item.id)

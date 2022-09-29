@@ -37,7 +37,7 @@ function QuoteHeader() {
     return (
         <>
             <Box>
-                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={"gray.700"}>Select a Service</Text>
+                <Text textAlign="left" fontSize="18" mb={2} fontWeight="bold" color={"gray.700"}>Select a Service</Text>
 
                 <Flex align='center' justify='space-between' >
                     {

@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Skeleton, Text } from '@chakra-ui/react'
+import { Box, Flex, HStack, Image, Skeleton, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 import { IoMdAddCircle, IoMdRemoveCircle, IoMdCheckmarkCircle } from 'react-icons/io'
@@ -109,31 +109,32 @@ function AddOns() {
 
             return (
                 <>
-                    <Flex rounded='md' align='center' flexDirection='column' w={120} mb={3} mx={1}>
-                        <Skeleton w={'100%'} isLoaded={loaded} >
+                    <WrapItem>
 
-                            <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
-                                <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
-                            </Flex>
-                            <Flex align="center" flexDirection='column'>
-                                <Image
-                                    boxSize='60px'
-                                    objectFit='cover'
-                                    src={item.icon}
-                                    background='white'
-                                    opacity={.5}
-                                    padding='2'
-                                    rounded='lg'
-                                />
-                            </Flex>
-
-                            <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-t, blue.700 50%, blue.400)' borderBottomRadius={'md'}>
-                                <IoMdRemoveCircle onClick={() => onRemoveClick(item)} size={16} color={'#fff'} cursor='pointer' />
-                                <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{counters}</Text>
-                                <IoMdAddCircle onClick={(e) => onAddClick(item)} size={16} color={'#fff'} cursor='pointer' />
-                            </Flex>
-                        </Skeleton>
-                    </Flex>
+                        <Flex rounded='md' align='center' flexDirection='column' w={'110px'}>
+                            <Skeleton w={'100%'} isLoaded={loaded} >
+                                <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
+                                    <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
+                                </Flex>
+                                <Flex align="center" flexDirection='column'>
+                                    <Image
+                                        boxSize='50px'
+                                        objectFit='cover'
+                                        src={item.icon}
+                                        background='white'
+                                        opacity={.5}
+                                        padding='3'
+                                        rounded='lg'
+                                    />
+                                </Flex>
+                                <Flex align="center" justify="space-evenly" w="100%" bgGradient='linear(to-t, blue.700 50%, blue.400)' borderBottomRadius={'md'}>
+                                    <IoMdRemoveCircle onClick={() => onRemoveClick(item)} size={16} color={'#fff'} cursor='pointer' />
+                                    <Text px={4} fontSize="16" fontWeight="bold" color={'#fff'}>{counters}</Text>
+                                    <IoMdAddCircle onClick={(e) => onAddClick(item)} size={16} color={'#fff'} cursor='pointer' />
+                                </Flex>
+                            </Skeleton>
+                        </Flex>
+                    </WrapItem>
                 </>
             )
         }
@@ -156,46 +157,45 @@ function AddOns() {
             return (
                 <>
 
+                    <WrapItem>
+                        <Flex rounded='md' align='left' flexDirection='column' w={'244px'}  >
+                            <Skeleton w="100%" isLoaded={loaded} >
 
-                    <Flex borderWidth={.1} borderColor={'gray.200'} rounded='md' align='left' flexDirection='column' w={250} mb={3} mx={1} >
-                        <Skeleton w="100%" isLoaded={loaded} >
+                                <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
+                                    <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
+                                </Flex>
 
-                            <Flex align='center' bgGradient='linear(to-b, blue.700 50%, blue.400)' w="100%" justify="left" borderTopRadius={'md'}>
-                                <Text fontSize='14' ml={2} fontWeight='medium' color={'#fff'}>{item.label}</Text>
-                            </Flex>
+                                <Flex align="center" px={1}>
+                                    <Image
+                                        boxSize='50px'
+                                        objectFit='cover'
+                                        src={item.icon}
+                                        background={'#fff'}
+                                        padding='3'
+                                        opacity={.5}
+                                        rounded='lg'
+                                    />
+                                    <Box ml={2} >
+                                        <Flex onClick={() => setSteameClean(!steameClean)} align='' my={1} cursor="pointer" justify='space-between' w="140%">
+                                            <Text fontSize='12' fontWeight='medium' color={Colors.mattBlue}>Vaccumed Only</Text>
 
-                            <Flex align="center" px={1}>
+                                            {!steameClean ? <IoMdCheckmarkCircle size={16} color={'#48A14D'} cursor='pointer' /> : null}
+                                        </Flex>
 
-                                <Image
-                                    boxSize='60px'
-                                    objectFit='cover'
-                                    src={item.icon}
-                                    background={'#fff'}
-                                    padding='2'
-                                    opacity={.5}
-                                    rounded='lg'
-                                />
-                                <Box ml={2} >
-                                    <Flex onClick={() => setSteameClean(!steameClean)} align='' my={2} cursor="pointer" justify='space-between' w="140%">
-                                        <Text fontSize='12' fontWeight='medium' color={Colors.mattBlue}>Vaccumed Only</Text>
+                                        <Flex onClick={() => setSteameClean(!steameClean)} align='' my={1} cursor="pointer" justify='space-between' w="140%">
+                                            <Text fontSize='12' fontWeight='medium' color={Colors.mattBlue}>Steam Cleaned</Text>
+                                            {steameClean ? <IoMdCheckmarkCircle size={16} color={'#48A14D'} cursor='pointer' /> : null}
+                                        </Flex>
+                                    </Box>
 
-                                        {!steameClean ? <IoMdCheckmarkCircle size={16} color={'#48A14D'} cursor='pointer' /> : null}
-                                    </Flex>
+                                </Flex>
 
-                                    <Flex onClick={() => setSteameClean(!steameClean)} align='' my={1} cursor="pointer" justify='space-between' w="140%">
-                                        <Text fontSize='12' fontWeight='medium' color={Colors.mattBlue}>Steam Cleaned</Text>
-                                        {steameClean ? <IoMdCheckmarkCircle size={16} color={'#48A14D'} cursor='pointer' /> : null}
-                                    </Flex>
-                                </Box>
-
-                            </Flex>
-
-                            <ShowAddButtons />
+                                <ShowAddButtons />
 
 
-                        </Skeleton>
-                    </Flex>
-
+                            </Skeleton>
+                        </Flex>
+                    </WrapItem>
                 </>
             )
         }
@@ -214,8 +214,7 @@ function AddOns() {
                 <Skeleton isLoaded={loaded} >
                     <Text textAlign="left" fontSize="18" my={2} fontWeight="bold" color={"gray.700"}>Add Ons</Text>
                 </Skeleton>
-                <Flex align="center" justify="space-evenly" flexWrap="wrap">
-
+                <Wrap spacing={6} align="center" justify="center">
                     {
                         data.map((item) => {
                             return (
@@ -223,7 +222,7 @@ function AddOns() {
                             )
                         })
                     }
-                </Flex>
+                </Wrap>
             </Box>
         </>
     )

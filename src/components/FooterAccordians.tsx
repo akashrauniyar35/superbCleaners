@@ -43,27 +43,27 @@ function FooterAccordians() {
 
     const AccordianCard = ({ label, description }: any) => {
         return (
-            <AccordionItem borderWidth={0} borderColor="transparent" pb={2}>
+            <AccordionItem borderWidth={0} borderColor="transparent" pb={2} >
 
                 <AccordionButton p={0} _hover={{ backgroundColor: "transparent" }}>
                     <Box flex='1' textAlign='left'>
-                        <Text textAlign="left" fontSize="13" fontWeight="md" color="gray.700">{label}</Text>
+                        <Text textAlign="left" fontSize="14" fontWeight="md" color="gray.700">{label}</Text>
                     </Box>
                     <AccordionIcon w={6} h={6} color="gray.700" />
                 </AccordionButton>
 
-                <AccordionPanel p={0} borderWidth={0}>
+                <AccordionPanel p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
 
-                    <Text fontSize="13" textAlign='left' fontWeight="light" color="gray.700">{description}</Text>
+                    <Text fontSize="14" textAlign='left' fontWeight="light" color="gray.700">{description}</Text>
                 </AccordionPanel>
-            </AccordionItem>
+            </AccordionItem >
         )
     }
 
     return (
         <>
 
-            <Box  shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative'>
+            <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative' w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
                 <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Questionaries</Text>
                 <Accordion allowMultiple >
 

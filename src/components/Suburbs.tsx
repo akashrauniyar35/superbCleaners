@@ -68,15 +68,15 @@ const data = [
 
 function Suburbs() {
     return (
-        <Box my={4} bg="#f5f5f5" rounded="md" p={4} position='relative' shadow="base">
+        <Box my={4} bg="#f5f5f5" rounded="md" p={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
             <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Sydney</Text>
             <UnorderedList>
-                <Flex align="center" flexWrap='wrap'>
+                <Flex align="center" flexWrap='wrap' w={{ lg: '80%', sm: '90%' }}>
 
                     {data.map((item) => {
                         return (
                             <ListItem key={item.id} marginRight={8} marginBottom={2} color="gray.700"  >
-                                <Text fontSize="13" color="gray.700" >{item.title}</Text>
+                                <Text fontSize="14" color="gray.700" >{item.title}</Text>
                             </ListItem>
                         )
                     })}

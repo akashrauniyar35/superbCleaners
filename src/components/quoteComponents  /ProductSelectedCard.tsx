@@ -1,5 +1,6 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { IoMdCart } from 'react-icons/io';
 
 function ProductSelectedCard({ item: { service, bedroomCount, bathroomCount, addOns } }: any) {
     const [linesVisible, setLinesVisible] = useState(false);
@@ -11,15 +12,14 @@ function ProductSelectedCard({ item: { service, bedroomCount, bathroomCount, add
 
         return (
             <Flex justify="center" w="6" h="6" rounded='full' bg={!transparent ? "white" : "transparent"} shadow={!transparent ? 'base' : "none"} position="relative" >
-                <Text
+                {linesVisible ? <Text
                     bgGradient='linear(to-tr, red.300, #e5236c)'
                     bgClip='text'
                     alignSelf='center'
                     marginLeft="-1px"
                     fontWeight="bold"
                     fontSize="13">{count}
-                </Text>
-                {/* linesVisible ? "4" : "0" */}
+                </Text> : <Flex bgGradient='linear(to-tr, red.300, #e5236c)' align='center' justify="center" w="6" h="6" borderWidth={1} borderColor="white" rounded='full'><IoMdCart size={'16'} /></Flex>}
                 <Box h={linesVisible ? !isLast ? "4" : "0" : "0"} top={'24px'} bg="transparent" position="absolute" borderStyle={!transparent ? "dotted" : "none"} borderLeftWidth={4} zIndex={1} borderColor={'white'} />
             </Flex >
         )
@@ -36,7 +36,7 @@ function ProductSelectedCard({ item: { service, bedroomCount, bathroomCount, add
                             <Flex flex='1' textAlign='left' align='center'>
                                 <Circle count={1} transparent={false} />
                                 <Flex align="center" justify="space-between" w="87%">
-                                    <Text marginLeft="3" fontSize='16' fontWeight="medium">{service}</Text>
+                                    <Text marginLeft="3" fontSize='16' fontWeight="medium">{linesVisible ? service : "Cart All Items"}</Text>
                                     <Flex w='30%' align='center' justify="left">
                                         <Text fontSize='16' fontWeight="medium" ml='5'>$</Text>
                                         <Text fontSize='16' fontWeight="medium" ml='2'>150.00</Text>
@@ -54,10 +54,22 @@ function ProductSelectedCard({ item: { service, bedroomCount, bathroomCount, add
                                         <Text marginLeft="3" fontSize='16' fontWeight="medium">Bedrooms</Text>
                                         <Flex w='30%' align='center' justify="left">
                                             <Text fontSize='16' fontWeight="medium" ml='5'>$</Text>
-                                            <Text fontSize='16' fontWeight="medium" ml='2'>500.00</Text></Flex>
+                                            <Text fontSize='16' fontWeight="medium" ml='2'>150.00</Text></Flex>
                                     </Flex>
                                 </Flex>
                             </Box>
+
+                            {/* <Box mt={4}>
+                                <Flex flex='1' align='center' >
+                                    <Circle count={bathroomCount} transparent={false} />
+                                    <Flex align="center" justify="space-between" w="87%" >
+                                        <Text marginLeft="3" fontSize='16' fontWeight="medium">Bedrooms</Text>
+                                        <Flex w='30%' align='center' justify="left">
+                                            <Text fontSize='16' fontWeight="medium" ml='5'>$</Text>
+                                            <Text fontSize='16' fontWeight="medium" ml='2'>80.00</Text></Flex>
+                                    </Flex>
+                                </Flex>
+                            </Box> */}
 
                             <Box mt={4}>
                                 <Flex flex='1' align='center' >

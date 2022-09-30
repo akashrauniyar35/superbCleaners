@@ -68,7 +68,7 @@ const data = [
 
 function Suburbs() {
     return (
-        <Box my={4} bg="#f5f5f5" rounded="md" p={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
+        <Box my={4} bg="#f5f5f5" rounded="md" p={4} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
             <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Sydney</Text>
             <UnorderedList>
                 <Flex align="center" flexWrap='wrap' w={{ lg: '80%', sm: '90%' }}>

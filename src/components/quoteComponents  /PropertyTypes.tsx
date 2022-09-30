@@ -72,7 +72,7 @@ function PropertyTypes() {
                             return (
                                 <Flex key={item.id}
                                     onClick={() => selectProperty(item.label)}
-                                    opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bgGradient='linear(to-tr, red.300, #e5236c)' px='9' rounded='sm' py='1'>
+                                    opacity={item.label === selectedProperty ? '1' : '.3'} cursor='pointer' align='center' justify='center' bgGradient='linear(to-tr, red.300, #e5236c)' px='7' rounded='sm' py='1'>
                                     <Text color='#fff' fontSize='14' fontWeight='bold'>{item.label}</Text>
                                 </Flex>
                             )
@@ -97,7 +97,7 @@ function PropertyTypes() {
                                 <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bedroom</Text>
                             </Flex>
 
-                            <Flex align="center" justify="space-evenly">
+                            <Flex align="center" justify="space-evenly" mr={4}>
 
                                 <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdRemove onClick={() => addBedroom()} size={16} color={"white"} cursor='pointer' />
@@ -129,7 +129,7 @@ function PropertyTypes() {
                                 <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="bold" color={"gray.700"}>Bathroom</Text>
                             </Flex>
 
-                            <Flex align="center" justify="space-evenly">
+                            <Flex align="center" justify="space-evenly"  mr={4}>
 
                                 <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdRemove onClick={() => removeBathroom()} size={16} color={"white"} cursor='pointer' />
@@ -140,6 +140,7 @@ function PropertyTypes() {
                                     <IoMdAdd onClick={() => addBathroom()} size={16} color={"white"} cursor='pointer' />
                                 </Box>
                             </Flex>
+
                         </Flex>
                     </Flex>
                 </Skeleton>

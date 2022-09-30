@@ -134,7 +134,7 @@ function Reviews() {
     }
     return (
         <>
-            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Reviews</Text>
 
 

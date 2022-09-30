@@ -63,7 +63,7 @@ function FooterAccordians() {
     return (
         <>
 
-            <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative' w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
+            <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative' w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Text mb={2} textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Questionaries</Text>
                 <Accordion allowMultiple >
 

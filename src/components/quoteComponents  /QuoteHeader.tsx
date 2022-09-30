@@ -44,13 +44,14 @@ function QuoteHeader() {
                         serviceTypes.map((item) => {
                             return (
 
-                                <Flex key={item.id} p={2} w='180px' rounded='md' bgGradient='linear(to-tr, blue.100, #000A5D)' cursor='pointer' justify='space-between' onClick={() => onServiceSelect(item.title)}
+                                <Flex key={item.id} p={2} w="45%" rounded='md' bgGradient='linear(to-tr, blue.100, #000A5D)' cursor='pointer' justify='space-between' onClick={() => onServiceSelect(item.title)}
 
                                     opacity={item.title === service ? "1" : '.3'}
-
+                                    shadow={item.title === service ? "base" : 'inner'}
                                 >
                                     <Image
-                                        width="20" height="20"
+                                        width='14'
+                                        height="14"
                                         // boxSize='70px'
                                         bg="#000000" opacity=".8"
                                         objectFit='cover'
@@ -59,7 +60,7 @@ function QuoteHeader() {
                                         padding='2'
                                         rounded='lg'
                                     />
-                                    <Text ml={3} fontSize='18' fontWeight='medium' color='#fff'>{item.title}</Text>
+                                    <Text ml={3} mt={.5} fontSize='14' lineHeight='1.2' fontWeight='medium' color='#fff'>{item.title}</Text>
                                 </Flex>
                             )
                         })

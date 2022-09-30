@@ -18,7 +18,7 @@ function Banner() {
         <>
 
             <Box px={4} pb={4} position="relative">
-                <Box width="90" alignSelf="center" mt={-8}>
+                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" mt={-8} marginX="auto">
                     <Text
                         bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
                         bgClip='text'
@@ -27,11 +27,11 @@ function Banner() {
                     </Text>
                 </Box>
 
-                <Box width="90" alignSelf="center" pt={4} position="relative">
+                <Box alignSelf="center" pt={4} position="relative" marginX="auto" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }}>
                     <Text textAlign="left" fontSize="14" color="gray.700">The no-stress way to book the cleaning service you need in minutes. Eliminates back and forth emails. Book straight into our team`s schedule even on SUNDAY! </Text>
                 </Box>
 
-                <Box position="relative" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
+                <Box position="relative" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
 
                     <Box position="relative">
                         <Flex position="relative">
@@ -40,17 +40,18 @@ function Banner() {
                                 objectFit='cover'
                                 src="/bannerPicture.png"
                                 zIndex="3"
+                                ml={-6}
                             />
 
                             {/* left={{ base: '10', sm: '44%', lg: '40%' }} */}
                             < Box position="absolute" left={{ base: '40%', sm: '44%', lg: '40%' }} zIndex="2" top={'10'} >
                                 <Flex opacity=".7" bgGradient='linear(to-tr, red.300, #e5236c)'
-                                    borderRightRadius={{ md: 'full', base: 'full', sm: 'none', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', lg: ' full' }} align="center" h={{ base: '200px', sm: '300px',lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" >
-                                    <UnorderedList fontSize={18} ml={12} color='white'>
-                                        <ListItem><Text  fontWeight="bold" color="white">Best in Sydney, NSW</Text></ListItem>
-                                        <ListItem><Text  fontWeight="bold" color="white">Get a Quote in less than 2 minutes</Text></ListItem>
-                                        <ListItem><Text  fontWeight="bold" color="white">Satisfaction guranteed</Text></ListItem>
-                                        <ListItem><Text  fontWeight="bold" color="white">Resonable Pricings</Text></ListItem>
+                                    borderRightRadius={{ md: 'full', base: 'none', sm: 'full', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', lg: ' full' }} align="center" h={{ base: '200px', sm: '300px', lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" >
+                                    <UnorderedList lineHeight={1} fontSize={14} ml={8} color='white'>
+                                        <ListItem><Text mb={2} fontWeight="bold" color="white">Best in Sydney, NSW</Text></ListItem>
+                                        <ListItem><Text mb={2} fontWeight="bold" color="white">Get a Quote in less than 2 minutes</Text></ListItem>
+                                        <ListItem><Text mb={2} fontWeight="bold" color="white">Satisfaction guranteed</Text></ListItem>
+                                        <ListItem><Text fontWeight="bold" color="white">Resonable Pricings</Text></ListItem>
                                     </UnorderedList>
                                 </Flex>
                             </Box>
@@ -77,16 +78,17 @@ function Banner() {
                             <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Instant online booking</Text>
                             <Flex align="center" marginTop={2}>
                                 <Flex rounded="full" align="center"
-                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' boxSize="50px"  shadow="base">
+                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
+                                        opacity={.5}
                                         alignSelf="center"
-                                        width="35px" height="35px"
+                                        w="70px"
+                                        rounded="full"
                                         objectFit='cover'
-                                        p={.5}
-                                        opacity={.6}
+                                        p={2}
                                         src="/bookNow.png"
                                     /></Flex>
-                                <Text fontSize="14" textAlign='left' width="80" marginLeft={6} color="gray.700">Get a free estimate and book online in minutes, or give us a call to book your cleaning over the phone.</Text>
+                                <Text fontSize="14" textAlign='left' width="80" marginLeft={2} color="gray.700">Get a free estimate and book online in minutes, or give us a call to book your cleaning over the phone.</Text>
                             </Flex>
                         </Box>
 
@@ -96,18 +98,19 @@ function Banner() {
                             <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Adjustable scheduling</Text>
                             <Flex align="center" marginTop={2}>
                                 <Flex rounded="full" align="center"
-                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' boxSize="50px"  shadow="base">
+                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
+                                        opacity={.5}
                                         alignSelf="center"
-                                        width="35px" height="35px"
+                                        w="70px"
+                                        rounded="full"
                                         objectFit='cover'
-                                        p={.5}
-                                        opacity={.6}
+                                        p={2}
                                         src="/calendar.png"
 
                                     />
                                 </Flex>
-                                <Text fontSize="14" textAlign='left' width="80" marginLeft={6} color="gray.700">Get a free estimate and book online in minutes, or give us a call to book your cleaning over the phone.</Text>
+                                <Text fontSize="14" textAlign='left' width="80" marginLeft={2} color="gray.700">Get a free estimate and book online in minutes, or give us a call to book your cleaning over the phone.</Text>
                             </Flex>
                         </Box>
 
@@ -115,19 +118,20 @@ function Banner() {
                             <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Trusted professionals</Text>
                             <Flex align="center" marginTop={2}>
                                 <Flex rounded="full" align="center"
-                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' boxSize="50px" shadow="base">
+                                    justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
-                                        opacity={.6}
+                                        opacity={.5}
                                         alignSelf="center"
-                                        width="35px" height="35px"
+                                        w="70px"
+                                        rounded="full"
                                         objectFit='cover'
-                                        p={.5}
-                                        ml={1}
+                                        p={1}
                                         src="/professional.png"
                                     /></Flex>
-                                <Text fontSize="14" textAlign='left' width="80" marginLeft={6} color="gray.700">Fully insured and carefully vetted cleaning technicians will make sure to complete the service as per your requirements.</Text>
+                                <Text fontSize="14" textAlign='left' width="80" marginLeft={2} color="gray.700">Fully insured and carefully vetted cleaning technicians will make sure to complete the service as per your requirements.</Text>
                             </Flex>
                         </Box>
+
 
                     </Box>
 

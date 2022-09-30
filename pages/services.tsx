@@ -1,8 +1,9 @@
-import { Box, Flex, Image, List, ListIcon, ListItem, Text, UnorderedList } from "@chakra-ui/react"
+import { Box, DrawerOverlay, Flex, Image, List, ListIcon, ListItem, Text, UnorderedList } from "@chakra-ui/react"
 import React from "react"
 import { MdCheckCircle, MdCheckCircleOutline } from "react-icons/md"
 import Colors from "../src/assets/Colors"
 import DrawerButton from "../src/components/Drawer"
+import Footer from "../src/components/Footer"
 import InstantQuote from "../src/components/InstantQuoteButton"
 import Logo from "../src/components/Logo"
 
@@ -133,27 +134,37 @@ const Services = () => {
 
     const ServicesCard = ({ item }: any) => {
         return (
-            <Flex flexDirection="column" pb={4} mb={6} borderBottomWidth={1} borderColor="gray.200">
-                <Text fontSize="20" mb={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.title}</Text>
+
+
+
+
+
+
+            <Flex
+
+                my={2} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base"
+
+                flexDirection="column">
+                <Text fontSize="16" mb={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.title}</Text>
 
                 <Text fontSize="14" mb={2} color="gray.700" fontWeight="light">{item.description}</Text>
 
 
 
-                <Box position="relative" rounded="md" >
+                <Flex position="relative" rounded="md" mt={3} align="center" marginX="auto">
 
-                    <Box position="relative">
-                        <Image boxSize="400" rounded="md" src="/eolBanner.png" bg="#000000" opacity=".8" />
-                    </Box>
 
-                    <Box position="absolute" top="0" pl="2" pt="4">
+                    <Image rounded="md" src="/eolBanner.png" bg="#000000" opacity=".6" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
+
+
+                    <Box position="absolute" top="0" pl={{ base: '2', lg: '16%' }} pt="4">
                         <List spacing={3}>
                             {item.headerList.map((x: any) => {
                                 return (
                                     <ListItem key={x.id}>
                                         <Flex align="center" >
-                                            <ListIcon as={MdCheckCircleOutline} color='gray.900' w="6" h="6" />
-                                            <Text fontSize="12" color="gray.900" fontWeight="bold">
+                                            <ListIcon as={MdCheckCircleOutline} color="gray.700" w="6" h="6" />
+                                            <Text fontSize="14" lineHeight="1" color="gray.700" fontWeight="bold">
                                                 {x.listTitle}
                                             </Text>
                                         </Flex>
@@ -165,13 +176,13 @@ const Services = () => {
                     </Box>
 
                     {item.title === "End of Lease Cleaning" ?
-                        <Box position="absolute" bottom="0" pl="4" pb="8"><InstantQuote /></Box> : null}
+                        <Box position="absolute" bottom="-5" pl={{ base: '4', lg: '16%' }} pb="8"><InstantQuote /></Box> : null}
 
-                </Box>
+                </Flex>
 
 
 
-                <Box>
+                <Box mt={4}>
 
                     <Text fontSize="14" my={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.stepProcess}</Text>
 
@@ -191,7 +202,7 @@ const Services = () => {
                 </Box>
 
 
-                <Box>
+                <Box mt={4}>
 
                     <Text fontSize="14" my={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.retuirements}</Text>
 
@@ -232,28 +243,28 @@ const Services = () => {
                 </Flex>
             </Flex>
 
-            <Box px={4}>
 
+            <Flex px={4} flexDirection="column" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto" mb={4}>
 
-                <Text textAlign="left" fontSize="28" mb={4} fontWeight="bold" color={"gray.700"}>Services</Text>
-
-            </Box>
-
-
-
-            <Flex px={4} flexDirection="column">
-
+                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" my={4} marginX="auto">
+                    <Text
+                        bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
+                        bgClip='text'
+                        fontWeight='extrabold'
+                        textAlign="left" fontSize="28" lineHeight={1}>Services
+                    </Text>
+                </Box>
 
                 {
                     servicesData.map((item) => {
                         return <ServicesCard item={item} key={item.id} />
                     })
                 }
-
-
             </Flex>
 
-
+            <Box>
+                <Footer />
+            </Box>
         </>
     )
 }

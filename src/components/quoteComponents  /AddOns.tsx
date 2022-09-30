@@ -58,6 +58,12 @@ function AddOns() {
         },
         {
             id: '07',
+            label: 'Other Extra',
+            count: 0,
+            icon: '/blinds.png',
+        },
+        {
+            id: '08',
             label: 'Carpets',
             count: 0,
             steameClean: false,

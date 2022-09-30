@@ -5,8 +5,7 @@ import Colors from '../assets/Colors'
 function CleaningProcess() {
     return (
         <>
-            <Box backgroundColor={"#f5f5f5"} rounded="md" p={4} position='relative' shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
-
+            <Box backgroundColor={"#f5f5f5"} rounded="md" p={4} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Box mb={4}>
                     <Text textAlign="left" mb={2} fontSize="18" fontWeight="bold" color={'gray.700'}>Our Working Process</Text>
 
@@ -68,17 +67,17 @@ function CleaningProcess() {
                 </Box>
 
 
-                <Box position="absolute" top='20' zIndex="2" left={6}>
-                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'70px'} w={'40px'} h="40px" zIndex={4} >
+                <Box position="absolute" top='20' zIndex="2" left={4}>
+                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'90px'} w={'40px'} h="40px" zIndex={4} >
                         <Text color='#fff' fontSize='14' fontWeight='bold'>1</Text>
                     </Flex>
-                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'85px'} w={'40px'} h="40px">
+                    <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" mb={'90px'} w={'40px'} h="40px">
                         <Text color='#fff' fontSize='14' fontWeight='bold' alignSelf="center" >2</Text>
                     </Flex>
                     <Flex shadow="base" align="center" position="relative" justify="center" bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full" ml={-8} borderWidth={4} borderColor="#fff" w={'40px'} h="40px">
                         <Text color='#fff' fontSize='14' fontWeight='bold' alignSelf="center">3</Text>
                     </Flex>
-                    <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={.5} position="absolute" h={'240'} top={5} left={-3} zIndex={-2} />
+                    <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={.2} position="absolute" h={'280'} top={5} left={-3} zIndex={-2} />
                 </Box>
 
             </Box >

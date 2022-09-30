@@ -5,7 +5,7 @@ import Colors from '../assets/Colors'
 function ChooseUS() {
     return (
         <>
-            <Box backgroundColor={"#f5f5f5"} p={4} rounded='md' my={4} shadow="base" w={{ base: '88%', md: '50%', lg: '70%' }} marginX="auto">
+            <Box backgroundColor={"#f5f5f5"} p={4} rounded='md' my={4} shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Box backgroundColor={"#f5f5f5"}>
                     <Text textAlign="left" fontSize="16" fontWeight="bold" color="gray.700">Why choose Superb Cleaning?</Text>
 

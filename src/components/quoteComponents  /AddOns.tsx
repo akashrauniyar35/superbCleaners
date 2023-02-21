@@ -38,7 +38,7 @@ function AddOns() {
         },
         {
             id: '04',
-            label: 'Wall wash',
+            label: 'Wall spot clean',
             count: 0,
             icon: '/wall.png',
         },
@@ -105,7 +105,19 @@ function AddOns() {
         return (
             <>
                 <Flex justify="space-between" mb={2}>
-                    <Text fontSize="14" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
+
+                    <Flex align="center">
+                        <Image
+                            boxSize='20px'
+                            objectFit='cover'
+                            src={item.icon}
+                            opacity={item.label === "Wall spot clean" ? .6 : .9}
+                            background={'#fff'}
+                            mr={4}
+                        />
+                        <Text fontSize="14" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
+                    </Flex>
+
                     <Flex align="center" justify="space-evenly" borderBottomRadius={'md'}>
                         <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
                             <IoMdRemove onClick={() => onRemoveClick(item)} size={16} color={"white"} cursor='pointer' />

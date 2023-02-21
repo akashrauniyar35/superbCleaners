@@ -89,10 +89,10 @@ function PropertyTypes() {
 
                             <Flex align="center">
                                 <Image
-                                    boxSize='60px'
+                                    boxSize='30px'
                                     objectFit='cover'
                                     src={'/bedroom.png'}
-                                    opacity={.5}
+                                    opacity={1}
                                     background={'#fff'}
                                 />
                                 <Text ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="sm" color={"gray.700"}>Bedroom</Text>
@@ -115,13 +115,13 @@ function PropertyTypes() {
 
                         </Flex>
 
-                        <Flex align="center" justify="space-between" width="100%">
+                        <Flex align="center" justify="space-between" width="100%" mt={4}>
 
                             <Flex align="center">
 
                                 <Image
-                                    opacity={.5}
-                                    boxSize='60px'
+                                    opacity={1}
+                                    boxSize='25px'
                                     objectFit='cover'
                                     src={'/bath.png'}
                                     background={'#fff'}

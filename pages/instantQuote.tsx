@@ -44,8 +44,7 @@ const InstantQuotePage = () => {
             <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
                 <Stack spacing={8}>
 
-
-                    <Box>
+                    <Box mt={4}>
                         <QuoteHeader />
                     </Box>
 

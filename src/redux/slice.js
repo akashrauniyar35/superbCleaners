@@ -4,14 +4,16 @@ import { MdYard } from 'react-icons/md'
 
 
 const initialState = {
-    id: 0,
-    title: '',
     service: '',
     property: '',
+    fullname: "",
+    address: "",
+    email: "",
+    phone: "",
     bedroomCount: 0,
     bathroomCount: 0,
     addOns: [],
-    contactDetails: ''
+    message: ""
 }
 
 
@@ -31,44 +33,33 @@ const quoteSlice = createSlice({
         },
         addBedCount(state, action) {
             console.log(action.payload)
-            state.bedroomCount = action.payload
+            state.bedroomCount = action.payload + 1
         },
         removeBedCount(state, action) {
-            state.bedroomCount = action.payload
+            state.bedroomCount = action.payload - 1
         },
         addBathCount(state, action) {
-            state.bathroomCount = action.payload
+            state.bathroomCount = action.payload + 1
+        },
+        removeBathCount(state, action) {
+            state.bathroomCount = action.payload - 1
         },
         addAddOn(state, action) {
-
-            //Milan Work On Here
-            
-            let add_existing_item = (x) => state.addOns.push(action.payload)
-            // let existed_item = state.addOns?.map((x) => x.id === action.payload.id ? add_existing_item(x) : console.log(action.payload))
-            let cart = console.log('CART', state?.addOns)
-            let existed_item = cart
-            state.addOns.length === 0 ? state.addOns.push(action.payload) : existed_item
-
-
-
+            state.addOns = action.payload
         },
-
 
         removeAddOn(state, action) {
-            // state.addOns.push(action.payload)
+            state.addOns = action.payload
         },
-        customerName(state, action) {
-            // console.log('s', state.contactDetails)
 
-        },
         customerDetails(state, action) {
-            console.log(action)
-            // state.contactDetails.push(action.payload)
-            // const itemIndex = state.addOns.findIndex(action.payload)
+            state.fullname = action.payload.name
+            state.email = action.payload.email
+            state.phone = action.payload.phone
+            state.address = `${action.payload.unit} ${action.payload.streetAddress} ${action.payload.suburb} ${action.payload.postCode} ${action.payload.state}`
         },
-
     },
 })
 
-export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, customerName } = quoteSlice.actions
+export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, removeBathCount } = quoteSlice.actions
 export default quoteSlice.reducer

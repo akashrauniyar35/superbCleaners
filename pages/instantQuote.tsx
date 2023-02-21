@@ -5,7 +5,6 @@ import Colors from '../src/assets/Colors'
 import Logo from '../src/components/Logo'
 import AddOns from '../src/components/quoteComponents  /AddOns'
 import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
-import ProductsSelected from '../src/components/quoteComponents  /ProductsSelected'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
 import { useSelector } from 'react-redux'
@@ -17,17 +16,12 @@ const InstantQuotePage = () => {
     const toast = useToast()
 
     const loding: any = useSelector((state) => state)
-    const showPrices = loding.service === "" ? false : true;
-
-
 
     function onSubmit() {
         setSending(true)
         setTimeout(() => setSending(false), 3000)
 
     }
-
-
 
     return (
         <>
@@ -45,12 +39,11 @@ const InstantQuotePage = () => {
                 </Flex>
             </Flex>
 
-            {showPrices ? <Box px={4} position="sticky" top={20} zIndex={4} bg="white">
-                <ProductsSelected />
-            </Box> : null}
+
 
             <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
                 <Stack spacing={8}>
+
 
                     <Box>
                         <QuoteHeader />

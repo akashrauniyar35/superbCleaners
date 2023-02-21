@@ -5,17 +5,10 @@ import HeaderDivider from './HeaderDivider'
 import InstantQuote from './InstantQuoteButton'
 import Logo from './Logo'
 
-import { Sticky, StickyScrollUp, StickyProvider } from 'react-stickup';
-// import styles from "./HeaderButtons.css"
-
 
 const container = React.createRef();
 
 function HeaderButtons() {
-
-
-
-
 
     return (
         <>

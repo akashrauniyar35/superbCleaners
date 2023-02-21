@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 function AddOns() {
-    const [steameClean, setSteameClean] = useState(false)
-    const [loaded, setLoaded] = useState(true)
+    const loading = useSelector((state: any) => state.property)
     const [linesVisible, setLinesVisible] = useState(false);
     const dispatch = useDispatch()
+
     const [data, setData] = useState([
         {
             id: '00',
@@ -64,7 +64,6 @@ function AddOns() {
     )
 
 
-
     const AddOnCards = ({ item }: any) => {
         let pp: any = []
         const onAddClick = (item: any) => {
@@ -104,7 +103,7 @@ function AddOns() {
 
         return (
             <>
-                <Flex justify="space-between" mb={2}>
+                <Flex justify="space-between" mb={4}>
 
                     <Flex align="center">
                         <Image
@@ -115,14 +114,14 @@ function AddOns() {
                             background={'#fff'}
                             mr={4}
                         />
-                        <Text fontSize="14" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
+                        <Text fontFamily="Outfit" fontSize="14" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
                     </Flex>
 
-                    <Flex align="center" justify="space-evenly" borderBottomRadius={'md'}>
+                    <Flex align="center" justify="space-evenly" borderBottomRadius={'md'} w="80px">
                         <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
-                            <IoMdRemove onClick={() => onRemoveClick(item)} size={16} color={"white"} cursor='pointer' />
+                            <IoMdRemove onClick={() => onRemoveClick(item)} size={16} color={"#fff"} cursor='pointer' />
                         </Box>
-                        <Text px={4} fontSize="16" fontWeight="sm" color={"gray.700"}>{item.count}</Text>
+                        <Text fontFamily="Outfit" margin="auto" fontSize="16" fontWeight="sm" color={"gray.700"}>{item.count}</Text>
                         <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
                             <IoMdAdd onClick={() => onAddClick(item)} size={16} color={"white"} cursor='pointer' />
                         </Box>
@@ -132,17 +131,13 @@ function AddOns() {
         )
     }
 
-
-
-
     return (
         <>
-            <Box>
-                <Accordion allowToggle borderColor="transparent" onChange={(expandedIndex) => expandedIndex === 0 ? setLinesVisible(true) : setLinesVisible(false)}>
+            <Skeleton isLoaded={loading ? true : false}>
+                <Accordion p={0} _hover={{ backgroundColor: "transparent" }} allowToggle borderColor="transparent" onChange={(expandedIndex) => expandedIndex === 0 ? setLinesVisible(true) : setLinesVisible(false)}>
                     <AccordionItem>
-
-                        <AccordionButton bgGradient='linear(to-tr, red.300, #e5236c)' rounded="sm">
-                            <Text fontSize="18" fontWeight="bold" color={"#fff"}>Add-ons</Text>
+                        <AccordionButton _hover={{ backgroundColor: "transparent" }} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="sm">
+                            <Text fontFamily="Outfit" fontSize="18" fontWeight="600" color={"#fff"}>Add-ons</Text>
                         </AccordionButton>
 
                         <AccordionPanel>
@@ -156,7 +151,7 @@ function AddOns() {
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
-            </Box>
+            </Skeleton>
         </>
     )
 }

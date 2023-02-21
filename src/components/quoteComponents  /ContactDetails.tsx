@@ -2,32 +2,35 @@ import { PhoneIcon } from '@chakra-ui/icons'
 import { Box, Flex, Image, Input, InputGroup, InputLeftElement, Skeleton, Stack, Text, Textarea } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Colors from '../../assets/Colors'
+import { IoMdAlert } from 'react-icons/io'
 
 import { customerDetails } from '../../redux/slice';
 import { useDispatch, useSelector } from 'react-redux'
 
 function ContactDetails() {
-    const [loaded, setLoaded] = useState(true)
+    const loaded = useSelector((state: any) => state.property)
     const dispatch = useDispatch();
-
     const [data, setData] = useState({ name: '', email: '', phone: '', streetAddress: '', unit: '', postCode: "", suburb: "", state: "NSW", message: "" })
 
+    const rePhoneNumber =
+        /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm
+    const reEmail = /^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/;
 
     useEffect(() => {
         dispatch(customerDetails(data))
     }, [data])
 
-    console.log("data", data)
+    console.log("error", reEmail.test(data.email))
 
     return (
         <Box>
-            <Skeleton isLoaded={loaded}>
-                <Text textAlign="left" fontSize="20" mb={2} fontWeight="bold" color={"gray.700"}>Contact Details</Text>
+            <Skeleton isLoaded={loaded ? true : false}>
+                <Text textAlign="left" fontSize="18" mb={2} fontWeight="600" color={"gray.700"}>Contact Details</Text>
             </Skeleton>
 
             <Box>
                 <Stack spacing={3} >
-                    <Skeleton isLoaded={loaded}>
+                    <Skeleton isLoaded={loaded ? true : false}>
 
                         <InputGroup>
                             <InputLeftElement
@@ -45,8 +48,16 @@ function ContactDetails() {
 
                         </InputGroup>
                     </Skeleton>
-                    <Skeleton isLoaded={loaded}>
 
+                    {
+                        data.email.length > 3 && !reEmail.test(data.email) ?
+                            <Flex align="center">
+                                <IoMdAlert color="red" size="20px" />
+                                <Text fontWeight="300" fontFamily="Outfit" color="red" ml={2}>Please enter a valid email</Text>
+                            </Flex> : null
+                    }
+
+                    <Skeleton isLoaded={loaded ? true : false}>
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
@@ -64,7 +75,15 @@ function ContactDetails() {
                         </InputGroup>
                     </Skeleton>
 
-                    <Skeleton isLoaded={loaded}>
+                    {
+                        data.phone.length > 3 && !rePhoneNumber.test(data.phone) ?
+                            <Flex align="center">
+                                <IoMdAlert color="red" size="20px" />
+                                <Text fontWeight="300" fontFamily="Outfit" color="red" ml={2}>Please enter a valid phone number</Text>
+                            </Flex> : null
+                    }
+
+                    <Skeleton isLoaded={loaded ? true : false}>
 
                         <InputGroup>
                             <InputLeftElement
@@ -79,11 +98,11 @@ function ContactDetails() {
                                     padding='2'
                                     mt='-1'
                                 /></InputLeftElement>
-                            <Input size='sm' onChange={(e) => setData({ ...data, phone: e.target.value })} rounded='md' placeholder='Contact number' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
+                            <Input maxLength={10} size='sm' onChange={(e) => setData({ ...data, phone: e.target.value })} rounded='md' placeholder='Contact number' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
 
                         </InputGroup>
                     </Skeleton>
-                    <Skeleton isLoaded={loaded}>
+                    <Skeleton isLoaded={loaded ? true : false}>
 
                         <Flex align='center'>
 
@@ -106,7 +125,7 @@ function ContactDetails() {
                         </Flex>
 
                     </Skeleton>
-                    <Skeleton isLoaded={loaded}>
+                    <Skeleton isLoaded={loaded ? true : false}>
 
                         <InputGroup>
 
@@ -124,7 +143,7 @@ function ContactDetails() {
 
                     </Skeleton>
 
-                    <Skeleton isLoaded={loaded}>
+                    <Skeleton isLoaded={loaded ? true : false}>
                         <Textarea size='sm' onChange={(e) => setData({ ...data, message: e.target.value })} rounded='md' placeholder="message..." variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} />
                     </Skeleton>
                 </Stack>

@@ -13,7 +13,8 @@ const initialState = {
     bedroomCount: 0,
     bathroomCount: 0,
     addOns: [],
-    message: ""
+    message: "",
+    postQuoteLoading: false,
 }
 
 
@@ -56,10 +57,22 @@ const quoteSlice = createSlice({
             state.fullname = action.payload.name
             state.email = action.payload.email
             state.phone = action.payload.phone
+            state.message = action.payload.message
             state.address = `${action.payload.unit} ${action.payload.streetAddress} ${action.payload.suburb} ${action.payload.postCode} ${action.payload.state}`
+        },
+        postQuotePending(state) {
+            state.postQuoteLoading = true
+        },
+        postQuoteSuccess(state) {
+            state.postQuoteLoading = false
+
+        },
+        postQuoteFail(state) {
+            state.postQuoteLoading = false
+
         },
     },
 })
 
-export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, removeBathCount } = quoteSlice.actions
+export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, removeBathCount, postQuotePending, postQuoteSuccess, postQuoteFail } = quoteSlice.actions
 export default quoteSlice.reducer

@@ -76,7 +76,7 @@ function Suburbs() {
                     {data.map((item) => {
                         return (
                             <ListItem key={item.id} marginRight={8} marginBottom={2} color="gray.700"  >
-                                <Text fontSize="14" color="gray.700" >{item.title}</Text>
+                                <Text fontWeight="300" fontFamily="Outfit" fontSize="14" color="gray.700" >{item.title}</Text>
                             </ListItem>
                         )
                     })}

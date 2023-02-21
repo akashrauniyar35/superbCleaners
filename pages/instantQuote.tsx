@@ -7,53 +7,79 @@ import AddOns from '../src/components/quoteComponents  /AddOns'
 import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { IoMdCall } from 'react-icons/io'
+import onSubmit from './api/submit'
+import { postQuotePending, postQuoteSuccess, postQuoteFail } from '../src/redux/slice'
+
 
 const InstantQuotePage = () => {
     const [loaded, setLoaded] = useState(true);
-    const [sending, setSending] = useState(false);
-
+    const postLoading: any = useSelector((state: any) => state.postQuoteLoading)
     const toast = useToast()
+    const dispatch = useDispatch()
+    const data: any = useSelector((state) => state)
 
-    const loding: any = useSelector((state) => state)
+    const onSubmitHandler = async () => {
+        let arr = data.fullname.split(" ", 2);
+        toast({
+            duration: 9000,
+            position: 'top',
+            render: () => (
+                <Box color='white' p={3} bg='green.500' rounded="md" w={'400px'}>
+                    <Text fontFamily="Outfit" fontWeight="600">Thankyou {arr[0].charAt(0).toUpperCase() + arr[0].slice(1)}, We have received your quote.</Text>
+                    <Text fontFamily="Outfit" fontWeight="300" >One of our team members will shortly reach out to you on your contact number {data.phone}</Text>
+                </Box>
+            ),
+        })
+        // dispatch(postQuotePending())
+        // let addons = data.addOns.reduce((all: any, cur: any) => ({ ...all, [cur.label]: cur.count }), {})
 
-    function onSubmit() {
-        setSending(true)
-        setTimeout(() => setSending(false), 3000)
+        // let prams: any = {
+        //     from_name: data.fullname,
+        //     form_quote_date: new Date().toString(),
+        //     from_email_id: data.email,
+        //     form_phone_number: data.phone,
+        //     from_address: data.address,
+        //     from_service: data.service,
+        //     from_bedroom: data.bedroomCount,
+        //     from_bathroom: data.bathroomCount,
+        //     from_addons: JSON.stringify(addons),
+        //     from_message: data.message
+        // }
+        // const res = await onSubmit(prams)
+        // if (res === "OK") {
+        //     dispatch(postQuoteSuccess())
+        //     toast({
+        //         position: 'top',
+        //         title: 'Quote created successfully',
+        //         description: `Our team will reach out to you soon on ${data.phone}`,
+        //         status: 'success',
+        //         duration: 9000,
+        //         isClosable: true,
+        //     })
 
+        // }
+        // dispatch(postQuoteFail())
     }
 
     return (
         <>
             <Flex px={4} py={2} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
                 <Logo />
-                <Flex align="center">
-                    <Image
-                        boxSize='45px'
-                        p={1}
-                        objectFit='cover'
-                        cursor='pointer'
-                        src={'/phone.png'}
-                        background={'transparent'}
-                    />
-                </Flex>
+                <Box bg="green.400" rounded={"full"} p={1.5}>
+                    <IoMdCall size="30px" color='#fff' />
+                </Box>
             </Flex>
-
-
 
             <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
                 <Stack spacing={8}>
-
                     <Box mt={4}>
                         <QuoteHeader />
                     </Box>
-
-
                     <Box>
                         <PropertyTypes />
                     </Box>
-
-
                     <Box>
                         <AddOns />
                     </Box>
@@ -64,9 +90,9 @@ const InstantQuotePage = () => {
                     <Box>
                         <Skeleton isLoaded={loaded}>
 
-                            <Flex onClick={() => onSubmit()} cursor='pointer' h={"10"} shadow="base" align="center" bgGradient='linear(to-tr, red.300, #e5236c)' justify='center' rounded='md' mb={4}>
-                                {sending ? <Spinner color={'#fff'} size='md' /> :
-                                    <Text fontSize="20" fontWeight="bold" color={'#fff'}>Submit</Text>
+                            <Flex onClick={() => onSubmitHandler()} cursor='pointer' h={"10"} shadow="base" align="center" bgGradient='linear(to-tr, red.300, #e5236c)' justify='center' rounded='md' mb={4}>
+                                {postLoading ? <Spinner color={'#fff'} size='md' /> :
+                                    <Text fontFamily="Outfit" fontSize="14" fontWeight="600" color={'#fff'}>Submit</Text>
                                 }
                             </Flex>
                         </Skeleton>

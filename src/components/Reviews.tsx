@@ -113,21 +113,18 @@ function Reviews() {
                     </Box>
                     <Flex align="top" justify="space-between" w="100%">
                         <Box pl={4}>
-                            <Text textAlign="left" fontSize="16" fontWeight="medium" color="gray.700">{name}</Text>
-                            <Text textAlign="left" fontSize="10" fontWeight="medium" color="gray.400">{service}</Text>
+                            <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="600" color="gray.700">{name}</Text>
+                            <Text fontFamily="Outfit" textAlign="left" fontSize="10" fontWeight="700" color="gray.500">{service}</Text>
                             {star > 4 ? fiveStars() : fourStars()}
                         </Box>
-                        <Text textAlign="left" fontSize="10" fontWeight="medium" color="gray.700">{date}</Text>
+                        <Text fontFamily="Outfit" textAlign="left" fontSize="10" fontWeight="300" color="gray.700">{date}</Text>
                     </Flex>
 
                 </Flex>
 
                 <Box bg='#fff' rounded='md' p={2} mt={4} h={32} shadow="inner">
-                    <Text textAlign="left" fontSize="13" p={2} fontWeight="medium" color="gray.700">{comment}</Text>
+                    <Text fontFamily="Outfit" textAlign="left" fontSize="13" p={2} fontWeight="300" color="gray.700">{comment}</Text>
                 </Box>
-
-
-
 
             </Flex >
         )
@@ -135,7 +132,7 @@ function Reviews() {
     return (
         <>
             <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
-                <Text textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Reviews</Text>
+                <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Reviews</Text>
 
 
                 <Flex flexDirection="column" pt={2} w={{ lg: '40%', sm: '80%' }} marginX="auto">

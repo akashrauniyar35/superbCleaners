@@ -1,5 +1,6 @@
 import { Box, DrawerOverlay, Flex, Image, List, ListIcon, ListItem, Text, UnorderedList } from "@chakra-ui/react"
 import React from "react"
+import { IoMdCall } from "react-icons/io"
 import { MdCheckCircle, MdCheckCircleOutline } from "react-icons/md"
 import Colors from "../src/assets/Colors"
 import DrawerButton from "../src/components/Drawer"
@@ -231,16 +232,9 @@ const Services = () => {
             <Flex px={4} shadow="base" py={2} align="center" flexDirection="row" justify="space-between" >
                 <DrawerButton />
                 <Logo />
-                <Flex align="center">
-                    <Image
-                        boxSize="14"
-                        objectFit="cover"
-                        src={"/phone.png"}
-                        background={"transparent"}
-                        padding="2"
-                    />
-                    {/* <Text fontSize={16} color="gray.700">0415701000</Text> */}
-                </Flex>
+                <Box bg="green.400" rounded={"full"} p={1.5}>
+                    <IoMdCall size="30px" color='#fff' />
+                </Box>
             </Flex>
 
 

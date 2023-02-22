@@ -189,8 +189,7 @@ function Banner() {
                 </Box>
 
                 <Box my={8}>
-                    <Image
-                        alt="" Slider />
+                    <ImageSlider />
                 </Box>
 
                 <Box my={8}>

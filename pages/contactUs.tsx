@@ -10,7 +10,7 @@ import Footer from '../src/components/Footer'
 import InstantQuoteButton from '../src/components/InstantQuoteButton'
 import Logo from '../src/components/Logo'
 import { postContactFail, postContactPending, postContactSuccess } from '../src/redux/slice'
-import contactUsSubmit from './api/contactUSSubmit'
+import postContactForm from './api/postContactForm'
 
 const ContactUs = () => {
     const [data, setData] = useState({ name: '', email: '', phone: '', streetAddress: '', unit: '', postCode: "", suburb: "", state: "NSW", message: "", category: "" })
@@ -50,7 +50,7 @@ const ContactUs = () => {
             from_service: data.category,
             from_message: data.message
         }
-        const res = await contactUsSubmit(prams)
+        const res = await postContactForm(prams)
         console.log("Res", res)
         if (res === "OK") {
             dispatch(postContactSuccess())

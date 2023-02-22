@@ -58,7 +58,7 @@ function FooterAccordians() {
     const AccordianCard = ({ label, key, description, points, conclusion }: any) => {
         return (
             <AccordionItem key={key} borderWidth={0} borderColor="transparent" pb={4} >
-                <AccordionButton p={0} _hover={{ backgroundColor: "transparent" }} >
+                <AccordionButton key={key} p={0} _hover={{ backgroundColor: "transparent" }} >
                     <Box flex='1' textAlign='left'>
                         <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="md" color="gray.700">{label}</Text>
                     </Box>
@@ -66,9 +66,9 @@ function FooterAccordians() {
                 </AccordionButton>
 
                 {label === "What does End of Lease Cleaning include?" ?
-                    <AccordionPanel p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
+                    <AccordionPanel key={key} p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700" mb={2}>{description}</Text>
-                        <UnorderedList>
+                        <UnorderedList key={key} >
                             {points.map((x: any) => {
                                 return (
                                     <ListItem>
@@ -80,7 +80,7 @@ function FooterAccordians() {
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700" mt={2}>{conclusion}</Text>
                     </AccordionPanel> :
 
-                    <AccordionPanel p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
+                    <AccordionPanel key={key} p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700">{description}</Text>
                     </AccordionPanel>}
 
@@ -93,7 +93,7 @@ function FooterAccordians() {
             <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} position='relative' w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Text fontFamily="Outfit" mb={2} textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Questionaries</Text>
                 <Accordion allowToggle>
-                    {data.map((item) => (<AccordianCard key={item.id} description={item.description} label={item.label} points={item.points} conclusion={item.conclusion} />))}
+                    {data.map((item: any) => (<AccordianCard key={item.id} description={item.description} label={item.label} points={item.points} conclusion={item.conclusion} />))}
                 </Accordion>
             </Box>
         </>

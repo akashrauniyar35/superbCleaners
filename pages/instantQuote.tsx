@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { IoMdCall } from 'react-icons/io'
 import onSubmit from './api/submit'
 import { postQuotePending, postQuoteSuccess, postQuoteFail } from '../src/redux/slice'
+import { useRouter } from 'next/router'
 
 
 const InstantQuotePage = () => {
@@ -19,57 +20,61 @@ const InstantQuotePage = () => {
     const toast = useToast()
     const dispatch = useDispatch()
     const data: any = useSelector((state) => state)
+    const router = useRouter()
+
+    const rePhoneNumber =
+        /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm
+    const reEmail = /^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/;
+
+    let testEmail = reEmail.test(data.email)
+    let testPhone = rePhoneNumber.test(data.phone)
 
     const onSubmitHandler = async () => {
         let arr = data.fullname.split(" ", 2);
-        toast({
-            duration: 9000,
-            position: 'top',
-            render: () => (
-                <Box color='white' p={3} bg='green.500' rounded="md" w={'400px'}>
-                    <Text fontFamily="Outfit" fontWeight="600">Thankyou {arr[0].charAt(0).toUpperCase() + arr[0].slice(1)}, We have received your quote.</Text>
-                    <Text fontFamily="Outfit" fontWeight="300" >One of our team members will shortly reach out to you on your contact number {data.phone}</Text>
-                </Box>
-            ),
-        })
-        // dispatch(postQuotePending())
-        // let addons = data.addOns.reduce((all: any, cur: any) => ({ ...all, [cur.label]: cur.count }), {})
 
-        // let prams: any = {
-        //     from_name: data.fullname,
-        //     form_quote_date: new Date().toString(),
-        //     from_email_id: data.email,
-        //     form_phone_number: data.phone,
-        //     from_address: data.address,
-        //     from_service: data.service,
-        //     from_bedroom: data.bedroomCount,
-        //     from_bathroom: data.bathroomCount,
-        //     from_addons: JSON.stringify(addons),
-        //     from_message: data.message
-        // }
-        // const res = await onSubmit(prams)
-        // if (res === "OK") {
-        //     dispatch(postQuoteSuccess())
-        //     toast({
-        //         position: 'top',
-        //         title: 'Quote created successfully',
-        //         description: `Our team will reach out to you soon on ${data.phone}`,
-        //         status: 'success',
-        //         duration: 9000,
-        //         isClosable: true,
-        //     })
+        dispatch(postQuotePending())
+        let addons = data.addOns.reduce((all: any, cur: any) => ({ ...all, [cur.label]: cur.count }), {})
 
-        // }
-        // dispatch(postQuoteFail())
+        let prams: any = {
+            from_name: data.fullname,
+            form_quote_date: new Date().toString(),
+            from_email_id: data.email,
+            form_phone_number: data.phone,
+            from_address: data.address,
+            from_service: data.service,
+            from_bedroom: data.bedroomCount,
+            from_bathroom: data.bathroomCount,
+            from_addons: JSON.stringify(addons),
+            from_message: data.message
+        }
+        const res = await onSubmit(prams)
+        if (res === "OK") {
+            dispatch(postQuoteSuccess())
+            toast({
+                duration: 9000,
+                position: 'top',
+                render: () => (
+                    <Flex flex="1" align="center" justify="center">
+                        <Box color='white' p={3} bg='green.500' rounded="md" w={'95%'}>
+                            <Text fontFamily="Outfit" fontWeight="600">Thankyou {arr[0].charAt(0).toUpperCase() + arr[0].slice(1)}, We have received your quote.</Text>
+                            <Text fontFamily="Outfit" fontWeight="300" >One of our team members will shortly reach out to you on your contact number {data.phone}</Text>
+                        </Box>
+                    </Flex>
+                ),
+            })
+            router.push("./")
+        }
+        dispatch(postQuoteFail())
     }
 
     return (
         <>
             <Flex px={4} py={2} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
                 <Logo />
-                <Box bg="green.400" rounded={"full"} p={1.5}>
-                    <IoMdCall size="30px" color='#fff' />
-                </Box>
+                <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
+                    <IoMdCall size="20px" color='#fff' />
+                    <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                </Flex>
             </Flex>
 
             <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
@@ -86,10 +91,8 @@ const InstantQuotePage = () => {
                     <Box>
                         <ContactDetails />
                     </Box>
-
                     <Box>
-                        <Skeleton isLoaded={loaded}>
-
+                        <Skeleton isLoaded={testEmail && testPhone}>
                             <Flex onClick={() => onSubmitHandler()} cursor='pointer' h={"10"} shadow="base" align="center" bgGradient='linear(to-tr, red.300, #e5236c)' justify='center' rounded='md' mb={4}>
                                 {postLoading ? <Spinner color={'#fff'} size='md' /> :
                                     <Text fontFamily="Outfit" fontSize="14" fontWeight="600" color={'#fff'}>Submit</Text>

@@ -59,16 +59,10 @@ function ImageSlider() {
 
 
     const SliderCard = ({ item: { img, title, id } }: any) => {
-
-
         return (
-            <Box position='relative'>
 
-                <Box py={2} bg='white' position='absolute' bottom='0' borderBottomRadius='md' w="100%" textAlign='left' px="2">
-                    <Text fontWeight="300" fontFamily="Outfit" alignSelf="left" fontSize='14' color='gray.700' opacity='1'>{title}</Text>
-                </Box>
-                <Image rounded='md' src={img} w={'60px'} h={'280px'} />
-            </Box >
+            <Image rounded='md' src={img} w={'60px'} h={'280px'} />
+
         )
     }
 
@@ -76,13 +70,11 @@ function ImageSlider() {
 
     return (
         <>
-            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} py={6} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
                 <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Gallery</Text>
-                <Flex flexDirection="column" align="center" pt={4} w={{ lg: '40%', sm: '80%' }} marginX="auto">
-                    <Carousel interval={2000} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false} renderArrowNext={(clickHandler) => arrowNext(clickHandler)} renderArrowPrev={(clickHandler) => arrowPrevious(clickHandler)} >
+                <Flex flexDirection="column" align="center" pt={4} w={{ base: '100%', lg: '40%', sm: '100%' }} marginX="auto">
+                    <Carousel showThumbs={false} interval={2000} autoPlay={true} infiniteLoop={true} swipeable={true} showIndicators={false}>
                         {data.map((item) => {
-                            let parseIn = parseInt(item.id)
-                            console.log('DATA LENGTH', parseIn)
                             return (<SliderCard key={item.id} item={item} />)
 
                         })}

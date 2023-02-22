@@ -42,10 +42,9 @@ function ContactDetails() {
                                     opacity={.5}
                                     background={'transparent'}
                                     padding='2'
-                                    mt='-1'
+                                    mt='1'
                                 /></InputLeftElement>
-                            <Input onChange={(e) => setData({ ...data, name: e.target.value })} size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
-
+                            <Input onChange={(e) => setData({ ...data, name: e.target.value })} size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} />
                         </InputGroup>
                     </Skeleton>
 
@@ -68,9 +67,9 @@ function ContactDetails() {
                                     opacity={.5}
                                     background={'transparent'}
                                     padding='2'
-                                    mt='-1'
+                                    mt='2'
                                 /></InputLeftElement>
-                            <Input size='sm' onChange={(e) => setData({ ...data, email: e.target.value })} rounded='md' placeholder='Email' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
+                            <Input size='sm' onChange={(e) => setData({ ...data, email: e.target.value })} rounded='md' placeholder='Email' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} />
 
                         </InputGroup>
                     </Skeleton>
@@ -96,9 +95,9 @@ function ContactDetails() {
                                     src={'/phone.png'}
                                     background={'transparent'}
                                     padding='2'
-                                    mt='-1'
+                                    mt='1'
                                 /></InputLeftElement>
-                            <Input maxLength={10} size='sm' onChange={(e) => setData({ ...data, phone: e.target.value })} rounded='md' placeholder='Contact number' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
+                            <Input maxLength={10} size='sm' onChange={(e) => setData({ ...data, phone: e.target.value })} rounded='md' placeholder='Contact number' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} />
 
                         </InputGroup>
                     </Skeleton>
@@ -106,7 +105,7 @@ function ContactDetails() {
 
                         <Flex align='center'>
 
-                            <Input size='sm' onChange={(e) => setData({ ...data, unit: e.target.value })} rounded='md' placeholder='Unit' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} w="20%" mr={4} />
+                            <Input size='sm' onChange={(e) => setData({ ...data, unit: e.target.value })} rounded='md' placeholder='Unit' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="20%" mr={4} />
 
                             <InputGroup>
                                 <InputLeftElement
@@ -118,9 +117,9 @@ function ContactDetails() {
                                         opacity={.5}
                                         background={'transparent'}
                                         padding='2'
-                                        mt='-1'
+                                        mt='-.5'
                                     /></InputLeftElement>
-                                <Input onChange={(e) => setData({ ...data, streetAddress: e.target.value })} size='sm' rounded='md' placeholder='Street Address' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} />
+                                <Input onChange={(e) => setData({ ...data, streetAddress: e.target.value })} size='sm' rounded='md' placeholder='Street Address' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} />
                             </InputGroup>
                         </Flex>
 
@@ -131,11 +130,11 @@ function ContactDetails() {
 
                             <Flex align='center'>
 
-                                <Input size='sm' rounded='md' onChange={(e) => setData({ ...data, postCode: e.target.value })} placeholder='Post Code' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} w="25%" mr={4} />
+                                <Input size='sm' rounded='md' onChange={(e) => setData({ ...data, postCode: e.target.value })} placeholder='Post Code' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} pl={3} w="25%" mr={4} />
 
-                                <Input size='sm' rounded='md' placeholder='Suburb' onChange={(e) => setData({ ...data, suburb: e.target.value })} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} w="45%" mr={4} />
+                                <Input size='sm' rounded='md' placeholder='Suburb' onChange={(e) => setData({ ...data, suburb: e.target.value })} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="45%" mr={4} />
 
-                                <Input size='sm' onChange={(e) => setData({ ...data, state: e.target.value })} rounded='md' placeholder={data.state} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} w="25%" />
+                                <Input size='sm' onChange={(e) => setData({ ...data, state: e.target.value })} rounded='md' placeholder={data.state} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="25%" />
 
                             </Flex>
                         </InputGroup>
@@ -144,7 +143,7 @@ function ContactDetails() {
                     </Skeleton>
 
                     <Skeleton isLoaded={loaded ? true : false}>
-                        <Textarea size='sm' onChange={(e) => setData({ ...data, message: e.target.value })} rounded='md' placeholder="message..." variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={1.5} pl={3} />
+                        <Textarea size='sm' onChange={(e) => setData({ ...data, message: e.target.value })} rounded='md' placeholder="message..." variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} pl={3} />
                     </Skeleton>
                 </Stack>
             </Box>

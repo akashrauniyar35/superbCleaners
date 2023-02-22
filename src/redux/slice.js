@@ -1,8 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { MdYard } from 'react-icons/md'
-
-
-
 const initialState = {
     service: '',
     property: '',
@@ -16,10 +12,6 @@ const initialState = {
     message: "",
     postQuoteLoading: false,
 }
-
-
-
-
 
 
 const quoteSlice = createSlice({
@@ -64,15 +56,37 @@ const quoteSlice = createSlice({
             state.postQuoteLoading = true
         },
         postQuoteSuccess(state) {
+            state.service = "",
+                state.phone = "",
+                state.property = "",
+                state.email = "",
+                state.fullname = "",
+                state.bedroomCount = 0,
+                state.bathroomCount = 0,
+                state.addOns = [],
+                state.address = "",
+                state.message = "",
+                state.postQuoteLoading = false
+        },
+        postQuoteFail(state) {
             state.postQuoteLoading = false
 
         },
-        postQuoteFail(state) {
+        postContactPending(state) {
+            state.postQuoteLoading = true
+        },
+        postContactSuccess(state) {
+            state.postQuoteLoading = false
+
+        },
+        postContactFail(state) {
             state.postQuoteLoading = false
 
         },
     },
 })
 
-export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, removeBathCount, postQuotePending, postQuoteSuccess, postQuoteFail } = quoteSlice.actions
+export const { selectedService, addBathCount, addBedCount, addAddOn, propertySelected, removeAddOn, removeBedCount, customerDetails, removeBathCount, postQuotePending, postQuoteSuccess, postQuoteFail,
+    postContactPending, postContactSuccess, postContactFail,
+} = quoteSlice.actions
 export default quoteSlice.reducer

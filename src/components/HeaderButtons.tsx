@@ -12,13 +12,15 @@ function HeaderButtons() {
 
     return (
         <>
-
             <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
-                <Drawer />
-                <Logo />
+                <Flex align={"center"}>
+                    <Drawer />
+                    <Box ml={4}>
+                        <Logo />
+                    </Box>
+                </Flex>
                 <InstantQuote />
             </Flex>
-
             <HeaderDivider />
 
         </>

@@ -9,7 +9,6 @@ import InstantQuote from "../src/components/InstantQuoteButton"
 import Logo from "../src/components/Logo"
 
 
-
 const servicesData = [
 
     {
@@ -18,7 +17,7 @@ const servicesData = [
         description: "Moving can be stressful no matter how well you plan every step on the way. Pair that with passing the final inspection over the cleanliness of your rental and you have the recipe for an emotional breakdown. Rushing to pack everything in boxes and get out of the door can cause you to lose your bond back. Superb Cleaners offers you a customised end of lease cleaning in Sydney which will make your property look like on a picture. We’ll leave the property so clean, your landlord will regret that you’re moving out.",
         headerList: [
             { id: "00", listTitle: 'FREE RE-CLEAN in the next 72 hours' },
-            { id: '01', listTitle: "Every little detail of the property is left {sparkling clean" },
+            { id: '01', listTitle: "Every little detail of the property is left sparkling clean" },
             { id: '02', listTitle: "Cleaning that follows the REA checklists" },
             { id: '03', listTitle: "Flexible booking allowing fitting the cleaning in your schedule", }
         ],
@@ -107,55 +106,28 @@ const servicesData = [
             { id: "02", label: "Experts clean exterior windows using a stepladder or a water-fed pole. The latter is one of the most effective windows cleaning methods. Pure water is pumped through the brushes and sprayed over the window. The cleaners will focus on stains and marks and making sure to leave the windows spotless." },
         ],
     },
-    // {
-    //     id: "04",
-    //     headerList: [],
-    //     stepsTasks: [],
-    //     title: "Oven Cleaning",
-    //     description: "",
-    //     img: "", requirementList: [],
-
-    // },
-    // {
-    //     id: "05",
-    //     headerList: [],
-    //     stepsTasks: [],
-    //     title: "Other Cleaning",
-    //     description: "",
-    //     img: "",
-    //     requirementList: [],
-
-    // },
 ]
 
 
 const Services = () => {
 
 
-
     const ServicesCard = ({ item }: any) => {
         return (
 
 
-
-
-
-
             <Flex
-
-                my={2} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base"
+                mb={8} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base"
 
                 flexDirection="column">
-                <Text fontSize="16" mb={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.title}</Text>
+                <Text fontSize="16" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="600" lineHeight={1}>{item.title}</Text>
 
-                <Text fontSize="14" mb={2} color="gray.700" fontWeight="light">{item.description}</Text>
-
-
+                <Text fontSize="14" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="300">{item.description}</Text>
 
                 <Flex position="relative" rounded="md" mt={3} align="center" marginX="auto">
 
 
-                    <Image rounded="md" src="/eolBanner.png" bg="#000000" opacity=".6" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
+                    <Image rounded="md" src="/eolBanner.png" opacity=".4" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
 
 
                     <Box position="absolute" top="0" pl={{ base: '2', lg: '16%' }} pt="4">
@@ -165,7 +137,7 @@ const Services = () => {
                                     <ListItem key={x.id}>
                                         <Flex align="center" >
                                             <ListIcon as={MdCheckCircleOutline} color="gray.700" w="6" h="6" />
-                                            <Text fontSize="14" lineHeight="1" color="gray.700" fontWeight="bold">
+                                            <Text fontSize="14" fontFamily="Outfit" lineHeight="1" color="gray.700" fontWeight="600">
                                                 {x.listTitle}
                                             </Text>
                                         </Flex>
@@ -185,9 +157,9 @@ const Services = () => {
 
                 <Box mt={4}>
 
-                    <Text fontSize="14" my={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.stepProcess}</Text>
+                    <Text fontSize="14" fontFamily="Outfit" my={2} color="gray.700" fontWeight="600" lineHeight={1}>{item.stepProcess}</Text>
 
-                    <Text fontSize="14" mb={2} color="gray.700" fontWeight="light">{item.stepProcessDescription}</Text>
+                    <Text fontSize="14" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="light">{item.stepProcessDescription}</Text>
 
 
                     <UnorderedList>
@@ -205,14 +177,14 @@ const Services = () => {
 
                 <Box mt={4}>
 
-                    <Text fontSize="14" my={2} color="gray.700" fontWeight="bold" lineHeight={1}>{item.retuirements}</Text>
+                    <Text fontSize="14" fontFamily="Outfit" my={2} color="gray.700" fontWeight="600" lineHeight={1}>{item.retuirements}</Text>
 
-                    <Text fontSize="14" mb={2} color="gray.700" fontWeight="light">{item.requirementDescription}</Text>
+                    <Text fontSize="14" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="light">{item.requirementDescription}</Text>
 
                     <UnorderedList>
                         {item.requirementList.map((i: any) => {
                             return (
-                                <ListItem key={i.key}>    <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
+                                <ListItem key={i.key}> <Text fontFamily="Outfit" fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
                             )
                         })}
 
@@ -229,12 +201,17 @@ const Services = () => {
 
     return (
         <>
-            <Flex px={4} shadow="base" py={2} align="center" flexDirection="row" justify="space-between" >
-                <DrawerButton />
-                <Logo />
-                <Box bg="green.400" rounded={"full"} p={1.5}>
-                    <IoMdCall size="30px" color='#fff' />
-                </Box>
+            <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
+                <Flex align="center">
+                    <DrawerButton />
+                    <Box ml={4}>
+                        <Logo />
+                    </Box>
+                </Flex>
+                <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
+                    <IoMdCall size="20px" color='#fff' />
+                    <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                </Flex>
             </Flex>
 
 

@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Circle, Flex, HStack, Image, Skeleton, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Circle, Flex, HStack, Image, Skeleton, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Colors from '../../assets/Colors'
 import { IoMdAddCircle, IoMdRemoveCircle, IoMdCheckmarkCircle, IoMdAdd, IoMdRemove } from 'react-icons/io'
@@ -137,9 +137,11 @@ function AddOns() {
                 <Accordion p={0} _hover={{ backgroundColor: "transparent" }} allowToggle borderColor="transparent" onChange={(expandedIndex) => expandedIndex === 0 ? setLinesVisible(true) : setLinesVisible(false)}>
                     <AccordionItem>
                         <AccordionButton _hover={{ backgroundColor: "transparent" }} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="sm">
-                            <Text fontFamily="Outfit" fontSize="18" fontWeight="600" color={"#fff"}>Add-ons</Text>
+                            <Flex flex='1' align="center" justify="space-between">
+                                <Text fontFamily="Outfit" fontSize="18" fontWeight="600" color={"#fff"}>Add-ons</Text>
+                                <AccordionIcon color="#fff" />
+                            </Flex>
                         </AccordionButton>
-
                         <AccordionPanel>
                             {
                                 data.map((item) => {

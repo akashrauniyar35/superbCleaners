@@ -16,12 +16,12 @@ function ContactDetails() {
         /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm
     const reEmail = /^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/;
 
-    const detailsDispatch = useCallback(() => {
-        dispatch(customerDetails(data))
-    }, [])
-    
+    // const detailsDispatch = useCallback(() => {
+    //     dispatch(customerDetails(data))
+    // }, [])
+
     useEffect(() => {
-        detailsDispatch()
+        dispatch(customerDetails(data))
     }, [data])
 
     return (

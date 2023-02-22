@@ -127,7 +127,7 @@ const Services = () => {
                 <Flex position="relative" rounded="md" mt={3} align="center" marginX="auto">
 
 
-                    <Image rounded="md" src="/eolBanner.png" opacity=".4" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
+                    <Image alt="" rounded="md" src="/eolBanner.png" opacity=".4" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
 
 
                     <Box position="absolute" top="0" pl={{ base: '2', lg: '16%' }} pt="4">

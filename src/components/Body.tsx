@@ -34,6 +34,7 @@ function Banner() {
 
                     <Flex w="110px" justify={'center'} py="2" flex="row" align={"center"} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full">
                         <Image
+                            alt=""
                             alignSelf="center"
                             w="15px"
                             objectFit='cover'
@@ -43,6 +44,7 @@ function Banner() {
                     </Flex>
                     <Flex w="110px" justify={'center'} py="2" flex="row" align={"center"} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full">
                         <Image
+                            alt=""
                             alignSelf="center"
                             w="18px"
                             objectFit='cover'
@@ -52,6 +54,7 @@ function Banner() {
                     </Flex>
                     <Flex w="110px" justify={'center'} py="2" flex="row" align={"center"} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full">
                         <Image
+                            alt=""
                             alignSelf="center"
                             w="18px"
                             objectFit='cover'
@@ -66,6 +69,7 @@ function Banner() {
                         <Flex position="relative">
 
                             <Image
+                                alt=""
                                 position={"relative"}
                                 objectFit='cover'
                                 src="/professionalbg.png"
@@ -111,6 +115,7 @@ function Banner() {
                                 <Flex rounded="full" align="center"
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
+                                        alt=""
                                         opacity={.7}
                                         alignSelf="center"
                                         w="70px"
@@ -130,6 +135,7 @@ function Banner() {
                                 <Flex rounded="full" align="center"
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
+                                        alt=""
                                         opacity={.7}
                                         alignSelf="center"
                                         w="70px"
@@ -149,6 +155,7 @@ function Banner() {
                                 <Flex rounded="full" align="center"
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
+                                        alt=""
                                         opacity={.7}
                                         alignSelf="center"
                                         w="70px"
@@ -182,7 +189,8 @@ function Banner() {
                 </Box>
 
                 <Box my={8}>
-                    <ImageSlider />
+                    <Image
+                        alt="" Slider />
                 </Box>
 
                 <Box my={8}>

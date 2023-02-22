@@ -40,7 +40,7 @@ const About = () => {
 
 
             <Flex overflow={"hidden"} zIndex={3} px={4} position='relative' align='center' justify='center'>
-                <Image marginX="auto" position='relative' boxSize="400" rounded="md" src="/background.png" />
+                <Image alt="" marginX="auto" position='relative' boxSize="400" rounded="md" src="/background.png" />
                 <Text w={{ base: '80%', sm: '60%', md: '40%', lg: '20%' }} top='5%' position='absolute' fontSize="28" color={"gray.700"} fontWeight="bold" lineHeight={1} zIndex={2}
                     textAlign="center" fontFamily="Outfit"
                 >We are here because you have better things to do.</Text>
@@ -52,7 +52,7 @@ const About = () => {
                 {data.map((item) => {
                     return (
                         <Flex key={item.id} align="center" flexDirection="column" mb={8} position="relative">
-                            <Image position="relative" boxSize="20" shadow='inner' rounded="full" src={item.img} bg="gray.300" opacity=".9" p={4} />
+                            <Image alt="" position="relative" boxSize="20" shadow='inner' rounded="full" src={item.img} bg="gray.300" opacity=".9" p={4} />
                             <Text fontFamily="Outfit" my={2} fontSize="16" fontWeight="bold" color={"gray.700"}>{item.title}</Text>
                             <Text fontFamily="Outfit" w={{ base: '80%', sm: '80%', md: '40%', lg: '20%' }} textAlign="center" fontSize="14" fontWeight="light" color={"gray.700"}>{item.description}</Text>
                         </Flex>

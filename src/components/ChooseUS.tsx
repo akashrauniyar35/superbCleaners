@@ -14,6 +14,7 @@ function ChooseUS() {
                     <Flex marginTop={4} >
                         <Circle bgGradient='linear(to-t, red.300, #e5236c)' opacity={1} p={1} size="10" rounded='full' shadow={'base'}>
                             <Image
+                                alt=""
                                 width="8" height="8"
                                 objectFit='cover'
                                 p={1}
@@ -30,6 +31,7 @@ function ChooseUS() {
                     <Flex marginTop={4} >
                         <Circle bgGradient='linear(to-t, red.300, #e5236c)' opacity={1} p={1} size="10" rounded='full' shadow={'base'}>
                             <Image
+                                alt=""
                                 width="8" height="8"
                                 objectFit='cover'
                                 p={1}
@@ -45,6 +47,7 @@ function ChooseUS() {
                     <Flex marginTop={4} >
                         <Circle bgGradient='linear(to-t, red.300, #e5236c)' opacity={1} p={1} size="10" rounded='full' shadow={'base'}>
                             <Image
+                                alt=""
                                 width="8" height="8"
                                 objectFit='cover'
                                 p={1}
@@ -54,12 +57,13 @@ function ChooseUS() {
 
                         <Box w={{ lg: '40%', sm: '60%' }}>
                             <Text fontFamily="Outfit" fontSize="16" textAlign='left' marginLeft={4} color="gray.700" fontWeight="600" mb={1}>Flexible Schedule</Text>
-                            <Text fontWeight="300" fontFamily="Outfit" fontSize="14" textAlign='left' marginLeft={4} color="gray.700">We understand that our clients have busy lives and schedules, and that's why we offer flexible cleaning services to meet your unique needs. Whether you need a one-time cleaning, recurring cleaning, or a customized cleaning plan, we can work with you to find a schedule that fits your lifestyle. Our team of cleaning professionals is available to clean your home or business during the day, evening, or weekend, depending on your preference.</Text>
+                            <Text fontWeight="300" fontFamily="Outfit" fontSize="14" textAlign='left' marginLeft={4} color="gray.700">We understand that our clients have busy lives and schedules, and that&#x27;s why we offer flexible cleaning services to meet your unique needs. Whether you need a one-time cleaning, recurring cleaning, or a customized cleaning plan, we can work with you to find a schedule that fits your lifestyle. Our team of cleaning professionals is available to clean your home or business during the day, evening, or weekend, depending on your preference.</Text>
                         </Box>
                     </Flex>
                     <Flex marginTop={4} >
                         <Circle bgGradient='linear(to-t, red.300, #e5236c)' opacity={1} p={1} size="10" rounded='full' shadow={'base'}>
                             <Image
+                                alt=""
                                 width="8" height="8"
                                 objectFit='cover'
                                 p={1}
@@ -69,7 +73,7 @@ function ChooseUS() {
 
                         <Box w={{ lg: '40%', sm: '60%' }}>
                             <Text fontFamily="Outfit" fontSize="16" textAlign='left' marginLeft={4} color="gray.700" fontWeight="600" mb={1}>Reasonable Pricing</Text>
-                            <Text fontWeight="300" fontFamily="Outfit" fontSize="14" textAlign='left' marginLeft={4} color="gray.700">We believe that everyone deserves to have a clean and organized space without breaking the bank. That's why we offer competitive and reasonable pricing for all our cleaning services. Our pricing is transparent, and we will work with you to find a cleaning plan that meets your needs and budget.</Text>
+                            <Text fontWeight="300" fontFamily="Outfit" fontSize="14" textAlign='left' marginLeft={4} color="gray.700">We believe that everyone deserves to have a clean and organized space without breaking the bank. That&#x27;s why we offer competitive and reasonable pricing for all our cleaning services. Our pricing is transparent, and we will work with you to find a cleaning plan that meets your needs and budget.</Text>
                         </Box>
                     </Flex>
                 </Box>

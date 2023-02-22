@@ -18,6 +18,7 @@ function CleaningProcess() {
 
                         <Square size='60px' rounded="md" bgGradient='linear(to-tr, red.300, #e5236c)' shadow="base">
                             <Image
+                                alt=""
                                 padding={4}
                                 opacity={.7}
                                 objectFit='cover'
@@ -42,6 +43,7 @@ function CleaningProcess() {
 
                         <Square size='60px' rounded="md" bgGradient='linear(to-tr, red.300, #e5236c)' shadow="base">
                             <Image
+                                alt=""
                                 padding={4}
                                 opacity={.7}
                                 objectFit='cover'
@@ -65,6 +67,7 @@ function CleaningProcess() {
 
                         <Square size='60px' rounded="md" bgGradient='linear(to-tr, red.300, #e5236c)' shadow="base">
                             <Image
+                                alt=""
                                 padding={4}
                                 opacity={.7}
                                 objectFit='cover'

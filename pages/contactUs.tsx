@@ -1,5 +1,6 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Image, Input, InputGroup, InputLeftElement, Radio, RadioGroup, Skeleton, Spinner, Stack, Text, Textarea, useToast } from '@chakra-ui/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { IoMdAlert, IoMdCheckboxOutline } from 'react-icons/io'
 import { useDispatch, useSelector } from 'react-redux'
@@ -24,7 +25,7 @@ const ContactUs = () => {
     let testPhone = rePhoneNumber.test(data.phone)
 
     const dispatch = useDispatch()
-
+    const router = useRouter()
     const services = [
         {
             id: '00',
@@ -58,14 +59,14 @@ const ContactUs = () => {
                 position: 'top',
                 render: () => (
                     <Flex flex="1" align="center" justify="center">
-                        <Box color='white' p={3} bg='green.500' rounded="md" w={'100%'}>
+                        <Box color='white' p={3} bg='green.500' rounded="md" w={'90%'}>
                             <Text fontFamily="Outfit" fontWeight="600">Thankyou {arr[0].charAt(0).toUpperCase() + arr[0].slice(1)}, for contacting us.</Text>
                             <Text fontFamily="Outfit" fontWeight="300" >One of our team members will shortly reach out to you.</Text>
                         </Box>
                     </Flex>
                 ),
             })
-
+            router.push("./")
             setData({ name: '', email: '', phone: '', streetAddress: '', unit: '', postCode: "", suburb: "", state: "NSW", message: "", category: "" })
         }
         dispatch(postContactFail())
@@ -104,14 +105,14 @@ const ContactUs = () => {
                     <InputGroup>
                         <InputLeftElement
                             pointerEvents='none'
-                        ><Image
-                                boxSize='35px'
-                                objectFit='cover'
-                                src={'/user.png'}
-                                opacity={.5}
-                                background={'transparent'}
-                                padding='2'
-                                mt='1'
+                        ><Image alt=""
+                            boxSize='35px'
+                            objectFit='cover'
+                            src={'/user.png'}
+                            opacity={.5}
+                            background={'transparent'}
+                            padding='2'
+                            mt='1'
                             /></InputLeftElement>
                         <Input value={data.name} fontFamily={"Outfit"} fontSize={"14"} onChange={(e) => setData({ ...data, name: e.target.value })} size='sm' rounded='md' placeholder='Full name' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} />
                     </InputGroup>
@@ -127,14 +128,14 @@ const ContactUs = () => {
                     <InputGroup>
                         <InputLeftElement
                             pointerEvents='none'
-                        ><Image
-                                boxSize='35px'
-                                objectFit='cover'
-                                src={'/mail.png'}
-                                opacity={.5}
-                                background={'transparent'}
-                                padding='2'
-                                mt='2'
+                        ><Image alt=""
+                            boxSize='35px'
+                            objectFit='cover'
+                            src={'/mail.png'}
+                            opacity={.5}
+                            background={'transparent'}
+                            padding='2'
+                            mt='2'
                             /></InputLeftElement>
                         <Input value={data.email} fontFamily={"Outfit"} fontSize={"14"} size='sm' onChange={(e) => setData({ ...data, email: e.target.value })} rounded='md' placeholder='Email' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} />
 
@@ -153,7 +154,7 @@ const ContactUs = () => {
                         <InputLeftElement
                             pointerEvents='none'
                         >
-                            <Image
+                            <Image alt=""
                                 boxSize='35px'
                                 objectFit='cover'
                                 opacity={.5}
@@ -181,11 +182,10 @@ const ContactUs = () => {
                             </h2>
                             {services.map((x: any) => {
                                 return (
-                                    <AccordionPanel py={2}>
+                                    <AccordionPanel py={2} key={x.id}>
                                         <Flex onClick={() => { setData({ ...data, category: x.title }), setAccordionIndex(-1) }} flex="1" align="center" justify="space-between" cursor={"pointer"}>
                                             <Text color='gray.500' fontFamily={"Outfit"} fontSize={"14"} opacity=".8" >{x.title}</Text>
                                         </Flex>
-
                                     </AccordionPanel>
                                 )
                             })}
@@ -198,14 +198,14 @@ const ContactUs = () => {
                         <InputGroup>
                             <InputLeftElement
                                 pointerEvents='none'
-                            ><Image
-                                    boxSize='35px'
-                                    objectFit='cover'
-                                    src={'/location.png'}
-                                    opacity={.5}
-                                    background={'transparent'}
-                                    padding='2'
-                                    mt='-.5'
+                            ><Image alt=""
+                                boxSize='35px'
+                                objectFit='cover'
+                                src={'/location.png'}
+                                opacity={.5}
+                                background={'transparent'}
+                                padding='2'
+                                mt='-.5'
                                 /></InputLeftElement>
                             <Input value={data.streetAddress} fontFamily={"Outfit"} fontSize={"14"} onChange={(e) => setData({ ...data, streetAddress: e.target.value })} size='sm' rounded='md' placeholder='Street Address' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} />
                         </InputGroup>

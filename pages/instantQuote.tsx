@@ -55,7 +55,7 @@ const InstantQuotePage = () => {
                 position: 'top',
                 render: () => (
                     <Flex flex="1" align="center" justify="center">
-                        <Box color='white' p={3} bg='green.500' rounded="md" w={'95%'}>
+                        <Box color='white' p={3} bg='green.500' rounded="md" w={'90%'}>
                             <Text fontFamily="Outfit" fontWeight="600">Thankyou {arr[0].charAt(0).toUpperCase() + arr[0].slice(1)}, We have received your quote.</Text>
                             <Text fontFamily="Outfit" fontWeight="300" >One of our team members will shortly reach out to you on your contact number {data.phone}</Text>
                         </Box>

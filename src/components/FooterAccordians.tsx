@@ -55,9 +55,9 @@ const data = [
 function FooterAccordians() {
 
 
-    const AccordianCard = ({ label, description, points, conclusion }: any) => {
+    const AccordianCard = ({ label, key, description, points, conclusion }: any) => {
         return (
-            <AccordionItem borderWidth={0} borderColor="transparent" pb={4} >
+            <AccordionItem key={key} borderWidth={0} borderColor="transparent" pb={4} >
                 <AccordionButton p={0} _hover={{ backgroundColor: "transparent" }} >
                     <Box flex='1' textAlign='left'>
                         <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="md" color="gray.700">{label}</Text>

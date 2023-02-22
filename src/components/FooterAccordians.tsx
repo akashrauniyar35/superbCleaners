@@ -53,12 +53,10 @@ const data = [
 
 
 function FooterAccordians() {
-
-
     const AccordianCard = ({ label, key, description, points, conclusion }: any) => {
         return (
             <AccordionItem key={key} borderWidth={0} borderColor="transparent" pb={4} >
-                <AccordionButton key={key} p={0} _hover={{ backgroundColor: "transparent" }} >
+                <AccordionButton p={0} _hover={{ backgroundColor: "transparent" }} >
                     <Box flex='1' textAlign='left'>
                         <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="md" color="gray.700">{label}</Text>
                     </Box>
@@ -66,9 +64,9 @@ function FooterAccordians() {
                 </AccordionButton>
 
                 {label === "What does End of Lease Cleaning include?" ?
-                    <AccordionPanel key={key} p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
+                    <AccordionPanel p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700" mb={2}>{description}</Text>
-                        <UnorderedList key={key} >
+                        <UnorderedList  >
                             {points.map((x: any) => {
                                 return (
                                     <ListItem>
@@ -80,7 +78,7 @@ function FooterAccordians() {
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700" mt={2}>{conclusion}</Text>
                     </AccordionPanel> :
 
-                    <AccordionPanel key={key} p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
+                    <AccordionPanel p={0} borderWidth={0} w={{ lg: '80%', sm: '80%' }} >
                         <Text fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700">{description}</Text>
                     </AccordionPanel>}
 

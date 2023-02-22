@@ -53,6 +53,7 @@ function QuoteHeader() {
                                     shadow={item.title === service ? "base" : 'inner'}
                                 >
                                     <Image
+                                        alt=""
                                         boxSize='30px'
                                         opacity=".8"
                                         objectFit="cover"

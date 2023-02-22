@@ -36,6 +36,7 @@ function ContactDetails() {
                             <InputLeftElement
                                 pointerEvents='none'
                             ><Image
+                                    alt=""
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/user.png'}
@@ -61,6 +62,7 @@ function ContactDetails() {
                             <InputLeftElement
                                 pointerEvents='none'
                             ><Image
+                                    alt=""
                                     boxSize='35px'
                                     objectFit='cover'
                                     src={'/mail.png'}
@@ -89,6 +91,7 @@ function ContactDetails() {
                                 pointerEvents='none'
                             >
                                 <Image
+                                    alt=""
                                     boxSize='35px'
                                     objectFit='cover'
                                     opacity={.5}
@@ -111,6 +114,7 @@ function ContactDetails() {
                                 <InputLeftElement
                                     pointerEvents='none'
                                 ><Image
+                                        alt=""
                                         boxSize='35px'
                                         objectFit='cover'
                                         src={'/location.png'}

@@ -85,7 +85,7 @@ function Reviews() {
             <Flex flexDirection="column" align="left" position="relative">
                 <Flex flexDirection="row" align="center" alignSelf="left" justify="flex-start">
                     <Box h="45px" w="45px" >
-                        <Image rounded='full' src={img} />
+                        <Image alt="" rounded='full' src={img} />
                     </Box>
                     <Flex align="top" justify="space-between" w="100%">
                         <Box pl={4}>

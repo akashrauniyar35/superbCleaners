@@ -33,35 +33,10 @@ function ImageSlider() {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    console.log("Current index", currentIndex)
-
-
-
-
-    const arrowPrevious = (clickHandler: any) => {
-        return (
-            <Flex onClick={clickHandler} cursor='pointer' backgroundColor={"blue.700"} borderColor={'#fff'} borderWidth={2} w={'35px'} h={'35px'} rounded='full' position='absolute' align='center' justify="center" top="40%" left={"2px"} zIndex="5">
-                <GoChevronLeft color='white' size={32} />
-            </Flex>
-        )
-    }
-    const arrowNext = (clickHandler: any) => {
-        return (
-            <Flex onClick={clickHandler} cursor='pointer' backgroundColor={"blue.700"} borderColor={'#fff'} borderWidth={2} w={'35px'} h={'35px'} rounded='full' position='absolute' align='center' justify="center" top="40%" right={"2px"} zIndex="2">
-                <GoChevronRight color='white' size={32} />
-            </Flex>
-        )
-    }
-
-
-
-
-
-
     const SliderCard = ({ item: { img, title, id } }: any) => {
         return (
 
-            <Image rounded='md' src={img} w={'60px'} h={'280px'} />
+            <Image alt="" rounded='md' src={img} w={'60px'} h={'280px'} />
 
         )
     }

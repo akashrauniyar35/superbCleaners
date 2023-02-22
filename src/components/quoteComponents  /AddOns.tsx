@@ -107,6 +107,7 @@ function AddOns() {
 
                     <Flex align="center">
                         <Image
+                            alt=""
                             boxSize='20px'
                             objectFit='cover'
                             src={item.icon}

@@ -88,6 +88,7 @@ function PropertyTypes() {
 
                             <Flex align="center">
                                 <Image
+                                    alt=""
                                     boxSize='30px'
                                     objectFit='cover'
                                     src={'/bedroom.png'}
@@ -118,6 +119,7 @@ function PropertyTypes() {
                             <Flex align="center">
 
                                 <Image
+                                    alt=""
                                     opacity={1}
                                     boxSize='25px'
                                     objectFit='cover'

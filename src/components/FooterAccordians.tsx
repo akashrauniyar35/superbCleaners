@@ -69,7 +69,7 @@ function FooterAccordians() {
                         <UnorderedList  >
                             {points.map((x: any) => {
                                 return (
-                                    <ListItem>
+                                    <ListItem key={x.id}>
                                         <Text mb={1} fontFamily="Outfit" fontSize="14" textAlign='left' fontWeight="300" color="gray.700">{x.text}</Text>
                                     </ListItem>
                                 )

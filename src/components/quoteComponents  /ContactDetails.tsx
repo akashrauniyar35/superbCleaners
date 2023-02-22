@@ -1,6 +1,6 @@
 import { PhoneIcon } from '@chakra-ui/icons'
 import { Box, Flex, Image, Input, InputGroup, InputLeftElement, Skeleton, Stack, Text, Textarea } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Colors from '../../assets/Colors'
 import { IoMdAlert } from 'react-icons/io'
 
@@ -9,18 +9,20 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function ContactDetails() {
     const loaded = useSelector((state: any) => state.property)
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const [data, setData] = useState({ name: '', email: '', phone: '', streetAddress: '', unit: '', postCode: "", suburb: "", state: "NSW", message: "" })
 
     const rePhoneNumber =
         /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm
     const reEmail = /^\w+([\.-]?\w+)+@\w+([\.:]?\w+)+(\.[a-zA-Z0-9]{2,3})+$/;
 
-    useEffect(() => {
+    const detailsDispatch = useCallback(() => {
         dispatch(customerDetails(data))
+    }, [])
+    
+    useEffect(() => {
+        detailsDispatch()
     }, [data])
-
-    console.log("error", reEmail.test(data.email))
 
     return (
         <Box>

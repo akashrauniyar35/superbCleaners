@@ -7,7 +7,7 @@ import { AiOutlineInstagram } from 'react-icons/ai';
 function HeaderDivider() {
     return (
         <Flex fontFamily="Outfit" align="center" bgGradient='linear(to-r, blue.700 82%, blue.400)' justify="space-around" paddingY={1}>
-            <Flex align="center" justifyContent={"space-between"} w={{ base: '100%', sm: '90%', md: "80%", lg: '50%' }}>
+            <Flex align="center" justifyContent={"space-between"} w={{ base: '90%', sm: '90%', md: "80%", lg: '50%' }}>
                 <Flex align="center">
                     <Flex align="center" >
                         <Flex align="center" position="relative">

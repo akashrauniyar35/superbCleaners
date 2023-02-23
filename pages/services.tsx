@@ -116,10 +116,8 @@ const servicesData = [
 
 const Services = () => {
 
-
     const ServicesCard = ({ item }: any) => {
         return (
-
 
             <Flex pb={item.title === "End of Lease Cleaning" ? 6 : 0}
                 mb={8} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={6} position='relative' shadow="base"
@@ -132,7 +130,7 @@ const Services = () => {
                 <Flex position="relative" rounded="md" mt={3} align="center" marginX="auto">
 
                     <Box bg="rgba(0,0,0,0.5)" rounded="md">
-                        <Image alt="" rounded="md" src={item.image} marginX="auto" opacity={.6} boxSize={{ base: "500px", md:"600px", lg: "700px" }} />
+                        <Image alt="" rounded="md" src={item.image} marginX="auto" opacity={.6} h={{ base: "300px", sm:"320px", md: "400px", lg: "400px" }} w={{ base: "500px", md: "600px", lg: "700px" }} />
                     </Box>
 
 

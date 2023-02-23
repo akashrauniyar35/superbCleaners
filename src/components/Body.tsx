@@ -15,7 +15,7 @@ function Banner() {
         <>
 
             <Box fontFamily="Outfit" px={4} pb={4} position="relative">
-                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" mt={-8} marginX="auto">
+                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" mt={4} marginX="auto">
                     <Text
                         bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
                         bgClip='text'
@@ -78,8 +78,7 @@ function Banner() {
                                 mt={"-5"}
                             />
 
-                            {/* left={{ base: '40%', sm: '60%', lg: '60%' }} */}
-                            < Box position="absolute" right={{ base: 0, sm: 0, md: 0, lg: '20%' }} zIndex="3" top={'10'} >
+                            < Box position="absolute" right={{ base: 0, sm: 0, md: 0, lg: '20%' }} zIndex="3" top={{ base: 5, sm: 10, md: 10, lg: 10 }} >
                                 <Flex opacity=".95" bgGradient='linear(to-tr, red.300, #e5236c)'
                                     borderRightRadius={{ md: 'full', base: 'none', sm: 'full', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', lg: ' full' }} align="center" h={{ base: '200px', sm: '300px', lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" justify={"center"} pl={{ base: 8 }}>
                                     <UnorderedList lineHeight={1} fontSize={14} color='white'>
@@ -116,7 +115,6 @@ function Banner() {
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
                                         alt=""
-                                        opacity={.7}
                                         alignSelf="center"
                                         w="70px"
                                         objectFit='cover'
@@ -136,7 +134,6 @@ function Banner() {
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
                                         alt=""
-                                        opacity={.7}
                                         alignSelf="center"
                                         w="70px"
                                         objectFit='cover'
@@ -156,7 +153,6 @@ function Banner() {
                                     justify="center" bgGradient='linear(to-t, red.300, #e5236c)' shadow="base">
                                     <Image
                                         alt=""
-                                        opacity={.7}
                                         alignSelf="center"
                                         w="70px"
                                         objectFit='cover'
@@ -169,8 +165,6 @@ function Banner() {
 
 
                     </Box>
-
-
                 </Box>
 
                 <Box my={8}>

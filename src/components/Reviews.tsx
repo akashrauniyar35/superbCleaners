@@ -9,11 +9,11 @@ const data = [
     {
         id: '00',
         service: "Manly NSW",
-        name: 'Kole Mcguire',
+        name: 'Aaron Mcguire',
         comment: 'I recently used Superb Cleaning to deep clean my home and was blown away by the results. The team arrived on time, were friendly and professional, and completed the job to an incredibly high standard. They paid great attention to detail and left every surface spotless, including hard-to-reach areas that I had never been able to clean properly myself. The communication from the company was excellent, and the price was very reasonable for the quality of work that was done. I couldnt be happier with the service I received and would highly recommend Superb Cleaning to anyone in need of a professional and reliable cleaning service. 5 stars!',
         date: '12 Feburary',
         star: 5,
-        img: 'https://randomuser.me/api/portraits/men/3.jpg'
+        img: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
     {
         id: '01',
@@ -31,21 +31,21 @@ const data = [
         comment: 'I recently booked Superb Cleaning Company for an end of lease cleaning, and I was thoroughly impressed with their service. The team arrived on time, they cleaned every corner of my apartment to an incredibly high standard, and the property looked spotless when they were finished. They were also very thorough and made sure to clean areas that are often overlooked in regular cleaning. The communication from the company was excellent, and the price was very reasonable for the quality of work that was done. I received my full bond back without any issues, and I know that the cleaning played a big part in that. I would highly recommend Superb Cleaning to anyone in need of an end of lease cleaning service. Thank you for a job well done! 5 stars.',
         date: '02 December',
         star: 5,
-        img: 'https://randomuser.me/api/portraits/men/72.jpg',
+        img: '/userTwo.png',
     },
     {
         id: '03',
-        service: "End of Lease Cleaning",
-        name: 'North Sydney',
+        service: "North Sydney",
+        name: 'Abdul Khan',
         comment: 'This guys has cleaned my house beyond my expectation. I celebrated my great festival with a very clean house. Thank you WeDo for your five star service. Will definately recommend to the colleagues.',
         date: '14 November',
         star: 5,
-        img: 'https://randomuser.me/api/portraits/men/32.jpg',
+        img: '/userOne.png',
     },
     {
         id: '04',
         service: "Bondi",
-        name: 'Courtney Allen',
+        name: 'Bella Smith',
         comment: 'Good guys, arrived on time and did a fantastic job. Highly recommended Superb Cleaning for end of lease cleaning service.',
         date: '03 November',
         star: 5,

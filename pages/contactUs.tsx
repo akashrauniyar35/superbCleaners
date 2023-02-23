@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Colors from '../src/assets/Colors'
 import DrawerButton from '../src/components/Drawer'
 import Footer from '../src/components/Footer'
+import HeaderButtons from '../src/components/HeaderButtons'
 import InstantQuoteButton from '../src/components/InstantQuoteButton'
 import Logo from '../src/components/Logo'
 import { postContactFail, postContactPending, postContactSuccess } from '../src/redux/slice'
@@ -75,7 +76,8 @@ const ContactUs = () => {
 
     return (
         <>
-            <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
+            <HeaderButtons />
+            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
                 <Flex align="center">
                     <DrawerButton />
                     <Box ml={4}>
@@ -83,7 +85,7 @@ const ContactUs = () => {
                     </Box>
                 </Flex>
                 <InstantQuoteButton />
-            </Flex>
+            </Flex> */}
 
             <Box px={4} pt={4} w={{ base: '100%', sm: '100%', md: '80%', lg: '40%' }} marginX="auto">
 

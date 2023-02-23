@@ -4,14 +4,15 @@ import { IoMdCall } from 'react-icons/io'
 import Colors from '../src/assets/Colors'
 import DrawerButton from '../src/components/Drawer'
 import Footer from '../src/components/Footer'
+import HeaderButtons from '../src/components/HeaderButtons'
 import InstantQuoteButton from '../src/components/InstantQuoteButton'
 import Logo from '../src/components/Logo'
 
 
 const data = [
 
-    { id: '00', title: 'What?', description: 'We help you by taking care of your home by offering a great variety of cleaning services. We provide domestic and commercial cleaning in Melbourne, Sydney, the UK and even some cities in the US. Everything is done by professionals using high-quality equipment. ', img: './paper.png' },
-    { id: '01', title: 'Why?', description: 'We believe cleaning services could be provided in a more fantastic way. Customers are as important as the technicians and this improves the quality. It is called the Fantastic Philosophy! ', img: './heart.png' },
+    { id: '00', title: 'What?', description: 'We help you by taking care of your home by offering a great variety of cleaning services. We provide domestic and commercial cleaning in Sydney. Everything is done by professionals using high-quality equipment. ', img: './paper.png' },
+    { id: '01', title: 'Why?', description: 'We believe cleaning services could be provided in a more superb way. Customers are as important as the technicians and this improves the quality. It is called the Superb Philosophy! ', img: './heart.png' },
     { id: '02', title: 'How?', description: 'We use technology where it works and people where it matters. Through innovation and technology, we are able to provide a high-quality on-demand response to your unique cleaning needs. ', img: './idea.png' },
 ]
 
@@ -19,15 +20,18 @@ const data = [
 const About = () => {
     return (
         <>
-            <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base" >
-                <Flex align="center">
-                    <DrawerButton />
-                    <Box ml={4}>
-                        <Logo />
-                    </Box>
+            <HeaderButtons />
+            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base" >
+                <Flex align="center" justify="space-between" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto">
+                    <Flex align="center">
+                        <DrawerButton />
+                        <Box ml={4}>
+                            <Logo />
+                        </Box>
+                    </Flex>
+                    <InstantQuoteButton />
                 </Flex>
-                <InstantQuoteButton />
-            </Flex>
+            </Flex> */}
 
             <Box px={4} w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" my={4} marginX="auto">
                 <Text

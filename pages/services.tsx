@@ -5,6 +5,7 @@ import { MdCheckCircle, MdCheckCircleOutline } from "react-icons/md"
 import Colors from "../src/assets/Colors"
 import DrawerButton from "../src/components/Drawer"
 import Footer from "../src/components/Footer"
+import HeaderButtons from "../src/components/HeaderButtons"
 import InstantQuote from "../src/components/InstantQuoteButton"
 import Logo from "../src/components/Logo"
 
@@ -116,8 +117,8 @@ const Services = () => {
         return (
 
 
-            <Flex
-                mb={8} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={4} position='relative' shadow="base"
+            <Flex pb={item.title === "End of Lease Cleaning" ? 6 : 0}
+                mb={8} backgroundColor={"#f5f5f5"} rounded="md" px={4} pt={6} position='relative' shadow="base"
 
                 flexDirection="column">
                 <Text fontSize="16" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="600" lineHeight={1}>{item.title}</Text>
@@ -161,12 +162,11 @@ const Services = () => {
 
                     <Text fontSize="14" fontFamily="Outfit" mb={2} color="gray.700" fontWeight="light">{item.stepProcessDescription}</Text>
 
-
                     <UnorderedList>
                         {item.stepsTasks.map((y: any) => {
                             return (
                                 <ListItem key={y.id}>
-                                    <Text fontSize="12" mb={1} color="gray.700" fontWeight="light">{y.title ? y.title + ':' : null} {y.label}</Text>
+                                    <Text fontSize="12" mb={2} color="gray.700" fontWeight="300">{y.title ? y.title + ':' : null} {y.label}</Text>
                                 </ListItem>
                             )
                         })}
@@ -184,15 +184,11 @@ const Services = () => {
                     <UnorderedList>
                         {item.requirementList.map((i: any) => {
                             return (
-                                <ListItem key={i.key}> <Text fontFamily="Outfit" fontSize="12" mb={1} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
+                                <ListItem key={i.key}> <Text fontFamily="Outfit" fontSize="12" mb={2} color="gray.700" fontWeight="light">{i.reqVal}</Text></ListItem>
                             )
                         })}
-
                     </UnorderedList>
                 </Box>
-
-
-
 
             </Flex >
         )
@@ -201,7 +197,9 @@ const Services = () => {
 
     return (
         <>
-            <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
+
+            <HeaderButtons />
+            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
                 <Flex align="center">
                     <DrawerButton />
                     <Box ml={4}>
@@ -212,7 +210,7 @@ const Services = () => {
                     <IoMdCall size="20px" color='#fff' />
                     <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
                 </Flex>
-            </Flex>
+            </Flex> */}
 
 
             <Flex px={4} flexDirection="column" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto" mb={4}>

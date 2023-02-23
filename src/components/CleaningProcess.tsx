@@ -20,7 +20,6 @@ function CleaningProcess() {
                             <Image
                                 alt=""
                                 padding={4}
-                                opacity={.7}
                                 objectFit='cover'
                                 src="/bookingOnlinePicture.png"
                             />
@@ -45,7 +44,6 @@ function CleaningProcess() {
                             <Image
                                 alt=""
                                 padding={4}
-                                opacity={.7}
                                 objectFit='cover'
                                 src="/home.png"
                             />
@@ -57,7 +55,7 @@ function CleaningProcess() {
                     </Flex>
                 </Box>
 
-                <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={"2px"} position="absolute" h={{ base: '240px', md: '150px', lg: '150px', }} left={0} zIndex={1} bottom={"70px"} mr={"40px"} />
+                <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={"2px"} position="absolute" h={{ base: '240px', sm: "150px", md: '150px', lg: '150px', }} left={0} zIndex={1} bottom={"70px"} mr={"40px"} />
 
                 <Box mb={0}>
                     <Flex flexDirection="row" position={'relative'}>
@@ -69,7 +67,6 @@ function CleaningProcess() {
                             <Image
                                 alt=""
                                 padding={4}
-                                opacity={.7}
                                 objectFit='cover'
                                 src="/notification.png"
                             />

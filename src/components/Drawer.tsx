@@ -3,16 +3,10 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Drawer,
     DrawerBody,
-    DrawerFooter,
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton,
     Box,
-    Button,
-    useDisclosure,
-    Input,
-    Container,
     Text,
     Flex,
 } from '@chakra-ui/react'
@@ -91,7 +85,7 @@ function DrawerButton() {
                 <Box>
                     <Drawer
 
-                        size={{ base: 'xs', sm: 'lg', md: 'lg', xl: 'lg' }}
+                        size={{ base: 'xs', sm: 'xs', md: 'xs', xl: 'xs' }}
                         isOpen={isOpen}
                         placement='left'
                         onClose={toggleDrawer}
@@ -115,7 +109,6 @@ function DrawerButton() {
                                     {data.map((item) => (<DrawerCard key={item.id} item={item} />))}
                                 </Box>
 
-
                                 <Box >
 
                                     <Flex cursor='pointer' mb={4} bg="green.400" justify='space-between' rounded={"md"} p={1.5} align="center" px="3">
@@ -136,8 +129,7 @@ function DrawerButton() {
                                 </Box>
 
                             </DrawerBody>
-
-                            <Footer />
+                            <Footer display={true} />
                         </DrawerContent>
 
 

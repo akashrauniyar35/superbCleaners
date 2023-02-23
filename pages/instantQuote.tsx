@@ -49,6 +49,7 @@ const InstantQuotePage = () => {
         }
         const res = await onSubmit(prams)
         if (res === "OK") {
+            router.push("./")
             dispatch(postQuoteSuccess())
             toast({
                 duration: 9000,
@@ -62,7 +63,6 @@ const InstantQuotePage = () => {
                     </Flex>
                 ),
             })
-            router.push("./")
         }
         dispatch(postQuoteFail())
     }

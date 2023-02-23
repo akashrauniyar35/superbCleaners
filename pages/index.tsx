@@ -17,7 +17,6 @@ const Home: NextPage = () => {
       </Head>
       <Flex margin="auto" flexDirection="column" bg='white' w={{ base: '100%', md: '100%', lg: '100%' }}>
         <HeaderButtons />
-        <CallUs />
         <Body />
         <Footer />
       </Flex>

@@ -14,8 +14,8 @@ function Banner() {
     return (
         <>
 
-            <Box fontFamily="Outfit" px={4} pb={4} position="relative">
-                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" mt={4} marginX="auto">
+            <Box fontFamily="Outfit" px={4} pb={4} position="relative" w={{ base: '100%', sm: '100%', md: "70%", lg: '40%' }} marginX="auto">
+                <Box alignSelf="center" mt={4} marginX="auto">
                     <Text
                         bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
                         bgClip='text'
@@ -24,13 +24,13 @@ function Banner() {
                     </Text>
                 </Box>
 
-                <Box alignSelf="center" pt={4} position="relative" marginX="auto" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }}>
+                <Box alignSelf="center" pt={4} position="relative" marginX="auto" >
                     <Text fontFamily="Outfit" textAlign="left" fontSize="14" color="gray.700">Welcome to Superb Cleaning, your go-to cleaning service for all your cleaning needs. We offer a range of cleaning services, including residential, move-in and move-out cleaning and more. Our team uses eco-friendly and non-toxic cleaning products, and we strive to maintain a clean and safe environment for you, your family, and your pets. At Superb Cleaning, we guarantee a spotless and sparkling clean every time. Contact us today to schedule your cleaning service and let us handle the rest!</Text>
                 </Box>
 
 
 
-                <Flex align={"center"} alignSelf="center" mb={6} mt={8} justify="space-around" w={{ base: '100%', sm: '80%', md: '50%', lg: '50%' }} marginX="auto">
+                <Flex align={"center"} alignSelf="center" mb={6} mt={8} justify="space-around" marginX="auto">
 
                     <Flex w="110px" justify={'center'} py="2" flex="row" align={"center"} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="full">
                         <Image
@@ -64,10 +64,9 @@ function Banner() {
                     </Flex>
                 </Flex>
 
-                <Box position="relative" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
+                <Box position="relative" marginX="auto">
                     <Box position="relative">
                         <Flex position="relative">
-
                             <Image
                                 alt=""
                                 position={"relative"}
@@ -77,10 +76,9 @@ function Banner() {
                                 ml={{ base: -20 }}
                                 mt={"-5"}
                             />
-
-                            < Box position="absolute" right={{ base: 0, sm: 0, md: 0, lg: '20%' }} zIndex="3" top={{ base: 5, sm: 10, md: 10, lg: 10 }} >
+                            < Box position="absolute" right={{ base: 0, sm: 0, md: "-10%", lg: '-10%' }} zIndex="3" top={{ base: 12, sm: 24, md: 10, lg: 10 }} >
                                 <Flex opacity=".95" bgGradient='linear(to-tr, red.300, #e5236c)'
-                                    borderRightRadius={{ md: 'full', base: 'none', sm: 'full', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', lg: ' full' }} align="center" h={{ base: '200px', sm: '300px', lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" justify={"center"} pl={{ base: 8 }}>
+                                    borderRightRadius={{ md: 'full', base: 'none', sm: 'none', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', md: "full", lg: ' full' }} align="center" h={{ base: '200px', sm: '250px', md: "300px", lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" justify={"center"} pl={{ base: 8 }}>
                                     <UnorderedList lineHeight={1} fontSize={14} color='white'>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Best in Sydney, NSW</Text></ListItem>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Get a quote in less than a minute</Text></ListItem>
@@ -181,10 +179,10 @@ function Banner() {
                 <Box my={8}>
                     <Reviews />
                 </Box>
-
                 <Box my={8}>
                     <ImageSlider />
                 </Box>
+
 
                 <Box my={8}>
                     <FooterAccordians />

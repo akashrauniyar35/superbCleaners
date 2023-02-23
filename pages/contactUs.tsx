@@ -77,17 +77,7 @@ const ContactUs = () => {
     return (
         <>
             <HeaderButtons />
-            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
-                <Flex align="center">
-                    <DrawerButton />
-                    <Box ml={4}>
-                        <Logo />
-                    </Box>
-                </Flex>
-                <InstantQuoteButton />
-            </Flex> */}
-
-            <Box px={4} pt={4} w={{ base: '100%', sm: '100%', md: '80%', lg: '40%' }} marginX="auto">
+            <Box px={4} pt={4} w={{ base: '100%', sm: '100%', md: "70%", lg: '40%' }} marginX="auto">
 
                 <Box alignSelf="center" mb={4} >
                     <Text
@@ -97,11 +87,9 @@ const ContactUs = () => {
                         textAlign="left" fontSize="28" lineHeight={1}>Contact Us
                     </Text>
                 </Box>
-
                 <Text fontSize="14" color="gray.700" fontWeight="light">If you want to request a service, discuss an existing appointment, learn more about our franchise opportunities, collaborate with us on an exiting project or drop us a line about your service experience, use the form below and we&apos;ll get in touch shortly! </Text>
             </Box>
-
-            <Box px={4} pt={4} w={{ base: '100%', sm: '100%', md: '80%', lg: '40%' }} marginX="auto">
+            <Box px={4} pt={4} marginX="auto" w={{ base: '100%', sm: '100%', md: "70%", lg: '40%' }}>
 
                 <Stack spacing={3} >
                     <InputGroup>

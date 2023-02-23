@@ -15,11 +15,12 @@ const servicesData = [
     {
         id: "00",
         title: "End of Lease Cleaning",
+        image: "/galleryTwo.png",
         description: "Moving can be stressful no matter how well you plan every step on the way. Pair that with passing the final inspection over the cleanliness of your rental and you have the recipe for an emotional breakdown. Rushing to pack everything in boxes and get out of the door can cause you to lose your bond back. Superb Cleaners offers you a customised end of lease cleaning in Sydney which will make your property look like on a picture. We’ll leave the property so clean, your landlord will regret that you’re moving out.",
         headerList: [
             { id: "00", listTitle: 'FREE RE-CLEAN in the next 72 hours' },
             { id: '01', listTitle: "Every little detail of the property is left sparkling clean" },
-            { id: '02', listTitle: "Cleaning that follows the REA checklists" },
+            { id: '02', listTitle: "Cleaning that follows the Real Estate checklists" },
             { id: '03', listTitle: "Flexible booking allowing fitting the cleaning in your schedule", }
         ],
 
@@ -49,6 +50,7 @@ const servicesData = [
     },
     {
         id: "01",
+        image: "/galleryFive.png",
         title: "General Cleaning",
         headerList: [],
         description: "Professional cleaners know what you need when it comes to providing help with the housework!",
@@ -70,6 +72,7 @@ const servicesData = [
     },
     {
         id: "02",
+        image: "/galleryEight.png",
         headerList: [],
         title: "Carpet Cleaning",
         description: "Advanced Rug and Caret Cleaning in Sydney for All Types of Textile",
@@ -92,6 +95,7 @@ const servicesData = [
     },
     {
         id: "03",
+        image: "/galleryTwo.png",
         stepProcess: "What is a Water-Fed Pole Method and How Does it Work",
         stepProcessDescription: "This window cleaning method is a pole system method using a telescopic pole with brushes attached to the end of the pole and is using purified water which is pumped from a unit on the ground.",
         headerList: [],
@@ -127,18 +131,19 @@ const Services = () => {
 
                 <Flex position="relative" rounded="md" mt={3} align="center" marginX="auto">
 
+                    <Box bg="rgba(0,0,0,0.5)" rounded="md">
+                        <Image alt="" rounded="md" src={item.image} marginX="auto" opacity={.6} boxSize={{ base: "500px", md:"600px", lg: "700px" }} />
+                    </Box>
 
-                    <Image alt="" rounded="md" src="/eolBanner.png" opacity=".4" width={{ base: '100%', sm: '100%', md: '100%', lg: '70%' }} marginX="auto" />
 
-
-                    <Box position="absolute" top="0" pl={{ base: '2', lg: '16%' }} pt="4">
+                    <Box position="absolute" top="0" pl={{ base: '2', lg: '2%' }} pt="4">
                         <List spacing={3}>
                             {item.headerList.map((x: any) => {
                                 return (
                                     <ListItem key={x.id}>
                                         <Flex align="center" >
-                                            <ListIcon as={MdCheckCircleOutline} color="gray.700" w="6" h="6" />
-                                            <Text fontSize="14" fontFamily="Outfit" lineHeight="1" color="gray.700" fontWeight="600">
+                                            <Image src="/checkMark.png" boxSize={"20px"} />
+                                            <Text ml={2} fontSize="14" fontFamily="Outfit" lineHeight="1" color="#fff" fontWeight="extrabold">
                                                 {x.listTitle}
                                             </Text>
                                         </Flex>
@@ -150,11 +155,9 @@ const Services = () => {
                     </Box>
 
                     {item.title === "End of Lease Cleaning" ?
-                        <Box position="absolute" bottom="-5" pl={{ base: '4', lg: '16%' }} pb="8"><InstantQuote /></Box> : null}
+                        <Box position="absolute" bottom="-5" pl={{ base: '4', lg: '4' }} pb="8"><InstantQuote /></Box> : null}
 
                 </Flex>
-
-
 
                 <Box mt={4}>
 
@@ -199,23 +202,10 @@ const Services = () => {
         <>
 
             <HeaderButtons />
-            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base">
-                <Flex align="center">
-                    <DrawerButton />
-                    <Box ml={4}>
-                        <Logo />
-                    </Box>
-                </Flex>
-                <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
-                    <IoMdCall size="20px" color='#fff' />
-                    <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
-                </Flex>
-            </Flex> */}
 
+            <Flex px={4} flexDirection="column" w={{ base: '100%', sm: '100%', md: "70%", lg: '40%' }} marginX="auto" mb={4}>
 
-            <Flex px={4} flexDirection="column" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto" mb={4}>
-
-                <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" my={4} marginX="auto">
+                <Box my={4}>
                     <Text
                         bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
                         bgClip='text'

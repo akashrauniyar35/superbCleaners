@@ -9,7 +9,7 @@ function Footer({ display }: any) {
     return (
         <Box backgroundColor={"blue.700"} p={4} py={6} fontFamily="Outfit">
 
-            <Box w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto">
+            <Box w={{ base: '100%', sm: '100%', md: "80%", lg: '50%' }} marginX="auto">
 
                 <Flex align="flex-start" justify="space-between">
                     {!display ? <Box display={{}}>

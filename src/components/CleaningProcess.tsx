@@ -5,7 +5,7 @@ import Colors from '../assets/Colors'
 function CleaningProcess() {
     return (
         <>
-            <Box backgroundColor={"#f5f5f5"} p={4} py={6} rounded='md' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto" position={"relative"}>
+            <Box backgroundColor={"#f5f5f5"} p={4} py={6} rounded='md' shadow="base"  marginX="auto" position={"relative"}>
 
                 <Box mb={4}>
                     <Text fontFamily="Outfit" textAlign="left" mb={2} fontSize="18" fontWeight="bold" color={'gray.700'}>Our Working Process</Text>

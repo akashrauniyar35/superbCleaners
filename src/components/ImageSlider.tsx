@@ -53,9 +53,9 @@ function ImageSlider() {
 
     return (
         <>
-            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} py={6} position='relative' shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
+            <Box my={4} backgroundColor={"#f5f5f5"} rounded="md" px={4} py={6} position='relative' shadow="base" marginX="auto">
                 <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Gallery</Text>
-                <Flex flexDirection="column" align="center" pt={4} w={{ base: '100%', lg: '40%', sm: '100%' }} >
+                <Flex flexDirection="column" align="center" pt={4} w={{ base: '100%', lg: '90%', sm: '100%', }} marginX="auto">
                     <Carousel showArrows={false} showThumbs={false} interval={2000} autoPlay={true} infiniteLoop={true} swipeable={false} showIndicators={false}>
                         {data.map((item) => {
                             return (<SliderCard key={item.id} item={item} />)

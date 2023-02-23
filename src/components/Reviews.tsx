@@ -121,11 +121,11 @@ function Reviews() {
 
     return (
         <>
-            <Box backgroundColor={"#f5f5f5"} rounded="md" px={4} py={6} shadow="base" w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto" >
+            <Box backgroundColor={"#f5f5f5"} rounded="md" px={4} py={6} shadow="base" marginX="auto" >
 
                 <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Reviews</Text>
 
-                <Flex flexDirection="column" pt={2} w={{ base: "100%", lg: '40%', sm: '100%' }} marginX="auto">
+                <Flex flexDirection="column" pt={2} w={{ base: "100%", lg: '90%', sm: '100%' }} marginX="auto">
                     <Carousel showThumbs={false} swipeable={false} interval={5000} showStatus={false} infiniteLoop={true} renderArrowNext={(clickHandler) => arrowNext(clickHandler)} renderArrowPrev={(clickHandler) => arrowPrevious(clickHandler)}
                     >
                         {data.map((item) => {

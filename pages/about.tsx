@@ -21,50 +21,40 @@ const About = () => {
     return (
         <>
             <HeaderButtons />
-            {/* <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={2} shadow="base" >
-                <Flex align="center" justify="space-between" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto">
-                    <Flex align="center">
-                        <DrawerButton />
-                        <Box ml={4}>
-                            <Logo />
-                        </Box>
-                    </Flex>
-                    <InstantQuoteButton />
+            <Box w={{ base: '100%', sm: '100%', md: "70%", lg: '40%' }} marginX="auto">
+
+                <Box px={4} alignSelf="center" my={4} >
+                    <Text
+                        bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
+                        bgClip='text'
+                        fontWeight='extrabold'
+                        textAlign="left" fontFamily="Outfit" fontSize="28" lineHeight={1}>Abouts
+                    </Text>
+                </Box>
+
+
+                <Flex overflow={"hidden"} zIndex={3} px={4} position='relative'  align='center' justify='center'>
+                    <Image alt="" marginX="auto" position='relative' rounded="md" src="/background.png" />
+                    <Text w={{ base: '80%', sm: '60%', md: '40%', lg: '40%' }} top='5%' position='absolute' fontSize="28" color={"gray.700"} fontWeight="bold" lineHeight={1} zIndex={2}
+                        textAlign="center" fontFamily="Outfit"
+                    >We are here because you have better things to do.</Text>
                 </Flex>
-            </Flex> */}
 
-            <Box px={4} w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} alignSelf="center" my={4} marginX="auto">
-                <Text
-                    bgGradient='linear(to-l, #e5236c,#FF0080,#7928CA)'
-                    bgClip='text'
-                    fontWeight='extrabold'
-                    textAlign="left" fontFamily="Outfit" fontSize="28" lineHeight={1}>Abouts
-                </Text>
+
+
+                <Flex px={4} flexDirection="column" pt={8} position="relative">
+                    {data.map((item) => {
+                        return (
+                            <Flex key={item.id} align="center" flexDirection="column" mb={8} position="relative">
+                                <Image alt="" position="relative" boxSize="20" shadow='inner' rounded="full" src={item.img} bg="gray.300" opacity=".9" p={4} />
+                                <Text fontFamily="Outfit" my={2} fontSize="16" fontWeight="bold" color={"gray.700"}>{item.title}</Text>
+                                <Text fontFamily="Outfit" w={{ base: '80%', sm: '80%', md: '60%', lg: '40%' }} textAlign="center" fontSize="14" fontWeight="light" color={"gray.700"}>{item.description}</Text>
+                            </Flex>
+                        )
+                    })}
+
+                </Flex>
             </Box>
-
-
-            <Flex overflow={"hidden"} zIndex={3} px={4} position='relative' align='center' justify='center'>
-                <Image alt="" marginX="auto" position='relative' boxSize="400" rounded="md" src="/background.png" />
-                <Text w={{ base: '80%', sm: '60%', md: '40%', lg: '20%' }} top='5%' position='absolute' fontSize="28" color={"gray.700"} fontWeight="bold" lineHeight={1} zIndex={2}
-                    textAlign="center" fontFamily="Outfit"
-                >We are here because you have better things to do.</Text>
-            </Flex>
-
-
-
-            <Flex px={4} flexDirection="column" pt={8} position="relative">
-                {data.map((item) => {
-                    return (
-                        <Flex key={item.id} align="center" flexDirection="column" mb={8} position="relative">
-                            <Image alt="" position="relative" boxSize="20" shadow='inner' rounded="full" src={item.img} bg="gray.300" opacity=".9" p={4} />
-                            <Text fontFamily="Outfit" my={2} fontSize="16" fontWeight="bold" color={"gray.700"}>{item.title}</Text>
-                            <Text fontFamily="Outfit" w={{ base: '80%', sm: '80%', md: '40%', lg: '20%' }} textAlign="center" fontSize="14" fontWeight="light" color={"gray.700"}>{item.description}</Text>
-                        </Flex>
-                    )
-                })}
-
-            </Flex>
-
             <Box><Footer /></Box>
         </>
     )

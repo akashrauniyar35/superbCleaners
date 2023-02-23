@@ -70,14 +70,16 @@ const InstantQuotePage = () => {
     return (
         <>
             <Flex px={4} py={2} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
-                <Logo />
-                <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
-                    <IoMdCall size="20px" color='#fff' />
-                    <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                <Flex align={"center"} justify="space-between" w={{ base: '100%', sm: '100%', md: '80%', lg: '70%' }} marginX="auto">
+                    <Logo />
+                    <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
+                        <IoMdCall size="20px" color='#fff' />
+                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                    </Flex>
                 </Flex>
             </Flex>
 
-            <Box px={4} w={{ base: '100%', sm: '70%', lg: '30%' }} marginX="auto">
+            <Box px={4} w={{ base: '100%', sm: '80%', md: "60%", lg: '40%' }} marginX="auto">
                 <Stack spacing={8}>
                     <Box mt={4}>
                         <QuoteHeader />

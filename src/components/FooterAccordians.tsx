@@ -85,10 +85,9 @@ function FooterAccordians() {
             </AccordionItem >
         )
     }
-
     return (
         <>
-            <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} py={6}position='relative' w={{ base: '98%', md: '80%', lg: '70%' }} marginX="auto">
+            <Box shadow='base' bg="#f5f5f5" rounded="md" p={4} py={6} position='relative' marginX="auto">
                 <Text fontFamily="Outfit" mb={2} textAlign="left" fontSize="18" fontWeight="600" color="gray.700">Questionaries</Text>
                 <Accordion allowToggle>
                     {data.map((item: any) => (<AccordianCard key={item.id} description={item.description} label={item.label} points={item.points} conclusion={item.conclusion} />))}

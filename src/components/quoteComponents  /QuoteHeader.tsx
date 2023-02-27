@@ -17,7 +17,7 @@ const serviceTypes = [
     },
     {
         id: '01',
-        title: 'General Cleaning Service',
+        title: 'General Cleaning',
         icon: '/house.png',
         icon2: '/houseWhite.png',
         description: 'A general cleaning meaning consists of basic cleaning activities that include sweeping, vacuuming, dusting, mopping, etc. This type of surface cleaning is performed on a weekly basis to maintain a level of cleanliness and hygiene in your home and offices.',

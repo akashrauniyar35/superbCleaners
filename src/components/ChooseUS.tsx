@@ -8,7 +8,7 @@ function ChooseUS() {
             <Box backgroundColor={"#f5f5f5"} p={4} rounded='md' py={8} my={4} shadow="base"  marginX="auto">
 
                 <Box backgroundColor={"#f5f5f5"} >
-                    <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Why choose Superb Cleaning?</Text>
+                    <Text fontFamily="Outfit" textAlign="left" fontSize="18" fontWeight="bold" color="gray.700">Why choose Hassle Free Cleaning?</Text>
 
 
                     <Flex marginTop={4} >

@@ -98,14 +98,14 @@ function PropertyTypes() {
                                 <Text fontFamily="Outfit" ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="sm" color={"gray.700"}>Bedroom</Text>
                             </Flex>
 
-                            <Flex align="center" justifyContent="space-between" w="80px" mr={4}>
+                            <Flex align="center" justifyContent="space-between" w="100px" mr={4}>
 
-                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdRemove onClick={() => removeBedroom()} size={16} color={"white"} cursor='pointer' />
                                 </Box>
                                 <Text fontFamily="Outfit" fontSize="16" margin="auto" fontWeight="sm" color={"gray.700"}>{bedroomCount}</Text>
 
-                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdAdd onClick={() => addBedroom()} size={16} color={"white"} cursor='pointer' />
                                 </Box>
 
@@ -130,14 +130,14 @@ function PropertyTypes() {
                                 <Text fontFamily="Outfit" ml={4} mt={0} textAlign="left" fontSize="16" fontWeight="sm" color={"gray.700"}>Bathroom</Text>
                             </Flex>
 
-                            <Flex align="center" justify="space-evenly" mr={4} w="80px">
+                            <Flex align="center" justify="space-evenly" mr={4} w="100px">
 
-                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdRemove onClick={() => removeBathroom()} size={16} color={"white"} cursor='pointer' />
                                 </Box>
 
                                 <Text fontFamily="Outfit" margin="auto" fontSize="16" fontWeight="sm" color={"gray.700"}>{bathroomCount}</Text>
-                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                                <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                                     <IoMdAdd onClick={() => addBathroom()} size={16} color={"white"} cursor='pointer' />
                                 </Box>
                             </Flex>

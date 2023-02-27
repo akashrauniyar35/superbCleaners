@@ -115,15 +115,15 @@ function AddOns() {
                             background={'#fff'}
                             mr={4}
                         />
-                        <Text fontFamily="Outfit" fontSize="14" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
+                        <Text fontFamily="Outfit" fontSize="16" fontWeight="sm" color={"gray.700"}>{item.label}</Text>
                     </Flex>
 
-                    <Flex align="center" justify="space-evenly" borderBottomRadius={'md'} w="80px">
-                        <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                    <Flex align="center" justify="space-evenly" borderBottomRadius={'md'} w="100px">
+                        <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                             <IoMdRemove onClick={() => onRemoveClick(item)} size={16} color={"#fff"} cursor='pointer' />
                         </Box>
                         <Text fontFamily="Outfit" margin="auto" fontSize="16" fontWeight="sm" color={"gray.700"}>{item.count}</Text>
-                        <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={.5} rounded="sm" shadow="base">
+                        <Box bgGradient='linear(to-tr, red.300, #e5236c)' p={1} rounded="full" shadow="base">
                             <IoMdAdd onClick={() => onAddClick(item)} size={16} color={"white"} cursor='pointer' />
                         </Box>
                     </Flex>
@@ -137,7 +137,7 @@ function AddOns() {
             <Skeleton isLoaded={loading ? true : false}>
                 <Accordion p={0} _hover={{ backgroundColor: "transparent" }} allowToggle borderColor="transparent" onChange={(expandedIndex) => expandedIndex === 0 ? setLinesVisible(true) : setLinesVisible(false)}>
                     <AccordionItem>
-                        <AccordionButton _hover={{ backgroundColor: "transparent" }} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="sm">
+                        <AccordionButton _hover={{ backgroundColor: "transparent" }} bgGradient='linear(to-tr, red.300, #e5236c)' rounded="sm" mb={4}>
                             <Flex flex='1' align="center" justify="space-between">
                                 <Text fontFamily="Outfit" fontSize="18" fontWeight="600" color={"#fff"}>Add-ons</Text>
                                 <AccordionIcon color="#fff" />

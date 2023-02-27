@@ -6,35 +6,35 @@ import Colors from '../assets/Colors'
 const data = [
     {
         id: '00',
-        title: 'StrathField',
+        title: 'Chatswood',
     },
     {
         id: '01',
-        title: 'Burwood',
+        title: 'Bondi',
     },
     {
         id: '02',
-        title: 'Central',
+        title: 'Manly',
     },
     {
         id: '03',
-        title: 'Townhall',
+        title: 'Coogee',
     },
     {
         id: '04',
-        title: 'Manly Beach',
+        title: 'North Sydney',
     },
     {
         id: '05',
-        title: 'Coogee Beach',
+        title: 'Ashfield',
     },
     {
         id: '06',
-        title: 'Coogee Beach',
+        title: 'Eastwood',
     },
     {
         id: '07',
-        title: 'Townhall',
+        title: 'Hornsby',
     },
     {
         id: '08',
@@ -42,28 +42,45 @@ const data = [
     },
     {
         id: '09',
-        title: 'Coogee Beach',
+        title: 'Epping',
     },
     {
         id: '10',
-        title: 'Coogee Beach',
+        title: 'Strathfield',
     },
     {
         id: '11',
-        title: 'Townhall',
+        title: 'Burwood',
     },
     {
         id: '12',
-        title: 'Manly Beach',
+        title: 'Ashfield',
     },
     {
         id: '13',
-        title: 'Coogee Beach',
+        title: 'Ryde',
     },
     {
         id: '14',
-        title: 'Coogee Beach',
+        title: 'Five Dock',
     },
+    {
+        id: '15',
+        title: 'Parramatta',
+    },
+    {
+        id: '16',
+        title: 'Lidcombe',
+    },
+    {
+        id: '17',
+        title: 'Auburn',
+    },
+    {
+        id: '18',
+        title: 'Hurstville',
+    },
+
 ];
 
 function Suburbs() {

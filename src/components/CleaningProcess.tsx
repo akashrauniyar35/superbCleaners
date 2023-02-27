@@ -26,7 +26,7 @@ function CleaningProcess() {
                         </Square>
 
                         <Flex flexDirection="column" ml={2} align="left" justify="center" mt={-1}>
-                            <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="600" color={'gray.700'}>Superb Working Process</Text>
+                            <Text fontFamily="Outfit" textAlign="left" fontSize="16" fontWeight="600" color={'gray.700'}>Hassle Free Working Process</Text>
                             <Text fontWeight="300" fontFamily="Outfit" fontSize="14" textAlign='left' width="70" color="gray.700">You can just call us for the quote or fill in the get quote form and we will get back to you with the Quote.</Text>
                         </Flex>
                     </Flex>
@@ -55,7 +55,7 @@ function CleaningProcess() {
                     </Flex>
                 </Box>
 
-                <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={"2px"} position="absolute" h={{ base: '240px', sm: "150px", md: '150px', lg: '150px', }} left={0} zIndex={1} bottom={"70px"} mr={"40px"} />
+                <Flex bgGradient='linear(to-t, red.300, #e5236c)' w={"2px"} position="absolute" h={{ base: '220px', sm: "150px", md: '150px', lg: '150px', }} left={0} zIndex={1} bottom={"70px"} mr={"40px"} />
 
                 <Box mb={0}>
                     <Flex flexDirection="row" position={'relative'}>

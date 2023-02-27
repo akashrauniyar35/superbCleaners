@@ -204,10 +204,9 @@ const ContactUs = () => {
                     <InputGroup>
 
                         <Flex align='center'>
+                            <Input value={data.suburb} fontFamily={"Outfit"} fontSize={"14"} size='sm' rounded='md' placeholder='Suburb' onChange={(e) => setData({ ...data, suburb: e.target.value })} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="45%" mr={4} />
 
                             <Input value={data.postCode} fontFamily={"Outfit"} fontSize={"14"} size='sm' rounded='md' onChange={(e) => setData({ ...data, postCode: e.target.value })} placeholder='Post Code' variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={3} pl={3} w="25%" mr={4} />
-
-                            <Input value={data.suburb} fontFamily={"Outfit"} fontSize={"14"} size='sm' rounded='md' placeholder='Suburb' onChange={(e) => setData({ ...data, suburb: e.target.value })} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="45%" mr={4} />
 
                             <Input value={data.state} fontFamily={"Outfit"} fontSize={"14"} size='sm' onChange={(e) => setData({ ...data, state: e.target.value })} rounded='md' placeholder={data.state} variant='unstyled' color={Colors.mattBlue} borderWidth={.2} borderColor="gray.200" textColor={"gray.700"} _placeholder={{ color: 'gray.700', }} py={2} pl={3} w="25%" />
 

@@ -25,7 +25,7 @@ function Banner() {
                 </Box>
 
                 <Box alignSelf="center" pt={4} position="relative" marginX="auto" >
-                    <Text fontFamily="Outfit" textAlign="left" fontSize="14" color="gray.700">Welcome to Superb Cleaning, your go-to cleaning service for all your cleaning needs. We offer a range of cleaning services, including residential, move-in and move-out cleaning and more. Our team uses eco-friendly and non-toxic cleaning products, and we strive to maintain a clean and safe environment for you, your family, and your pets. At Superb Cleaning, we guarantee a spotless and sparkling clean every time. Contact us today to schedule your cleaning service and let us handle the rest!</Text>
+                    <Text fontFamily="Outfit" textAlign="left" fontSize="14" color="gray.700">Welcome to Hassle Free Cleaning, your go-to cleaning service for all your cleaning needs. We offer a range of cleaning services, including residential, move-in and move-out cleaning and more. Our team uses eco-friendly and non-toxic cleaning products, and we strive to maintain a clean and safe environment for you, your family, and your pets. At Hassle Free Cleaning, we guarantee a spotless and sparkling clean every time. Contact us today to schedule your cleaning service and let us handle the rest!</Text>
                 </Box>
 
 

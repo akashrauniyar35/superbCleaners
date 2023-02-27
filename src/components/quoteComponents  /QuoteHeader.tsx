@@ -48,7 +48,7 @@ function QuoteHeader() {
 
                                 <Flex key={item.id} p={2} w="45%" rounded='md' h="50px"
                                     borderWidth="thin" borderColor={item.title === service ? "transparent" : service ? 'transparent' : 'gray.500'}
-                                    cursor='pointer' justify='space-between' align='center' bgGradient={item.title === service ? 'linear(to-tr, red.300, #e5236c)' : "#fff"} onClick={() => onServiceSelect(item.title)}
+                                    cursor='pointer' align='center' bgGradient={item.title === service ? 'linear(to-tr, red.300, #e5236c)' : "#fff"} onClick={() => onServiceSelect(item.title)}
                                     opacity={item.title === service ? "1" : service ? '.5' : '1'}
                                     shadow={item.title === service ? "base" : 'inner'}
                                 >
@@ -59,7 +59,7 @@ function QuoteHeader() {
                                         objectFit="cover"
                                         src={item.title === service ? item.icon2 : item.icon}
                                     />
-                                    <Text ml={3} mt={.5} fontSize='14' fontFamily="Outfit" lineHeight='1.2' fontWeight='medium' color={item.title === service ? "#fff" : "gray.700"}>{item.title}</Text>
+                                    <Text ml={2} mt={.5} fontSize='14' fontFamily="Outfit" lineHeight='1.2' fontWeight='medium' color={item.title === service ? "#fff" : "gray.700"}>{item.title}</Text>
                                 </Flex>
                             )
                         })

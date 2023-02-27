@@ -46,7 +46,7 @@ function QuoteHeader() {
                         serviceTypes.map((item) => {
                             return (
 
-                                <Flex key={item.id} p={2} w="45%" rounded='md'
+                                <Flex key={item.id} p={2} w="45%" rounded='md' h="50px"
                                     borderWidth="thin" borderColor={item.title === service ? "transparent" : service ? 'transparent' : 'gray.500'}
                                     cursor='pointer' justify='space-between' align='center' bgGradient={item.title === service ? 'linear(to-tr, red.300, #e5236c)' : "#fff"} onClick={() => onServiceSelect(item.title)}
                                     opacity={item.title === service ? "1" : service ? '.5' : '1'}

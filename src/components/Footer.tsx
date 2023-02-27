@@ -16,7 +16,7 @@ function Footer({ display }: any) {
                         <Box w="180px" ml={-4}>
                             <Logo />
                         </Box>
-                        <Text w="90%" bg="red" fontWeight={"600"} fontSize="16" textAlign='left' color="#fff" mt={-4}>Cleaning beyond your expectations</Text>
+                        <Text w="90%" fontWeight={"600"} fontSize="16" textAlign='left' color="#fff" mt={-4}>Cleaning beyond your expectations</Text>
                     </Box> : null}
 
                     <Link href="./services" >

@@ -74,7 +74,7 @@ const InstantQuotePage = () => {
                     <Logo />
                     <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
                         <IoMdCall size="20px" color='#fff' />
-                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415701456</Text>
                     </Flex>
                 </Flex>
             </Flex>

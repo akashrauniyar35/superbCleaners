@@ -59,7 +59,6 @@ function DrawerButton() {
         setIsOpen(!isOpen);
     }
 
-    // const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
 
 
@@ -89,7 +88,6 @@ function DrawerButton() {
                         isOpen={isOpen}
                         placement='left'
                         onClose={toggleDrawer}
-                    // finalFocusRef={btnRef}
                     >
                         <DrawerOverlay />
                         <DrawerContent>
@@ -114,7 +112,7 @@ function DrawerButton() {
                                 <Box >
 
                                     <Flex cursor='pointer' mb={4} bg="green.400" justify='space-between' rounded={"md"} p={1.5} align="center" px="3">
-                                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415 987 872</Text>
+                                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415701456</Text>
                                         <IoMdCall size="20px" color='#fff' />
                                     </Flex>
 

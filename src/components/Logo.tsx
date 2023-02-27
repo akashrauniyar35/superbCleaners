@@ -6,7 +6,7 @@ function Logo() {
     return (
         <>
             <Link href="./" >
-                <Flex position={"relative"} justify="center" align="center" cursor="pointer" >
+                <Flex position={"relative"} justify="center" align="center" cursor="pointer">
                     <Box position={"absolute"} mt={1}>
                         <Text lineHeight={.6} color="white" fontSize="16" fontWeight="bold" fontFamily="Outfit">Hassle Free</Text>
                         <Text color="white" fontSize="16" fontWeight="bold" fontFamily="Outfit">Cleaning</Text>

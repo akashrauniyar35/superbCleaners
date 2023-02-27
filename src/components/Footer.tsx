@@ -20,7 +20,7 @@ function Footer({ display }: any) {
                     </Box> : null}
 
                     <Link href="./services" >
-                        <Box mr={"10%"}>
+                        <Box mr={"10"}>
                             <Text cursor="pointer" textAlign="left" fontSize="18" fontWeight="bold" color="#fff" mb={4} >Services</Text>
                             <Text cursor="pointer" fontSize="13" textAlign='left' color="#fff" mb={2}>End of Lease Cleaning</Text>
                             <Text cursor="pointer" fontSize="13" textAlign='left' color="#fff" mb={2}>Vacate Cleaning</Text>
@@ -30,11 +30,15 @@ function Footer({ display }: any) {
                     </Link>
                 </Flex>
 
-                <Flex justify='space-between' mt={8}>
-                    <Text textAlign="left" fontSize="18" fontWeight="bold" color="#fff" mb={2} >Follow us on</Text>
-                    <AiOutlineInstagram color='#fff' size={24} cursor='pointer' />
-                </Flex>
-                <Text cursor="pointer" fontSize="13" textAlign='left' color="#fff" mb={1}>Sydney Cleaning Services © 2023. All rights reserved.</Text>
+
+                {!display ? <Box>
+                    <Flex justify='space-between' mt={8}>
+                        <Text textAlign="left" fontSize="18" fontWeight="bold" color="#fff" mb={2} >Follow us on</Text>
+                        <AiOutlineInstagram color='#fff' size={24} cursor='pointer' />
+                    </Flex>
+                    <Text cursor="pointer" fontSize="13" textAlign='left' color="#fff" mb={1}>Sydney Cleaning Services © 2023. All rights reserved.</Text>
+                </Box> : null}
+
             </Box>
 
         </Box>

@@ -13,7 +13,7 @@ function Footer({ display }: any) {
 
                 <Flex align="flex-start" justify="space-between">
                     {!display ? <Box display={{}}>
-                        <Box w="180px">
+                        <Box w="180px" ml={-4}>
                             <Logo />
                         </Box>
                         <Text fontWeight={"600"} fontSize="16" textAlign='left' color="#fff" mt={-2}>Cleaning beyond your expectations</Text>

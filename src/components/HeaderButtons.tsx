@@ -16,7 +16,7 @@ function HeaderButtons() {
         <>
 
             <Flex position="sticky" bg="white" top={0} zIndex={4} px={4} align="center" flexDirection="row" justify="space-between" py={0} shadow="base" >
-                <Flex align="center" justify="space-between" w={{ base: '100%', sm: '100%', md: "80%", lg: '50%' }} marginX="auto">
+                <Flex align="center" justify="space-between" w={{ base: '100%', sm: '100%', md: "80%", lg: '50%' }} marginX="auto" h="70px">
 
                     <Flex align="center" flex='1' display={{
                         base: "flex", sm: "flex", md: 'flex', lg: "none "

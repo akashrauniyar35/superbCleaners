@@ -94,8 +94,8 @@ function DrawerButton() {
                         <DrawerOverlay />
                         <DrawerContent>
 
-                            <DrawerHeader shadow='base' >
-                                <Flex align='center' justify='space-between' color='white' h="58px">
+                            <DrawerHeader shadow='base' h="70px">
+                                <Flex align='center' h="43px" justify='space-between' color='white'>
                                     <Box ml={-4}>
                                         <Logo />
                                     </Box>
@@ -125,7 +125,7 @@ function DrawerButton() {
 
                                     <Link href="/instantQuote">
                                         <Flex p={1.5} px={4} rounded='md' cursor='pointer' align="center" _hover={{ bgGradient: 'linear(to-tl, red.300, #e5236c)' }} bgGradient='linear(to-tr, red.300, #e5236c)'>
-                                            <Text fontSize="16" textAlign='left' color="#fff" fontWeight="bold">Request a quote</Text>
+                                            <Text fontSize="16" textAlign='left' color="#fff" fontWeight="bold">Get a quote</Text>
                                         </Flex>
                                     </Link>
                                 </Box>

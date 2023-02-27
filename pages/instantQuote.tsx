@@ -69,7 +69,7 @@ const InstantQuotePage = () => {
 
     return (
         <>
-            <Flex px={4} py={0} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2}>
+            <Flex px={4} py={0} shadow='base' zIndex={4} align="center" flexDirection="row" bg='white' justify="space-between" top={0} position="sticky" mb={2} h="70px">
                 <Flex align={"center"} justify="space-between" w={{ base: '100%', sm: '100%', md: "80%", lg: '50%' }} marginX="auto">
                     <Logo />
                     <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">

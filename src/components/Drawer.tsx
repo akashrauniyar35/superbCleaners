@@ -95,8 +95,10 @@ function DrawerButton() {
                         <DrawerContent>
 
                             <DrawerHeader shadow='base' >
-                                <Flex align='center' justify='space-between' color='white'>
-                                    <Logo />
+                                <Flex align='center' justify='space-between' color='white' h="58px">
+                                    <Box ml={-4}>
+                                        <Logo />
+                                    </Box>
                                     <Box bgGradient='linear(to-tr, red.300, #e5236c)' rounded={"full"} p={1.5}>
                                         {/* <IoMdCall size="30px" color='#fff' /> */}
                                         <AiOutlineClose size="16" onClick={toggleDrawer} cursor='pointer' />

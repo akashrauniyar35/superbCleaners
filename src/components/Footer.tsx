@@ -13,8 +13,10 @@ function Footer({ display }: any) {
 
                 <Flex align="flex-start" justify="space-between">
                     {!display ? <Box display={{}}>
-                        <Logo />
-                        <Text fontWeight={"600"} fontSize="16" textAlign='left' color="#fff" mt={1}>Cleaning beyond your expectations</Text>
+                        <Box w="180px">
+                            <Logo />
+                        </Box>
+                        <Text fontWeight={"600"} fontSize="16" textAlign='left' color="#fff" mt={-2}>Cleaning beyond your expectations</Text>
                     </Box> : null}
 
                     <Link href="./services" >

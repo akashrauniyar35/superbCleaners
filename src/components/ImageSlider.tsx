@@ -29,10 +29,6 @@ const data = [
         img: '/gallerySix.png',
     },
     {
-        id: '06',
-        img: '/gallerySeven.png',
-    },
-    {
         id: '07',
         img: '/galleryEight.png',
     },
@@ -40,9 +36,6 @@ const data = [
 ]
 
 function ImageSlider() {
-
-    const [currentIndex, setCurrentIndex] = useState(0)
-
     const SliderCard = ({ item: { img, title, id } }: any) => {
         return (
 

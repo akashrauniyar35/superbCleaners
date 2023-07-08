@@ -9,6 +9,7 @@ import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
 import { postQuoteFail, postQuotePending, postQuoteSuccess } from '../src/redux/slice'
 import onSubmit from './api/submit'
+import Link from 'next/link'
 
 
 const InstantQuotePage = () => {
@@ -71,9 +72,9 @@ const InstantQuotePage = () => {
                     <Logo />
                     <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
                         <IoMdCall size="20px" color='#fff' />
-                        <a href="tel:0481834009">
+                        <Link href="tel:0481834009">
                             <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0481834009</Text>
-                        </a>
+                        </Link>
                     </Flex>
                 </Flex>
             </Flex>

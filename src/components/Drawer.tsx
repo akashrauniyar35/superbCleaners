@@ -105,12 +105,12 @@ function DrawerButton() {
 
                                 <Box >
 
-                                    <a href="tel:0481834009">
+                                    <Link href="tel:0481834009">
                                         <Flex cursor='pointer' mb={4} bg="green.400" justify='space-between' rounded={"md"} p={1.5} align="center" px="3">
                                             <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0481834009</Text>
                                             <IoMdCall size="20px" color='#fff' />
                                         </Flex>
-                                    </a>
+                                    </Link>
 
                                     <Flex cursor='pointer' mb={4} rounded='md' align="center" backgroundColor="blue.700" px={4} py={1.5} justify='space-between' >
                                         <Text fontSize="16" textAlign='left' color="#fff" mr={2} fontWeight="bold">Follow us On</Text>

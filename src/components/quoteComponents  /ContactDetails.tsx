@@ -1,11 +1,10 @@
-import { PhoneIcon } from '@chakra-ui/icons'
 import { Box, Flex, Image, Input, InputGroup, InputLeftElement, Skeleton, Stack, Text, Textarea } from '@chakra-ui/react'
-import React, { useCallback, useEffect, useState } from 'react'
-import Colors from '../../assets/Colors'
+import { useEffect, useState } from 'react'
 import { IoMdAlert } from 'react-icons/io'
+import Colors from '../../assets/Colors'
 
-import { customerDetails } from '../../redux/slice';
 import { useDispatch, useSelector } from 'react-redux'
+import { customerDetails } from '../../redux/slice'
 
 function ContactDetails() {
     const loaded = useSelector((state: any) => state.property)

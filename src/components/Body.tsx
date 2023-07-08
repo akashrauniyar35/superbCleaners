@@ -75,7 +75,7 @@ function Banner() {
                                 mt={"-5"}
                             />
                             < Box position="absolute" right={{ base: 0, sm: 0, md: "-10%", lg: '-10%' }} zIndex="3"
-                                top={{ base: "40%", sm: "32%", md: "30%", lg: "10%" }} >
+                                top={{ base: "40%", sm: "42%", md: "30%", lg: "10%" }} >
                                 <Flex
                                     opacity=".9" bgGradient='linear(to-tr, red.300, #e5236c)'
                                     borderRightRadius={{ md: 'full', base: 'none', sm: 'none', lg: ' full' }}

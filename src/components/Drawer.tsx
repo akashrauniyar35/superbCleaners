@@ -1,28 +1,23 @@
-import React, { useRef, useState } from 'react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons';
 import {
+    Box,
     Drawer,
     DrawerBody,
+    DrawerContent,
     DrawerHeader,
     DrawerOverlay,
-    DrawerContent,
-    Box,
-    Text,
     Flex,
-} from '@chakra-ui/react'
+    Text,
+} from '@chakra-ui/react';
+import { useRef, useState } from 'react';
 
-import { IoMdCall, IoMdInformationCircleOutline } from 'react-icons/io';
-import { GiNewspaper, GiRead, GiVacuumCleaner } from 'react-icons/gi';
-import { AiFillHome } from 'react-icons/ai';
-import Colors from '../assets/Colors';
 import Link from 'next/link';
-import { MdAlternateEmail, MdContacts } from 'react-icons/md';
-import { IoMdAlert, } from 'react-icons/io';
-import { AiOutlineClose, AiOutlineInstagram } from 'react-icons/ai';
+import { AiFillHome, AiOutlineClose, AiOutlineInstagram } from 'react-icons/ai';
 import { FaSprayCan } from 'react-icons/fa';
-import Logo from './Logo';
+import { IoMdAlert, IoMdCall } from 'react-icons/io';
+import { MdContacts } from 'react-icons/md';
 import Footer from './Footer';
-import InstantQuoteButton from './InstantQuoteButton';
+import Logo from './Logo';
 
 
 const data = [

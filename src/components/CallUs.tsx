@@ -1,6 +1,4 @@
-import { Box, Circle, Flex, Image, Text } from '@chakra-ui/react'
-import React from 'react'
-import Colors from '../assets/Colors'
+import { Circle } from '@chakra-ui/react';
 import { IoMdCall } from 'react-icons/io';
 
 
@@ -8,17 +6,12 @@ import { IoMdCall } from 'react-icons/io';
 
 
 function CallUs() {
-
-
-
     return (
-
-        <Circle mr={4} p={2} bg="green.400" rounded={"full"} size="35px" cursor={"pointer"}>
-            <IoMdCall size="20px" color='#fff' />
-        </ Circle>
-
-
-
+        <a href="tel:0481834009">
+            <Circle mr={4} p={2} bg="green.400" rounded={"full"} size="35px" cursor={"pointer"}>
+                <IoMdCall size="20px" color='#fff' />
+            </ Circle>
+        </a>
     )
 }
 

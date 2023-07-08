@@ -1,21 +1,17 @@
-import { Box, Button, Divider, Flex, Image, Skeleton, Spinner, Stack, Text, useToast } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import Colors from '../src/assets/Colors'
-
+import { Box, Flex, Skeleton, Spinner, Stack, Text, useToast } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { IoMdCall } from 'react-icons/io'
+import { useDispatch, useSelector } from 'react-redux'
 import Logo from '../src/components/Logo'
 import AddOns from '../src/components/quoteComponents  /AddOns'
 import ContactDetails from '../src/components/quoteComponents  /ContactDetails'
 import PropertyTypes from '../src/components/quoteComponents  /PropertyTypes'
 import QuoteHeader from '../src/components/quoteComponents  /QuoteHeader'
-import { useSelector, useDispatch } from 'react-redux'
-import { IoMdCall } from 'react-icons/io'
+import { postQuoteFail, postQuotePending, postQuoteSuccess } from '../src/redux/slice'
 import onSubmit from './api/submit'
-import { postQuotePending, postQuoteSuccess, postQuoteFail } from '../src/redux/slice'
-import { useRouter } from 'next/router'
 
 
 const InstantQuotePage = () => {
-    const [loaded, setLoaded] = useState(true);
     const postLoading: any = useSelector((state: any) => state.postQuoteLoading)
     const toast = useToast()
     const dispatch = useDispatch()
@@ -42,6 +38,7 @@ const InstantQuotePage = () => {
             form_phone_number: data.phone,
             from_address: data.address,
             from_service: data.service,
+            from_property: data.property,
             from_bedroom: data.bedroomCount,
             from_bathroom: data.bathroomCount,
             from_addons: JSON.stringify(addons),
@@ -52,7 +49,7 @@ const InstantQuotePage = () => {
             router.push("./")
             dispatch(postQuoteSuccess())
             toast({
-                duration: 9000,
+                duration: 3000,
                 position: 'top',
                 render: () => (
                     <Flex flex="1" align="center" justify="center">
@@ -74,7 +71,9 @@ const InstantQuotePage = () => {
                     <Logo />
                     <Flex bg="green.400" rounded={"md"} p={1.5} align="center" px="3">
                         <IoMdCall size="20px" color='#fff' />
-                        <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0415701456</Text>
+                        <a href="tel:0481834009">
+                            <Text color="#fff" fontWeight="600" ml="2" letterSpacing="1px" fontFamily="Outfit">0481834009</Text>
+                        </a>
                     </Flex>
                 </Flex>
             </Flex>
@@ -102,7 +101,6 @@ const InstantQuotePage = () => {
                             </Flex>
                         </Skeleton>
                     </Box>
-
                 </Stack>
 
 

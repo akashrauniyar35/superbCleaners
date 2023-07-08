@@ -56,7 +56,7 @@ const ContactUs = () => {
         if (res === "OK") {
             dispatch(postContactSuccess())
             toast({
-                duration: 9000,
+                duration: 3000,
                 position: 'top',
                 render: () => (
                     <Flex flex="1" align="center" justify="center">

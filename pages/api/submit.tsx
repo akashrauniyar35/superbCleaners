@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 const onSubmit = async (prams: any) => {
-    return await emailjs.send('service_y6ig5jq', 'template_40zqqvf', prams, 'vfr7w_ettAbPZ-clt')
+    return await emailjs.send('service_t5e6t9e', 'template_1k9e7nl', prams, '-hLjdYlLwweke00m9')
         .then((result) => {
             return result.text
         }, (error) => {

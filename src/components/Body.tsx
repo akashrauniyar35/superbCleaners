@@ -1,6 +1,4 @@
-import { Box, Flex, Image, List, ListIcon, ListItem, OrderedList, Stack, Text, UnorderedList } from '@chakra-ui/react'
-import React from 'react'
-import { AiFillStar } from 'react-icons/ai';
+import { Box, Flex, Image, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import ChooseUS from './ChooseUS';
 import CleaningProcess from './CleaningProcess';
 import FooterAccordians from './FooterAccordians';
@@ -76,10 +74,15 @@ function Banner() {
                                 ml={{ base: -20 }}
                                 mt={"-5"}
                             />
-                            < Box position="absolute" right={{ base: 0, sm: 0, md: "-10%", lg: '-10%' }} zIndex="3" top={{ base: 12, sm: 24, md: 10, lg: 10 }} >
-                                <Flex opacity=".95" bgGradient='linear(to-tr, red.300, #e5236c)'
-                                    borderRightRadius={{ md: 'full', base: 'none', sm: 'none', lg: ' full' }} borderLeftRadius={{ base: "full", sm: 'full', md: "full", lg: ' full' }} align="center" h={{ base: '200px', sm: '250px', md: "300px", lg: '300px' }} w={{ base: '230px', sm: '300px', lg: '300px' }} shadow="base" justify={"center"} pl={{ base: 8 }}>
-                                    <UnorderedList lineHeight={1} fontSize={14} color='white'>
+                            < Box position="absolute" right={{ base: 0, sm: 0, md: "-10%", lg: '-10%' }} zIndex="3" top={{ base: "34%", sm: "46%", md: "30%", lg: "10%" }} >
+                                <Flex
+                                    opacity=".95" bgGradient='linear(to-tr, red.300, #e5236c)'
+                                    borderRightRadius={{ md: 'full', base: 'none', sm: 'none', lg: ' full' }}
+                                    borderLeftRadius={{ base: "full", sm: 'full', md: "full", lg: ' full' }}
+                                    align="center" h={{ base: '150px', sm: '200px', md: "250px", lg: '300px' }}
+                                    w={{ base: '200px', sm: '300px', lg: '300px', md: "250px", }}
+                                    shadow="base" justify={"center"} pl={{ base: 8 }}>
+                                    <UnorderedList lineHeight={1} fontSize={{ base: "xs", sm: "md", md: "md", lg: "md" }} color='white'>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Best in Sydney, NSW</Text></ListItem>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Get a quote in less than a minute</Text></ListItem>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Satisfaction guranteed</Text></ListItem>

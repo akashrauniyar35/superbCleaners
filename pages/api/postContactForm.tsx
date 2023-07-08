@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 const postContactForm = async (prams: any) => {
-    return await emailjs.send('service_y6ig5jq', 'template_ameptjf', prams, 'vfr7w_ettAbPZ-clt')
+    return await emailjs.send('service_t5e6t9e', 'template_ixu56tr', prams, '-hLjdYlLwweke00m9')
         .then((result) => {
             return result.text
         }, (error) => {

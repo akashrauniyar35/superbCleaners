@@ -81,8 +81,8 @@ function Banner() {
                                     borderRightRadius={{ md: 'full', base: 'none', sm: 'none', lg: ' full' }}
                                     borderLeftRadius={{ base: "full", sm: 'full', md: "full", lg: ' full' }}
                                     align="center"
-                                    h={{ base: '150px', sm: '200px', md: "250px", lg: '300px' }}
-                                    w={{ base: '200px', sm: '250px', md: "250px", lg: '300px', }}
+                                    h={{ base: '150px', sm: '15px', md: "250px", lg: '300px' }}
+                                    w={{ base: '200px', sm: '200px', md: "250px", lg: '300px', }}
                                     shadow="base" justify={"center"} pl={{ base: 8 }}>
                                     <UnorderedList lineHeight={1} fontSize={{ base: "xs", sm: "md", md: "md", lg: "md" }} color='white'>
                                         <ListItem><Text fontFamily="Outfit" mb={2} fontWeight="bold" color="white">Best in Sydney, NSW</Text></ListItem>
